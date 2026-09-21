@@ -32,14 +32,6 @@ export default async function Home() {
   const frontPromptHref = frontPrompt?.slug ? `/prompt/${frontPrompt.slug}` : "/explore";
   const rearPromptHref = rearPrompt?.slug ? `/prompt/${rearPrompt.slug}` : "/category/girls";
 
-  const appPreviewPrompts = [...(trending.items || []), ...(latest.items || [])]
-    .filter((prompt, index, items) =>
-      prompt?.slug
-        ? items.findIndex((item) => item?.slug === prompt.slug) === index
-        : true,
-    )
-    .slice(0, 4);
-
   return (
     <>
       <section className="hero">
@@ -221,7 +213,7 @@ export default async function Home() {
         </div>
       </section>
       <div className="container">
-        <AppDownloadCTA previewPrompts={appPreviewPrompts} />
+        <AppDownloadCTA />
       </div>
       <section className="container section">
         <div className="section-heading">
