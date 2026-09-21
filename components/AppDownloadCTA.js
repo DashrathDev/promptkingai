@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, Smartphone, Play } from "lucide-react";
 import { PLAY_STORE_URL } from "@/lib/site";
+
 export function PlayButton() {
   return (
     <a href={PLAY_STORE_URL} className="play-button">
@@ -13,7 +15,8 @@ export function PlayButton() {
     </a>
   );
 }
-export default function AppDownloadCTA({ compact = false }) {
+
+export default function AppDownloadCTA({ compact = false, previewPrompts = [] }) {
   if (compact)
     return (
       <section className="sidebar-cta">
@@ -30,6 +33,30 @@ export default function AppDownloadCTA({ compact = false }) {
         <PlayButton />
       </section>
     );
+
+  const fallbackImages = [
+    {
+      image: "/images/black.webp",
+      imageAlt: "Cinematic portrait reference",
+    },
+    {
+      image: "/images/traditional.webp",
+      imageAlt: "Traditional portrait reference",
+    },
+    {
+      image: "/images/couple.webp",
+      imageAlt: "Couple portrait reference",
+    },
+    {
+      image: "/images/soft.webp",
+      imageAlt: "Daylight portrait reference",
+    },
+  ];
+
+  const phonePrompts = previewPrompts.length
+    ? previewPrompts.slice(0, 4)
+    : fallbackImages;
+
   return (
     <section className="app-cta" aria-labelledby="app-title">
       <div className="app-cta-copy">
@@ -50,7 +77,7 @@ export default function AppDownloadCTA({ compact = false }) {
       </div>
       <div
         className="app-phone"
-        aria-label="Illustrative Prompt King feed preview"
+        aria-label="Prompt King feed preview using current prompt images"
       >
         <div className="phone-top">
           <span>
@@ -60,28 +87,33 @@ export default function AppDownloadCTA({ compact = false }) {
         </div>
         <div className="phone-label">Find your next photo idea.</div>
         <div className="phone-images">
-          {["black", "traditional", "couple", "soft"].map((x, i) => (
-            <div key={x}>
+          {phonePrompts.map((prompt, i) => {
+            const content = (
               <Image
-                src={`/images/${x}.webp`}
-                alt={
-                  [
-                    "Cinematic portrait reference",
-                    "Traditional portrait reference",
-                    "Couple portrait reference",
-                    "Daylight portrait reference",
-                  ][i]
-                }
+                src={prompt.image}
+                alt={prompt.imageAlt || prompt.title || `Prompt preview ${i + 1}`}
                 fill
                 sizes="160px"
               />
-            </div>
-          ))}
+            );
+
+            return prompt.slug ? (
+              <Link
+                href={`/prompt/${prompt.slug}`}
+                key={prompt.slug}
+                aria-label={`Explore ${prompt.title || "prompt"}`}
+              >
+                {content}
+              </Link>
+            ) : (
+              <div key={`${prompt.image}-${i}`}>{content}</div>
+            );
+          })}
         </div>
-        <div className="phone-bottom">
+        <Link href="/explore" className="phone-bottom">
           Explore photo prompts <ArrowUpRight size={16} />
-        </div>
-        <small className="mockup-label">Illustrative feed preview</small>
+        </Link>
+        <small className="mockup-label">Live prompt preview</small>
       </div>
     </section>
   );
