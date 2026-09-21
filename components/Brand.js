@@ -11,9 +11,7 @@ export default function Brand() {
         aria-hidden="true"
         className="brand-logo"
       />
-      <span>
-        Prompt King<span className="brand-dot">.</span>
-      </span>
+      <span>Prompt King</span>
     </Link>
   );
 }
