@@ -1,4 +1,3 @@
-export const dynamicParams = false;
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -9,30 +8,27 @@ import {
   Scan,
   SlidersHorizontal,
   ClipboardList,
+  LockKeyhole,
 } from "lucide-react";
-import {
-  getPrompt,
-  getPromptSlugs,
-  getRelatedPrompts,
-} from "@/lib/prompt-service";
+import { getPrompt, getRelatedPrompts } from "@/lib/prompt-service";
 import { seo, PLAY_STORE_URL } from "@/lib/site";
 import { categories } from "@/data/categories";
 import CopyPrompt from "@/components/CopyPrompt";
 import FAQ from "@/components/FAQ";
 import AppDownloadCTA from "@/components/AppDownloadCTA";
 import RelatedPrompts from "@/components/RelatedPrompts";
-export async function generateStaticParams() {
-  return (await getPromptSlugs()).map((slug) => ({ slug }));
-}
+
 export async function generateMetadata({ params }) {
   const p = await getPrompt((await params).slug);
   return p
     ? seo(p.title, p.description, `/prompt/${p.slug}`, p.image)
     : { title: "Prompt not found", robots: { index: false } };
 }
+
 export default async function PromptPage({ params }) {
   const p = await getPrompt((await params).slug);
   if (!p) notFound();
+
   const related = await getRelatedPrompts(p);
   const cat = categories.find((c) => c.slug === p.category);
   const faq = [
@@ -57,32 +53,33 @@ export default async function PromptPage({ params }) {
       "Yes. Use it as creative inspiration and customize the result for your audience. Use photos you have permission to upload, and check your chosen tool’s terms before publishing.",
     ],
   ];
+
   return (
     <div className="container detail-page">
       <nav className="breadcrumbs" aria-label="Breadcrumb">
         <Link href="/">Home</Link>
         <span>/</span>
-        <Link href={`/category/${p.category}`}>{cat?.name}</Link>
+        <Link href={`/category/${p.category}`}>{cat?.name || p.categoryName}</Link>
         <span>/</span>
         <span aria-current="page">{p.title}</span>
       </nav>
+
       <div className="detail-layout">
         <article className="detail-main">
           <Link href="/explore" className="back-link">
             <ArrowLeft size={16} /> Back to prompts
           </Link>
+
           <span className="eyebrow purple detail-eyebrow">
             YOUR NEXT CREATIVE STARTING POINT
           </span>
           <h1>{p.title}</h1>
           <p className="detail-intro">{p.description}</p>
+
           <div className="tags">
-            {[p.category, ...p.tags].map((t) => (
-              <Link key={t} href={`/category/${t}`}>
-                {t}
-              </Link>
-            ))}
+            <Link href={`/category/${p.category}`}>{p.categoryName}</Link>
           </div>
+
           <figure className="detail-figure">
             <div className="detail-image">
               <Image
@@ -98,31 +95,54 @@ export default async function PromptPage({ params }) {
               and customization.
             </figcaption>
           </figure>
+
           <section className="prompt-section">
             <div className="section-heading">
               <div>
-                <span className="eyebrow purple">
-                  YOUR IDEA STARTS WITH WORDS
-                </span>
+                <span className="eyebrow purple">YOUR IDEA STARTS WITH WORDS</span>
                 <h2>AI Photo Prompt</h2>
               </div>
             </div>
-            <div className="prompt-text">{p.prompt}</div>
-            <div className="copy-actions">
-              <CopyPrompt text={p.prompt} />
-              <a href={PLAY_STORE_URL} className="button secondary">
-                Open Prompt King App <ArrowUpRight size={17} />
-              </a>
-            </div>
+
+            {p.isPremium ? (
+              <div className="prompt-text">
+                <LockKeyhole size={20} aria-hidden="true" />
+                <p>
+                  This is a Premium prompt. Open Prompt King on Google Play to
+                  access it through the app.
+                </p>
+              </div>
+            ) : (
+              <>
+                <div className="prompt-text">{p.prompt}</div>
+                <div className="copy-actions">
+                  <CopyPrompt text={p.prompt} />
+                  <a href={PLAY_STORE_URL} className="button secondary">
+                    Open Prompt King App <ArrowUpRight size={17} />
+                  </a>
+                </div>
+              </>
+            )}
+
+            {p.isPremium ? (
+              <div className="copy-actions">
+                <a href={PLAY_STORE_URL} className="button">
+                  Get Prompt King App <ArrowUpRight size={17} />
+                </a>
+              </div>
+            ) : null}
+
             <p className="reference-note">
               The app button opens its Google Play listing, where available you
               can open or install it.
             </p>
           </section>
+
           <section className="content-section">
             <h2>About this prompt</h2>
             <p>{p.about}</p>
           </section>
+
           <div className="info-grid">
             {[
               [Camera, "Best for", p.bestFor],
@@ -141,24 +161,22 @@ export default async function PromptPage({ params }) {
               </section>
             ))}
           </div>
+
           <section className="content-section">
             <h2>A few helpful answers.</h2>
             <FAQ items={faq} />
           </section>
         </article>
+
         <aside className="detail-sidebar" aria-label="More inspiration">
           <AppDownloadCTA compact />
           <section className="sidebar-panel">
             <h2>Another direction?</h2>
             {related.slice(0, 3).map((r) => (
-              <Link
-                className="mini-prompt"
-                key={r.id}
-                href={`/prompt/${r.slug}`}
-              >
+              <Link className="mini-prompt" key={r.id} href={`/prompt/${r.slug}`}>
                 <Image src={r.image} alt={r.imageAlt} width={70} height={88} />
                 <span>
-                  <small>{r.category}</small>
+                  <small>{r.categoryName}</small>
                   <strong>{r.title}</strong>
                   <span>View prompt →</span>
                 </span>
@@ -178,6 +196,7 @@ export default async function PromptPage({ params }) {
           </section>
         </aside>
       </div>
+
       <RelatedPrompts prompts={related} />
       <AppDownloadCTA />
     </div>
