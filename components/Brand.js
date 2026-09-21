@@ -1,11 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Crown } from "lucide-react";
+
 export default function Brand() {
   return (
     <Link href="/" className="brand" aria-label="Prompt King home">
-      <span className="brand-mark">
-        <Crown size={23} strokeWidth={1.8} />
-      </span>
+      <Image
+        src="/brand/prompt-king-icon.svg"
+        alt=""
+        width={42}
+        height={42}
+        aria-hidden="true"
+        priority
+      />
       <span>
         Prompt<span className="brand-light"> King</span>
         <span className="brand-dot">.</span>
