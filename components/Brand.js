@@ -12,8 +12,7 @@ export default function Brand() {
         className="brand-logo"
       />
       <span>
-        Prompt<span className="brand-light"> King</span>
-        <span className="brand-dot">.</span>
+        Prompt King<span className="brand-dot">.</span>
       </span>
     </Link>
   );
