@@ -24,13 +24,13 @@ export const metadata = seo(
 export default async function Home() {
   const trending = await listPrompts({ sort: "featured", limit: 4 });
   const latest = await listPrompts({ sort: "latest", limit: 4 });
-  const southIndia = await listPrompts({ category: "south-india", limit: 1 });
+  const girls = await listPrompts({ category: "girls", limit: 1 });
 
   const frontPrompt = trending.items?.[0];
-  const rearPrompt = southIndia.items?.[0] || trending.items?.[1];
+  const rearPrompt = girls.items?.[0] || trending.items?.[1];
 
   const frontPromptHref = frontPrompt?.slug ? `/prompt/${frontPrompt.slug}` : "/explore";
-  const rearPromptHref = rearPrompt?.slug ? `/prompt/${rearPrompt.slug}` : "/category/south-india";
+  const rearPromptHref = rearPrompt?.slug ? `/prompt/${rearPrompt.slug}` : "/category/girls";
 
   return (
     <>
@@ -87,16 +87,16 @@ export default async function Home() {
             <Link
               href={rearPromptHref}
               className="hero-photo rear"
-              aria-label={rearPrompt ? `Explore ${rearPrompt.title}` : "Explore South India photo prompts"}
+              aria-label={rearPrompt ? `Explore ${rearPrompt.title}` : "Explore Girls photo prompts"}
             >
               <Image
                 src={rearPrompt?.image || "/images/traditional.webp"}
-                alt={rearPrompt?.imageAlt || "Traditional portrait photo inspiration"}
+                alt={rearPrompt?.imageAlt || "Girls portrait photo inspiration"}
                 fill
                 sizes="(max-width: 639px) 45vw, 230px"
                 priority
               />
-              <span>{(rearPrompt?.categoryName || "Traditional").toUpperCase()} / TIMELESS</span>
+              <span>{(rearPrompt?.categoryName || "Girls").toUpperCase()} / TIMELESS</span>
             </Link>
             <Link href={frontPromptHref} className="hero-photo front">
               <Image
