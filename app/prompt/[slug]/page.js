@@ -11,12 +11,16 @@ import {
   LockKeyhole,
 } from "lucide-react";
 import { getPrompt, getRelatedPrompts } from "@/lib/prompt-service";
-import { seo, PLAY_STORE_URL } from "@/lib/site";
+import { seo, PLAY_STORE_URL, SITE_URL } from "@/lib/site";
 import { categories } from "@/data/categories";
 import CopyPrompt from "@/components/CopyPrompt";
 import FAQ from "@/components/FAQ";
 import AppDownloadCTA from "@/components/AppDownloadCTA";
 import RelatedPrompts from "@/components/RelatedPrompts";
+
+function safeJsonLd(value) {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}
 
 export async function generateMetadata({ params }) {
   const p = await getPrompt((await params).slug);
@@ -31,6 +35,7 @@ export default async function PromptPage({ params }) {
 
   const related = await getRelatedPrompts(p);
   const cat = categories.find((c) => c.slug === p.category);
+  const categoryName = cat?.name || p.categoryName;
   const faq = [
     [
       "What type of image does this prompt create?",
@@ -54,12 +59,59 @@ export default async function PromptPage({ params }) {
     ],
   ];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: categoryName,
+        item: `${SITE_URL}/category/${p.category}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: p.title,
+        item: `${SITE_URL}/prompt/${p.slug}`,
+      },
+    ],
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer,
+      },
+    })),
+  };
+
   return (
     <div className="container detail-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(faqSchema) }}
+      />
+
       <nav className="breadcrumbs" aria-label="Breadcrumb">
         <Link href="/">Home</Link>
         <span>/</span>
-        <Link href={`/category/${p.category}`}>{cat?.name || p.categoryName}</Link>
+        <Link href={`/category/${p.category}`}>{categoryName}</Link>
         <span>/</span>
         <span aria-current="page">{p.title}</span>
       </nav>
