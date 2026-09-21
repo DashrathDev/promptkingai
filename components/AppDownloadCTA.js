@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowUpRight, Smartphone, Play } from "lucide-react";
 import { PLAY_STORE_URL } from "@/lib/site";
 
@@ -16,7 +15,7 @@ export function PlayButton() {
   );
 }
 
-export default function AppDownloadCTA({ compact = false, previewPrompts = [] }) {
+export default function AppDownloadCTA({ compact = false }) {
   if (compact)
     return (
       <section className="sidebar-cta">
@@ -33,29 +32,6 @@ export default function AppDownloadCTA({ compact = false, previewPrompts = [] })
         <PlayButton />
       </section>
     );
-
-  const fallbackImages = [
-    {
-      image: "/images/black.webp",
-      imageAlt: "Cinematic portrait reference",
-    },
-    {
-      image: "/images/traditional.webp",
-      imageAlt: "Traditional portrait reference",
-    },
-    {
-      image: "/images/couple.webp",
-      imageAlt: "Couple portrait reference",
-    },
-    {
-      image: "/images/soft.webp",
-      imageAlt: "Daylight portrait reference",
-    },
-  ];
-
-  const phonePrompts = previewPrompts.length
-    ? previewPrompts.slice(0, 4)
-    : fallbackImages;
 
   return (
     <section className="app-cta" aria-labelledby="app-title">
@@ -75,45 +51,16 @@ export default function AppDownloadCTA({ compact = false, previewPrompts = [] })
           Discover → Copy → Use in your preferred AI tool
         </span>
       </div>
-      <div
-        className="app-phone"
-        aria-label="Prompt King feed preview using current prompt images"
-      >
-        <div className="phone-top">
-          <span>
-            Prompt King<span className="brand-dot">.</span>
-          </span>
-          <Smartphone size={15} />
-        </div>
-        <div className="phone-label">Find your next photo idea.</div>
-        <div className="phone-images">
-          {phonePrompts.map((prompt, i) => {
-            const content = (
-              <Image
-                src={prompt.image}
-                alt={prompt.imageAlt || prompt.title || `Prompt preview ${i + 1}`}
-                fill
-                sizes="160px"
-              />
-            );
 
-            return prompt.slug ? (
-              <Link
-                href={`/prompt/${prompt.slug}`}
-                key={prompt.slug}
-                aria-label={`Explore ${prompt.title || "prompt"}`}
-              >
-                {content}
-              </Link>
-            ) : (
-              <div key={`${prompt.image}-${i}`}>{content}</div>
-            );
-          })}
-        </div>
-        <Link href="/explore" className="phone-bottom">
-          Explore photo prompts <ArrowUpRight size={16} />
-        </Link>
-        <small className="mockup-label">Live prompt preview</small>
+      <div className="app-showcase" aria-label="Prompt King Android app preview">
+        <Image
+          src="/images/prompt-king-app-showcase.webp"
+          alt="Prompt King Android app showing trending AI photo prompts"
+          width={540}
+          height={960}
+          sizes="(max-width: 639px) 72vw, (max-width: 1023px) 250px, 320px"
+          className="app-showcase-image"
+        />
       </div>
     </section>
   );
