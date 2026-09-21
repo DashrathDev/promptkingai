@@ -4,7 +4,7 @@ export default function Brand() {
   return (
     <Link href="/" className="brand" aria-label="Prompt King home">
       <img
-        src="/brand/prompt-king-icon.svg"
+        src="/brand/prompt-king-icon.png"
         alt=""
         width="42"
         height="42"
