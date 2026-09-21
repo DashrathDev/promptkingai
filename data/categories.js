@@ -1,50 +1,98 @@
 export const categories = [
   {
+    id: "68ea4256603528e9173a876a",
     slug: "trending",
     name: "Trending",
-    description:
-      "Explore our current editorial selection of creative photo prompt ideas.",
+    description: "Trending prompts and fresh creative photo ideas.",
   },
   {
-    slug: "portrait",
-    name: "Portrait",
-    description:
-      "Find your next portrait direction, from soft daylight to expressive studio lighting.",
+    id: "68ea45f4603528e9173a876b",
+    slug: "poster",
+    name: "Poster",
+    description: "Trending poster-style photo prompts and creative compositions.",
   },
   {
-    slug: "boys",
-    name: "Boys",
-    description:
-      "Explore men’s portrait ideas with confident styling, character and natural detail.",
-  },
-  {
-    slug: "girls",
-    name: "Girls",
-    description:
-      "Discover women’s portrait ideas, expressive styling and thoughtful compositions.",
-  },
-  {
+    id: "68ea4831603528e9173a876d",
     slug: "couple",
     name: "Couple",
-    description:
-      "Tell a story together with warm, candid and cinematic couple portrait ideas.",
+    description: "Creative couple portrait prompts and shared photo ideas.",
   },
   {
-    slug: "cinematic",
-    name: "Cinematic",
-    description:
-      "Give your next portrait a film-inspired mood with intentional light, color and framing.",
+    id: "68ea50a8603528e9173a8775",
+    slug: "girls",
+    name: "Girls",
+    description: "Trending portrait and styling prompts for women and girls.",
   },
   {
-    slug: "traditional",
-    name: "Traditional",
-    description:
-      "Explore expressive portraits inspired by traditional clothing, textures and settings.",
+    id: "68fbbce5603528e9173a878c",
+    slug: "bike-car",
+    name: "Bike-Car",
+    description: "High-quality trending bike and car photo prompts.",
   },
   {
+    id: "68ffa415603528e9173a87ef",
+    slug: "children",
+    name: "Children",
+    description: "Creative and high-quality photo prompts for children.",
+  },
+  {
+    id: "69063c6da8c77f730e718c15",
+    slug: "birthday",
+    name: "Birthday",
+    description: "Birthday photo prompts for portraits, celebrations and posters.",
+  },
+  {
+    id: "691aec4aa8c77f730e719020",
+    slug: "rajasthan",
+    name: "Rajasthan",
+    description: "Rajasthan and Rajput-inspired portrait prompt ideas.",
+  },
+  {
+    id: "695b48bb78b6ef663470e699",
+    slug: "northeast",
+    name: "NorthEast",
+    description: "North East India outfit and portrait prompt ideas.",
+  },
+  {
+    id: "695b48fa78b6ef663470e69a",
+    slug: "bridal",
+    name: "Bridal",
+    description: "Bridal portrait, styling and wedding photo prompt ideas.",
+  },
+  {
+    id: "695b4d1078b6ef663470e69e",
+    slug: "south-india",
+    name: "South India",
+    description: "South Indian traditional portrait and styling prompts.",
+  },
+  {
+    id: "695b4d3b78b6ef663470e69f",
+    slug: "vintage-retro",
+    name: "Vintage Retro",
+    description: "Vintage and retro-inspired portrait prompt ideas.",
+  },
+  {
+    id: "695cb23878b6ef663470e6bb",
+    slug: "premium",
+    name: "Premium",
+    description: "Premium prompts available through the Prompt King app.",
+  },
+  {
+    id: "6986e32578b6ef663470e870",
+    slug: "valentines-day",
+    name: "Valentine's Day",
+    description: "Valentine's Day couple and romantic photo prompt ideas.",
+  },
+  {
+    id: "699310c978b6ef663470e900",
+    slug: "enhance",
+    name: "Enhance",
+    description: "Prompts focused on enhanced detail and polished 4K-style results.",
+  },
+  {
+    id: "699ec1ed78b6ef663470e9d8",
     slug: "festival",
     name: "Festival",
-    description:
-      "Find celebratory portrait directions inspired by warm lights and festive colors.",
+    description: "Festival portrait prompts inspired by celebrations and traditional styling.",
   },
 ];
