@@ -24,9 +24,14 @@ export const metadata = seo(
 export default async function Home() {
   const trending = await listPrompts({ sort: "featured", limit: 4 });
   const latest = await listPrompts({ sort: "latest", limit: 4 });
-  const featuredPromptHref = trending.items?.[0]?.slug
-    ? `/prompt/${trending.items[0].slug}`
-    : "/explore";
+  const southIndia = await listPrompts({ category: "south-india", limit: 1 });
+
+  const frontPrompt = trending.items?.[0];
+  const rearPrompt = southIndia.items?.[0] || trending.items?.[1];
+
+  const frontPromptHref = frontPrompt?.slug ? `/prompt/${frontPrompt.slug}` : "/explore";
+  const rearPromptHref = rearPrompt?.slug ? `/prompt/${rearPrompt.slug}` : "/category/south-india";
+
   return (
     <>
       <section className="hero">
@@ -80,34 +85,30 @@ export default async function Home() {
               </span>
             </div>
             <Link
-              href="/category/south-india"
+              href={rearPromptHref}
               className="hero-photo rear"
-              aria-label="Explore South India photo prompts"
+              aria-label={rearPrompt ? `Explore ${rearPrompt.title}` : "Explore South India photo prompts"}
             >
               <Image
-                src="/images/traditional.webp"
-                alt="Traditional portrait photo inspiration"
+                src={rearPrompt?.image || "/images/traditional.webp"}
+                alt={rearPrompt?.imageAlt || "Traditional portrait photo inspiration"}
                 fill
                 sizes="(max-width: 639px) 45vw, 230px"
                 priority
               />
-              <span>TRADITIONAL / TIMELESS</span>
+              <span>{(rearPrompt?.categoryName || "Traditional").toUpperCase()} / TIMELESS</span>
             </Link>
-            <Link href={featuredPromptHref} className="hero-photo front">
+            <Link href={frontPromptHref} className="hero-photo front">
               <Image
-                src="/images/black.webp"
-                alt="Black outfit cinematic portrait inspiration"
+                src={frontPrompt?.image || "/images/black.webp"}
+                alt={frontPrompt?.imageAlt || "AI photo prompt inspiration"}
                 fill
                 sizes="(max-width: 639px) 55vw, 290px"
                 priority
               />
               <div className="hero-photo-caption">
-                <span>CINEMATIC PORTRAITS</span>
-                <strong>
-                  Find your
-                  <br />
-                  main character energy.
-                </strong>
+                <span>{(frontPrompt?.categoryName || "Trending").toUpperCase()} PROMPTS</span>
+                <strong>{frontPrompt?.title || "Find your next creative direction."}</strong>
                 <span className="hero-photo-link">
                   Explore the prompt <ArrowUpRight size={19} />
                 </span>
