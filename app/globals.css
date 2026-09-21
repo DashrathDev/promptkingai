@@ -2086,7 +2086,7 @@ summary:focus-visible {
 /* Footer: consistent typography and 4 / 2 / 1 responsive columns. */
 .footer {
   border-top: 1px solid var(--border);
-  padding-top: 72px;
+  padding-top: 56px;
   background: #faf9fc;
 }
 .footer-grid {
@@ -2095,7 +2095,7 @@ summary:focus-visible {
   column-gap: 64px;
   row-gap: 48px;
   align-items: start;
-  padding-bottom: 64px;
+  padding-bottom: 40px;
 }
 .footer-grid > div { min-width: 0; }
 .footer-grid p {
@@ -2119,13 +2119,13 @@ summary:focus-visible {
   letter-spacing: 0;
 }
 .footer ul { list-style: none; padding: 0; margin: 0; }
-.footer li { margin: 0 0 8px; color: var(--muted); }
+.footer li { margin: 0 0 4px; color: var(--muted); }
 .footer li:last-child { margin-bottom: 0; }
 .footer li a {
   display: flex;
   align-items: center;
-  min-height: 48px;
-  padding: 10px 0;
+  min-height: 44px;
+  padding: 6px 0;
   font-size: 16px;
   line-height: 1.5;
   overflow-wrap: anywhere;
@@ -2140,7 +2140,7 @@ summary:focus-visible {
   flex-wrap: wrap;
   gap: 16px 32px;
   border-top: 1px solid var(--border);
-  padding-block: 28px;
+  padding-block: 22px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.7;
@@ -2151,7 +2151,7 @@ summary:focus-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 48px;
     row-gap: 44px;
-    padding-bottom: 48px;
+    padding-bottom: 40px;
   }
 }
 @media (max-width: 639px) {
@@ -2163,5 +2163,5 @@ summary:focus-visible {
   }
   .footer h2 { margin-bottom: 16px; }
   .footer li a { font-size: 16px; }
-  .footer-bottom { flex-direction: column; gap: 12px; padding-block: 24px; }
+  .footer-bottom { flex-direction: column; gap: 12px; padding-block: 22px; }
 }
