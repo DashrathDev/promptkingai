@@ -1,29 +1,44 @@
 import Link from "next/link";
 import {
   Flame,
+  Camera,
   UserRound,
   Users,
-  Clapperboard,
   Sparkles,
   Flower2,
-  Camera,
+  Bike,
+  CakeSlice,
+  Baby,
+  Heart,
+  WandSparkles,
+  Image as ImageIcon,
 } from "lucide-react";
 import { categories } from "@/data/categories";
-const icons = [
-  Flame,
-  Camera,
-  UserRound,
-  UserRound,
-  Users,
-  Clapperboard,
-  Flower2,
-  Sparkles,
-];
+
+const icons = {
+  trending: Flame,
+  poster: ImageIcon,
+  couple: Users,
+  girls: UserRound,
+  "bike-car": Bike,
+  children: Baby,
+  birthday: CakeSlice,
+  rajasthan: Sparkles,
+  northeast: Flower2,
+  bridal: Heart,
+  "south-india": Sparkles,
+  "vintage-retro": Camera,
+  premium: WandSparkles,
+  "valentines-day": Heart,
+  enhance: WandSparkles,
+  festival: Sparkles,
+};
+
 export default function CategoryChips({ active }) {
   return (
     <nav className="category-chips" aria-label="Prompt categories">
-      {categories.map((c, i) => {
-        const Icon = icons[i];
+      {categories.map((c) => {
+        const Icon = icons[c.slug] || Camera;
         return (
           <Link
             className={`chip ${active === c.slug ? "active" : ""}`}
