@@ -1,156 +1,232 @@
+import Image from "next/image";
 import Link from "next/link";
-
-const prompts = [
-  ["cinematic-black-outfit-portrait", "Cinematic Black Outfit Portrait", "Portrait", "t1"],
-  ["vintage-outdoor-couple-photo", "Vintage Outdoor Couple Photo", "Couple", "t2"],
-  ["luxury-blue-editorial-portrait", "Luxury Blue Editorial Portrait", "Cinematic", "t3"],
-  ["traditional-golden-festive-look", "Traditional Golden Festive Look", "Festival", "t4"],
-  ["moody-purple-studio-portrait", "Moody Purple Studio Portrait", "Portrait", "t5"],
-  ["green-nature-cinematic-photo", "Green Nature Cinematic Photo", "Outdoor", "t6"],
-  ["soft-pink-princess-portrait", "Soft Pink Princess Portrait", "Girls", "t7"],
-  ["blue-sky-fashion-editorial", "Blue Sky Fashion Editorial", "Boys", "t8"],
-];
-
-export default function HomePage() {
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Sparkles,
+  Copy,
+  Layers3,
+  Compass,
+  Check,
+  Clapperboard,
+} from "lucide-react";
+import SearchBar from "@/components/SearchBar";
+import CategoryChips from "@/components/CategoryChips";
+import PromptGrid from "@/components/PromptGrid";
+import AppDownloadCTA from "@/components/AppDownloadCTA";
+import BlogPreview from "@/components/BlogPreview";
+import { listPrompts } from "@/lib/prompt-service";
+import { seo, PLAY_STORE_URL } from "@/lib/site";
+export const metadata = seo(
+  "Discover Trending AI Photo Prompts",
+  "Explore ready-to-copy prompts for portraits, cinematic photos, couples, festivals and more. Find your next photo idea with Prompt King.",
+);
+export default async function Home() {
+  const trending = await listPrompts({ sort: "featured", limit: 4 });
+  const latest = await listPrompts({ sort: "latest", limit: 4 });
   return (
     <>
-      <header className="siteHeader">
-        <div className="container nav">
-          <Link className="brand" href="/">
-            <span className="logo">PK</span>
-            <span>Prompt <b>King</b></span>
-          </Link>
-          <nav className="navLinks">
-            <a href="#prompts">Explore</a>
-            <a href="#categories">Categories</a>
-            <a href="#features">Why Prompt King</a>
-            <a href="#blog">Blog</a>
-          </nav>
-          <a className="downloadBtn" href="#">Download App</a>
-        </div>
-      </header>
-
-      <main>
-        <section className="hero">
-          <div className="container heroGrid">
-            <div>
-              <div className="eyebrow">✦ Fresh prompts added regularly</div>
-              <h1>Discover <span>Trending AI Photo Prompts</span></h1>
-              <p>
-                Explore ready-to-copy prompts for cinematic portraits, couples,
-                traditional looks, festivals and more. Find a style you love,
-                copy the prompt, and use it in your preferred compatible AI tool.
-              </p>
-              <div className="heroActions">
-                <a className="primaryBtn" href="#prompts">Explore Prompts</a>
-                <a className="secondaryBtn" href="#">Get Prompt King App</a>
+      <section className="hero">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <span className="hero-kicker">
+              <Sparkles size={15} /> A LITTLE INSPIRATION. ENDLESS
+              POSSIBILITIES.
+            </span>
+            <h1>
+              Discover Trending
+              <br />
+              AI Photo{" "}
+              <span>
+                Prompts<span className="title-spark">✳</span>
+              </span>
+            </h1>
+            <p>
+              Explore ready-to-copy prompts for portraits, cinematic photos,
+              couples, festivals and more. Find a style you love, copy the
+              prompt, and use it in your preferred compatible AI tool.
+            </p>
+            <div className="hero-buttons">
+              <Link href="#trending" className="button">
+                Explore Prompts <ArrowRight size={18} />
+              </Link>
+              <a href={PLAY_STORE_URL} className="button secondary">
+                Download Prompt King App <ArrowUpRight size={17} />
+              </a>
+            </div>
+            <div className="hero-steps">
+              <span>
+                <Check size={15} /> Discover a style
+              </span>
+              <span>
+                <Check size={15} /> Copy the prompt
+              </span>
+              <span>
+                <Check size={15} /> Make it yours
+              </span>
+            </div>
+          </div>
+          <div className="hero-art">
+            <div className="hero-orbit" />
+            <div className="floating-label">
+              <Clapperboard size={18} />
+              <span>
+                A new perspective
+                <br />
+                <strong>is one prompt away.</strong>
+              </span>
+            </div>
+            <div className="hero-photo rear">
+              <Image
+                src="/images/traditional.webp"
+                alt="Traditional portrait photo inspiration"
+                fill
+                sizes="(max-width: 639px) 45vw, 230px"
+                priority
+              />
+              <span>TRADITIONAL / TIMELESS</span>
+            </div>
+            <Link
+              href="/prompt/cinematic-black-outfit-portrait"
+              className="hero-photo front"
+            >
+              <Image
+                src="/images/black.webp"
+                alt="Black outfit cinematic portrait inspiration"
+                fill
+                sizes="(max-width: 639px) 55vw, 290px"
+                priority
+              />
+              <div className="hero-photo-caption">
+                <span>CINEMATIC PORTRAITS</span>
+                <strong>
+                  Find your
+                  <br />
+                  main character energy.
+                </strong>
+                <span className="hero-photo-link">
+                  Explore the prompt <ArrowUpRight size={19} />
+                </span>
               </div>
-            </div>
-
-            <div className="heroCard">
-              <div className="phone">
-                <div className="phoneTop"><b>Prompt King</b><span>⌕</span></div>
-                <div className="mockImage" />
-                <div className="mockBody">
-                  <strong>Cinematic Purple Portrait Prompt</strong>
-                  <div className="mockTags"><span>Trending</span><span>Portrait</span></div>
-                  <div className="copyBar"><span>Ready-to-copy prompt</span><b>COPY</b></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div className="container searchWrap">
-          <div className="searchBox">
-            <span>⌕</span>
-            <input placeholder="Search portrait, couple, cinematic, festival..." />
-            <button>Search</button>
-          </div>
-        </div>
-
-        <section id="categories">
-          <div className="container">
-            <div className="sectionHead">
-              <div><h2>Browse Categories</h2><p>Jump straight into the style you want.</p></div>
-            </div>
-            <div className="chips">
-              {["Trending","Portrait","Boys","Girls","Couple","Cinematic","Traditional","Festival"].map((x,i)=>
-                <button className={"chip "+(i===0?"active":"")} key={x}>{x}</button>
-              )}
-            </div>
-          </div>
-        </section>
-
-        <section id="prompts">
-          <div className="container">
-            <div className="sectionHead">
-              <div><h2>Trending Prompts</h2><p>Popular AI photo prompt ideas from the Prompt King feed.</p></div>
-              <a className="viewAll" href="#">View all →</a>
-            </div>
-            <div className="promptGrid">
-              {prompts.map(([slug,title,cat,cls]) => (
-                <Link href={`/prompt/${slug}`} className="promptCard" key={slug}>
-                  <div className={`thumb ${cls}`}><span className="badge">Trending</span></div>
-                  <div className="cardBody">
-                    <div className="cardTitle">{title}</div>
-                    <div className="meta"><span>{cat}</span><b>View Prompt →</b></div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="features">
-          <div className="container">
-            <div className="sectionHead">
-              <div><h2>Built for Prompt Discovery</h2><p>Simple tools to help you find and use prompt ideas faster.</p></div>
-            </div>
-            <div className="features">
-              <div className="feature"><span>⚡</span><h3>Trending Prompt Feed</h3><p>Discover fresh photo prompt ideas in an easy visual feed.</p></div>
-              <div className="feature"><span>⧉</span><h3>One-Tap Copy</h3><p>Copy a ready-to-use prompt quickly and use it in a compatible AI tool.</p></div>
-              <div className="feature"><span>⌕</span><h3>Easy Categories</h3><p>Browse portrait, couple, cinematic, festival and more.</p></div>
-              <div className="feature"><span>↗</span><h3>Open in Your AI Tool</h3><p>Copy a prompt and use it with your preferred compatible AI tool.</p></div>
-            </div>
-
-            <div className="cta">
+            </Link>
+            <div className="copy-float">
+              <span>
+                <Copy size={19} />
+              </span>
               <div>
-                <h2>More prompts in your pocket.</h2>
-                <p>Get the Prompt King app on Google Play and browse the latest prompt feed anytime.</p>
-                <a className="playBtn" href="#">▶ Download on Google Play</a>
+                <strong>Good ideas, ready to copy.</strong>
+                <small>Your next creative starting point.</small>
               </div>
-              <div className="ctaArt" />
             </div>
           </div>
-        </section>
-
-        <section id="blog">
-          <div className="container">
-            <div className="sectionHead">
-              <div><h2>Prompt Guides</h2><p>Helpful articles for getting more from AI photo prompts.</p></div>
-            </div>
-            <div className="blogGrid">
-              <article className="blogCard"><small>GUIDE</small><h3>How to Use AI Photo Prompts</h3><p>A beginner-friendly guide to copying, adapting and using prompts.</p></article>
-              <article className="blogCard"><small>IDEAS</small><h3>Best Cinematic Portrait Prompt Ideas</h3><p>Explore lighting, camera, wardrobe and composition ideas.</p></article>
-              <article className="blogCard"><small>TIPS</small><h3>How to Improve an AI Photo Prompt</h3><p>Learn which details make prompts clearer and more useful.</p></article>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        <div className="container footerGrid">
-          <div>
-            <Link className="brand" href="/"><span className="logo">PK</span><span>Prompt <b>King</b></span></Link>
-            <p>Discover trending, ready-to-copy AI photo prompts.</p>
-          </div>
-          <div><h4>Explore</h4><a href="#">Trending</a><a href="#">Categories</a><a href="#">Latest Prompts</a></div>
-          <div><h4>Company</h4><a href="#">About Us</a><a href="#">Contact</a><a href="#">FAQ</a></div>
-          <div><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Disclaimer</a></div>
         </div>
-        <div className="container copyright">© 2026 Prompt King.</div>
-      </footer>
+      </section>
+      <div className="container discovery">
+        <SearchBar />
+        <div className="category-label">
+          <span>FIND YOUR AESTHETIC</span>
+          <Link href="/categories">
+            All categories <ArrowRight size={15} />
+          </Link>
+        </div>
+        <CategoryChips active="trending" />
+      </div>
+      <section id="trending" className="section container">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow purple">THE INSPIRATION EDIT</span>
+            <h2>
+              Trending prompts<span className="purple">.</span>
+            </h2>
+            <p>A fresh perspective for your next photo idea.</p>
+          </div>
+          <Link href="/category/trending" className="text-link">
+            Explore trending <ArrowUpRight size={18} />
+          </Link>
+        </div>
+        <PromptGrid prompts={trending.items} />
+        <p className="reference-note">
+          An editorial selection · Images are illustrative style references.
+        </p>
+      </section>
+      <section className="latest-section">
+        <div className="container section">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow purple">FRESH FROM THE FEED</span>
+              <h2>New ideas just landed.</h2>
+              <p>A different mood. A new story. Find what inspires you next.</p>
+            </div>
+            <Link href="/latest" className="text-link">
+              See latest prompts <ArrowUpRight size={18} />
+            </Link>
+          </div>
+          <PromptGrid prompts={latest.items} />
+        </div>
+      </section>
+      <section className="container section why">
+        <div className="section-heading centered">
+          <div>
+            <span className="eyebrow purple">
+              LESS SEARCHING. MORE INSPIRATION.
+            </span>
+            <h2>Your creative head start.</h2>
+            <p>A simpler way to find the words behind your next photo idea.</p>
+          </div>
+        </div>
+        <div className="features">
+          {[
+            [
+              Compass,
+              "Trending Prompt Feed",
+              "Find fresh visual directions in a thoughtfully organized prompt feed.",
+            ],
+            [
+              Copy,
+              "Ready-to-Copy Prompts",
+              "Start with a detailed prompt. Copy it, then add your own perspective.",
+            ],
+            [
+              Layers3,
+              "Easy Categories",
+              "Go straight to the portraits, moments and styles you want to explore.",
+            ],
+            [
+              Sparkles,
+              "Use With Compatible AI Tools",
+              "Take your prompt to your preferred compatible tool and create there.",
+            ],
+          ].map(([Icon, title, body]) => (
+            <article key={title}>
+              <span className="feature-icon">
+                <Icon size={23} />
+              </span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <div className="container">
+        <AppDownloadCTA />
+      </div>
+      <section className="container section">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow purple">
+              A LITTLE KNOW-HOW GOES A LONG WAY
+            </span>
+            <h2>Better prompts start here.</h2>
+            <p>
+              Practical guides to turn a visual idea into a thoughtful prompt.
+            </p>
+          </div>
+          <Link href="/blog" className="text-link">
+            All guides <ArrowUpRight size={18} />
+          </Link>
+        </div>
+        <BlogPreview />
+      </section>
     </>
   );
 }

@@ -1,88 +1,185 @@
+export const dynamicParams = false;
 import Link from "next/link";
-import CopyPromptButton from "./CopyPromptButton";
-
-const promptText =
-  "Ultra-realistic cinematic portrait of a stylish young man wearing a premium black outfit, confident natural pose, realistic skin texture, soft directional studio lighting, dramatic shadows, shallow depth of field, premium editorial photography, detailed facial features, natural color grading, high-end DSLR look, clean background composition.";
-
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const title = slug.replaceAll("-", " ").replace(/\b\w/g, c => c.toUpperCase());
-  return {
-    title,
-    description: `Explore the ${title} AI photo prompt with usage tips and related prompt ideas.`,
-  };
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  Camera,
+  Scan,
+  SlidersHorizontal,
+  ClipboardList,
+} from "lucide-react";
+import {
+  getPrompt,
+  getPromptSlugs,
+  getRelatedPrompts,
+} from "@/lib/prompt-service";
+import { seo, PLAY_STORE_URL } from "@/lib/site";
+import { categories } from "@/data/categories";
+import CopyPrompt from "@/components/CopyPrompt";
+import FAQ from "@/components/FAQ";
+import AppDownloadCTA from "@/components/AppDownloadCTA";
+import RelatedPrompts from "@/components/RelatedPrompts";
+export async function generateStaticParams() {
+  return (await getPromptSlugs()).map((slug) => ({ slug }));
 }
-
-export default async function PromptDetailPage({ params }) {
-  const { slug } = await params;
-  const title = slug.replaceAll("-", " ").replace(/\b\w/g, c => c.toUpperCase());
-
+export async function generateMetadata({ params }) {
+  const p = await getPrompt((await params).slug);
+  return p
+    ? seo(p.title, p.description, `/prompt/${p.slug}`, p.image)
+    : { title: "Prompt not found", robots: { index: false } };
+}
+export default async function PromptPage({ params }) {
+  const p = await getPrompt((await params).slug);
+  if (!p) notFound();
+  const related = await getRelatedPrompts(p);
+  const cat = categories.find((c) => c.slug === p.category);
+  const faq = [
+    [
+      "What type of image does this prompt create?",
+      `In a compatible AI tool, this prompt is intended as a starting point for ${p.description.charAt(0).toLowerCase() + p.description.slice(1)} Results depend on the tool, settings and references you use.`,
+    ],
+    [
+      "Can I customize the clothing or background?",
+      "Yes. Replace the clothing, setting or colors in the prompt with your own choices. Keep descriptions consistent and adjust one detail at a time.",
+    ],
+    [
+      "What aspect ratio works best?",
+      `Start with ${p.framing}. A 4:5 ratio works well for a portrait feed post. Adjust the crop for your intended platform and your tool’s available settings.`,
+    ],
+    [
+      "Does Prompt King generate the image?",
+      "No. Prompt King helps users discover and copy prompts that can be used with compatible AI tools.",
+    ],
+    [
+      "Can I use this for social media ideas?",
+      "Yes. Use it as creative inspiration and customize the result for your audience. Use photos you have permission to upload, and check your chosen tool’s terms before publishing.",
+    ],
+  ];
   return (
-    <>
-      <header className="siteHeader">
-        <div className="container nav">
-          <Link className="brand" href="/"><span className="logo">PK</span><span>Prompt <b>King</b></span></Link>
-          <nav className="navLinks"><Link href="/#prompts">Explore</Link><Link href="/#categories">Categories</Link><Link href="/#blog">Blog</Link></nav>
-          <a className="downloadBtn" href="#">Download App</a>
-        </div>
-      </header>
-
-      <div className="container crumbs"><Link href="/">Home</Link> / Portrait / {title}</div>
-
-      <main className="container detailLayout">
-        <article>
-          <Link className="back" href="/">← Back to prompts</Link>
-          <h1 className="detailTitle">{title}</h1>
-          <p className="lead">A ready-to-copy prompt for creating a premium cinematic portrait with controlled lighting, realistic detail and an editorial photography look.</p>
-
-          <div className="tags"><span>Portrait</span><span>Cinematic</span><span>Trending</span></div>
-
-          <div className="imageCard"><div className="detailImage">Sample image</div></div>
-
-          <section className="contentBox">
-            <h2>AI Photo Prompt</h2>
-            <div className="promptBox">{promptText}</div>
-            <div className="actions">
-              <CopyPromptButton text={promptText} />
-              <button className="outlineBtn">Open Prompt King App</button>
+    <div className="container detail-page">
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <Link href="/">Home</Link>
+        <span>/</span>
+        <Link href={`/category/${p.category}`}>{cat?.name}</Link>
+        <span>/</span>
+        <span aria-current="page">{p.title}</span>
+      </nav>
+      <div className="detail-layout">
+        <article className="detail-main">
+          <Link href="/explore" className="back-link">
+            <ArrowLeft size={16} /> Back to prompts
+          </Link>
+          <span className="eyebrow purple detail-eyebrow">
+            YOUR NEXT CREATIVE STARTING POINT
+          </span>
+          <h1>{p.title}</h1>
+          <p className="detail-intro">{p.description}</p>
+          <div className="tags">
+            {[p.category, ...p.tags].map((t) => (
+              <Link key={t} href={`/category/${t}`}>
+                {t}
+              </Link>
+            ))}
+          </div>
+          <figure className="detail-figure">
+            <div className="detail-image">
+              <Image
+                src={p.image}
+                alt={p.imageAlt}
+                fill
+                priority
+                sizes="(max-width: 1023px) 100vw, 66vw"
+              />
             </div>
+            <figcaption>
+              Illustrative style reference. Results will vary by tool, settings
+              and customization.
+            </figcaption>
+          </figure>
+          <section className="prompt-section">
+            <div className="section-heading">
+              <div>
+                <span className="eyebrow purple">
+                  YOUR IDEA STARTS WITH WORDS
+                </span>
+                <h2>AI Photo Prompt</h2>
+              </div>
+            </div>
+            <div className="prompt-text">{p.prompt}</div>
+            <div className="copy-actions">
+              <CopyPrompt text={p.prompt} />
+              <a href={PLAY_STORE_URL} className="button secondary">
+                Open Prompt King App <ArrowUpRight size={17} />
+              </a>
+            </div>
+            <p className="reference-note">
+              The app button opens its Google Play listing, where available you
+              can open or install it.
+            </p>
           </section>
-
-          <section className="contentBox">
+          <section className="content-section">
             <h2>About this prompt</h2>
-            <p>This prompt focuses on a polished editorial portrait style with realistic skin detail, a dark fashion look and shallow depth of field.</p>
-            <div className="tips">
-              <div><b>Best for</b><span>Profile photos, social portraits and cinematic posts.</span></div>
-              <div><b>Suggested framing</b><span>Portrait orientation works well for mobile-first content.</span></div>
-              <div><b>Customization idea</b><span>Change outfit color, background, pose or camera angle.</span></div>
-              <div><b>Usage</b><span>Copy the prompt and use it with a compatible AI tool.</span></div>
-            </div>
+            <p>{p.about}</p>
           </section>
-
-          <section className="contentBox faq">
-            <h2>Frequently asked questions</h2>
-            <details open><summary>What type of image does this prompt create?</summary><p>A cinematic portrait with realistic detail and editorial lighting.</p></details>
-            <details><summary>Can I customize the clothing or background?</summary><p>Yes. You can replace outfit, setting, lighting or camera details.</p></details>
-            <details><summary>What aspect ratio should I use?</summary><p>Portrait ratios are a natural fit for this style.</p></details>
-            <details><summary>Does Prompt King generate the image?</summary><p>No. Prompt King helps you discover and copy prompts for compatible AI tools.</p></details>
-            <details><summary>Can I use this for social media ideas?</summary><p>Yes. The prompt can be adapted for creative social content.</p></details>
+          <div className="info-grid">
+            {[
+              [Camera, "Best for", p.bestFor],
+              [Scan, "Suggested framing", p.framing],
+              [SlidersHorizontal, "Customization ideas", p.customization],
+              [
+                ClipboardList,
+                "How to use",
+                "Copy the prompt, adapt it to your idea, and paste it into your preferred compatible AI tool. Follow that tool’s instructions for reference photos.",
+              ],
+            ].map(([Icon, title, body]) => (
+              <section key={title}>
+                <Icon size={22} />
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </section>
+            ))}
+          </div>
+          <section className="content-section">
+            <h2>A few helpful answers.</h2>
+            <FAQ items={faq} />
           </section>
         </article>
-
-        <aside className="sidebar">
-          <div className="sideBox appBox">
-            <h3>Get more prompts in the app</h3>
-            <p>Browse the latest Prompt King feed and discover new ready-to-copy prompts.</p>
-            <a className="playBtn" href="#">▶ Download on Google Play</a>
-          </div>
-          <div className="sideBox">
-            <h3>Related prompts</h3>
-            <div className="relatedGrid">
-              {["Luxury Portrait","Blue Cinematic","Soft Pink Portrait","Vintage Outdoor"].map(x => <div className="related" key={x}><div className="relImg" /><h4>{x}</h4></div>)}
+        <aside className="detail-sidebar" aria-label="More inspiration">
+          <AppDownloadCTA compact />
+          <section className="sidebar-panel">
+            <h2>Another direction?</h2>
+            {related.slice(0, 3).map((r) => (
+              <Link
+                className="mini-prompt"
+                key={r.id}
+                href={`/prompt/${r.slug}`}
+              >
+                <Image src={r.image} alt={r.imageAlt} width={70} height={88} />
+                <span>
+                  <small>{r.category}</small>
+                  <strong>{r.title}</strong>
+                  <span>View prompt →</span>
+                </span>
+              </Link>
+            ))}
+          </section>
+          <section className="sidebar-panel">
+            <h2>Find your aesthetic</h2>
+            <div className="sidebar-categories">
+              {categories.map((c) => (
+                <Link href={`/category/${c.slug}`} key={c.slug}>
+                  {c.name}
+                  <ArrowUpRight size={15} />
+                </Link>
+              ))}
             </div>
-          </div>
+          </section>
         </aside>
-      </main>
-    </>
+      </div>
+      <RelatedPrompts prompts={related} />
+      <AppDownloadCTA />
+    </div>
   );
 }

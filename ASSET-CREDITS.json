@@ -1,0 +1,51 @@
+[
+  {
+    "file": "black-sweater.jpg",
+    "category": "man black outfit",
+    "credit": "Unsplash",
+    "source": "https://unsplash.com/s/photos/black-sweater",
+    "imageUrl": "https://images.unsplash.com/photo-1771092358802-982066deae6f"
+  },
+  {
+    "file": "traditional-woman.jpg",
+    "category": "woman traditional Indian",
+    "credit": "Avinash Narnaware / Unsplash",
+    "source": "https://unsplash.com/photos/a-woman-poses-in-a-beautiful-pink-saree-OtT_sbW8RzM"
+  },
+  {
+    "file": "couple.jpg",
+    "category": "romantic couple",
+    "credit": "Jonathan Borba / Unsplash",
+    "source": "https://unsplash.com/photos/man-kissing-womans-forehead-on-brown-grass-field-during-daytime-eMWge8701vs"
+  },
+  {
+    "file": "male-editorial.jpg",
+    "category": "male editorial",
+    "credit": "Pexels",
+    "source": "https://www.pexels.com/photo/1043474/"
+  },
+  {
+    "file": "woman-portrait.jpg",
+    "category": "woman portrait",
+    "credit": "Pexels",
+    "source": "https://www.pexels.com/photo/1239291/"
+  },
+  {
+    "file": "festival.jpg",
+    "category": "festival",
+    "credit": "Pexels",
+    "source": "https://www.pexels.com/photo/1190297/"
+  },
+  {
+    "file": "traditional-man.jpg",
+    "category": "traditional man",
+    "credit": "Wafiq Raza / Unsplash",
+    "source": "https://unsplash.com/photos/a-man-sitting-on-a-wall-with-a-cell-phone-rbGetpUz1YI"
+  },
+  {
+    "file": "cinematic-landscape.jpg",
+    "usedAs": "public/images/moody.webp",
+    "credit": "Pexels",
+    "source": "https://www.pexels.com/photo/1689731/"
+  }
+]

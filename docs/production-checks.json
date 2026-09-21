@@ -1,0 +1,210 @@
+{
+  "status": "passed",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "Discover Trending AI Photo Prompts",
+      "h1": 1
+    },
+    {
+      "route": "/explore",
+      "status": 200,
+      "title": "Explore Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/categories",
+      "status": 200,
+      "title": "Browse Prompt Categories | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/latest",
+      "status": 200,
+      "title": "Latest Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/blog",
+      "status": 200,
+      "title": "Photo Prompt Guides | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "title": "About Prompt King | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "title": "Contact Prompt King | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/faq",
+      "status": 200,
+      "title": "Frequently Asked Questions | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/privacy-policy",
+      "status": 200,
+      "title": "Privacy Policy | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/terms",
+      "status": 200,
+      "title": "Terms &amp; Conditions | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/disclaimer",
+      "status": 200,
+      "title": "Disclaimer | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/cookie-policy",
+      "status": 200,
+      "title": "Cookie Policy | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/editorial-policy",
+      "status": 200,
+      "title": "Editorial Policy | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/dmca",
+      "status": 200,
+      "title": "DMCA / Copyright | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/category/trending",
+      "status": 200,
+      "title": "Trending Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/category/portrait",
+      "status": 200,
+      "title": "Portrait Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/category/boys",
+      "status": 200,
+      "title": "Boys Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/category/girls",
+      "status": 200,
+      "title": "Girls Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/category/couple",
+      "status": 200,
+      "title": "Couple Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/category/cinematic",
+      "status": 200,
+      "title": "Cinematic Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/category/traditional",
+      "status": 200,
+      "title": "Traditional Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/category/festival",
+      "status": 200,
+      "title": "Festival Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/prompt/cinematic-black-outfit-portrait",
+      "status": 200,
+      "title": "The black outfit. The main character. | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/prompt/sunlit-traditional-portrait",
+      "status": 200,
+      "title": "A little sunshine. A lot of grace. | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/prompt/golden-hour-couple",
+      "status": 200,
+      "title": "Together, in golden hour. | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/prompt/city-editorial-portrait",
+      "status": 200,
+      "title": "Made for the city. | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/prompt/soft-daylight-portrait",
+      "status": 200,
+      "title": "Soft light, strong presence. | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/prompt/festive-lights-portrait",
+      "status": 200,
+      "title": "Under a sky of festival lights. | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/prompt/moody-cinematic-portrait",
+      "status": 200,
+      "title": "Some stories need no words. | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/prompt/timeless-traditional-style",
+      "status": 200,
+      "title": "Tradition, with your own twist. | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/blog/how-to-use-ai-photo-prompts",
+      "status": 200,
+      "title": "How to Use AI Photo Prompts | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/blog/cinematic-portrait-prompt-ideas",
+      "status": 200,
+      "title": "Best Cinematic Portrait Prompt Ideas | Prompt King",
+      "h1": 1
+    },
+    {
+      "route": "/blog/improve-an-ai-photo-prompt",
+      "status": 200,
+      "title": "How to Improve an AI Photo Prompt | Prompt King",
+      "h1": 1
+    }
+  ],
+  "notFound": 404,
+  "promptFAQCount": 5,
+  "localImages": "all return 200",
+  "playStoreLinks": "correct across every route",
+  "searchRoute": "200 with couple result",
+  "browserTests": "not run; environment preview incompatible with Next.js CLI",
+  "responsiveGrid": "source checked: desktop 4; tablet 2; mobile 1"
+}

@@ -1,15 +1,27 @@
 {
-  "name": "promptkingai",
+  "name": "prompt-king",
   "version": "1.0.0",
-  "private": true,
+  "description": "Prompt King — AI photo prompt discovery website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "playwright test"
   },
+  "license": "UNLICENSED",
   "dependencies": {
-    "next": "^15.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@fontsource-variable/outfit": "^5.3.0",
+    "lucide-react": "^1.47.0",
+    "next": "^16.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "prettier": "^3.9.8"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.0.0"
   }
 }
