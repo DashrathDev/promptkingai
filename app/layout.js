@@ -1,17 +1,43 @@
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { SITE_URL } from "@/lib/site";
+import { DEFAULT_SOCIAL_IMAGE, SITE_URL } from "@/lib/site";
+
+const defaultTitle = "Prompt King — Discover AI Photo Prompts";
+const defaultDescription =
+  "Discover ready-to-copy AI photo prompts for portraits, cinematic photos, couples and more.";
+
 export const metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: "Prompt King",
   title: {
-    default: "Prompt King — Discover AI Photo Prompts",
+    default: defaultTitle,
     template: "%s | Prompt King",
   },
-  description:
-    "Discover ready-to-copy AI photo prompts for portraits, cinematic photos, couples and more.",
+  description: defaultDescription,
+  alternates: { canonical: "/" },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: defaultTitle,
+    description: defaultDescription,
+    url: SITE_URL,
+    siteName: "Prompt King",
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}${DEFAULT_SOCIAL_IMAGE}`,
+        alt: "Prompt King — Discover AI Photo Prompts",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [`${SITE_URL}${DEFAULT_SOCIAL_IMAGE}`],
+  },
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
