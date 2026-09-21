@@ -2,7 +2,9 @@ import { SITE_URL } from "@/lib/site";
 import { getPromptSlugs } from "@/lib/prompt-service";
 import { categories } from "@/data/categories";
 import { guides } from "@/data/guides";
+
 export default async function sitemap() {
+  const generatedAt = new Date();
   const paths = [
     "",
     "/explore",
@@ -22,9 +24,19 @@ export default async function sitemap() {
     ...(await getPromptSlugs()).map((s) => `/prompt/${s}`),
     ...guides.map((g) => `/blog/${g.slug}`),
   ];
-  return paths.map((path) => ({
-    url: `${SITE_URL}${path}`,
-    changeFrequency: path.includes("policy") ? "yearly" : "weekly",
-    priority: path === "" ? 1 : path.startsWith("/prompt") ? 0.8 : 0.6,
-  }));
+
+  return paths.map((path) => {
+    const isPolicy =
+      path.includes("policy") ||
+      path === "/terms" ||
+      path === "/disclaimer" ||
+      path === "/dmca";
+
+    return {
+      url: `${SITE_URL}${path}`,
+      lastModified: generatedAt,
+      changeFrequency: isPolicy ? "yearly" : "weekly",
+      priority: path === "" ? 1 : path.startsWith("/prompt") ? 0.8 : 0.6,
+    };
+  });
 }
