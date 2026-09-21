@@ -1,0 +1,40 @@
+.app-showcase {
+  flex-shrink: 0;
+  width: 285px;
+  position: relative;
+  transform: rotate(5deg) translateY(30px);
+  filter: drop-shadow(18px 26px 24px rgba(24, 9, 35, 0.28));
+}
+
+.app-showcase-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+}
+
+@media (max-width: 1023px) {
+  .app-showcase {
+    width: 235px;
+  }
+}
+
+@media (max-width: 767px) {
+  .app-showcase {
+    width: 205px;
+    transform: rotate(4deg) translateY(30px);
+  }
+}
+
+@media (max-width: 639px) {
+  .app-showcase {
+    width: min(78vw, 280px);
+    align-self: center;
+    transform: rotate(2deg) translateY(12px);
+    margin-bottom: -32px;
+  }
+
+  .app-showcase-image {
+    border-radius: 20px;
+  }
+}
