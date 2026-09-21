@@ -24,6 +24,9 @@ export const metadata = seo(
 export default async function Home() {
   const trending = await listPrompts({ sort: "featured", limit: 4 });
   const latest = await listPrompts({ sort: "latest", limit: 4 });
+  const featuredPromptHref = trending.items?.[0]?.slug
+    ? `/prompt/${trending.items[0].slug}`
+    : "/explore";
   return (
     <>
       <section className="hero">
@@ -76,7 +79,11 @@ export default async function Home() {
                 <strong>is one prompt away.</strong>
               </span>
             </div>
-            <div className="hero-photo rear">
+            <Link
+              href="/category/south-india"
+              className="hero-photo rear"
+              aria-label="Explore South India photo prompts"
+            >
               <Image
                 src="/images/traditional.webp"
                 alt="Traditional portrait photo inspiration"
@@ -85,11 +92,8 @@ export default async function Home() {
                 priority
               />
               <span>TRADITIONAL / TIMELESS</span>
-            </div>
-            <Link
-              href="/prompt/cinematic-black-outfit-portrait"
-              className="hero-photo front"
-            >
+            </Link>
+            <Link href={featuredPromptHref} className="hero-photo front">
               <Image
                 src="/images/black.webp"
                 alt="Black outfit cinematic portrait inspiration"
