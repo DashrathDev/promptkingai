@@ -17,10 +17,25 @@ import AppDownloadCTA from "@/components/AppDownloadCTA";
 import BlogPreview from "@/components/BlogPreview";
 import { listPrompts } from "@/lib/prompt-service";
 import { seo, PLAY_STORE_URL } from "@/lib/site";
-export const metadata = seo(
-  "Discover Trending AI Photo Prompts",
+
+const homeSeo = seo(
+  "Prompt King – AI Photo Prompts",
   "Explore ready-to-copy prompts for portraits, cinematic photos, couples, festivals and more. Find your next photo idea with Prompt King.",
 );
+
+export const metadata = {
+  ...homeSeo,
+  title: { absolute: "Prompt King – AI Photo Prompts" },
+  openGraph: {
+    ...homeSeo.openGraph,
+    title: "Prompt King – AI Photo Prompts",
+  },
+  twitter: {
+    ...homeSeo.twitter,
+    title: "Prompt King – AI Photo Prompts",
+  },
+};
+
 export default async function Home() {
   const trending = await listPrompts({ sort: "featured", limit: 4 });
   const latest = await listPrompts({ sort: "latest", limit: 4 });
