@@ -168,8 +168,8 @@ export default async function PromptPage({ params }) {
                 <div className="prompt-text">{p.prompt}</div>
                 <div className="copy-actions">
                   <CopyPrompt text={p.prompt} />
-                  <a href={PLAY_STORE_URL} className="button secondary">
-                    Open Prompt King App <ArrowUpRight size={17} />
+                  <a href={PLAY_STORE_URL} className="button">
+                    Download Prompt King App <ArrowUpRight size={17} />
                   </a>
                 </div>
               </>
@@ -184,8 +184,8 @@ export default async function PromptPage({ params }) {
             ) : null}
 
             <p className="reference-note">
-              The app button opens its Google Play listing, where available you
-              can open or install it.
+              Want more trending photo prompts? Discover them in the Prompt King
+              Android app on Google Play.
             </p>
           </section>
 
