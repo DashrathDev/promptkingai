@@ -1,7 +1,7 @@
 import { SITE_URL } from "@/lib/site";
 import { getPromptSlugs } from "@/lib/prompt-service";
 import { categories } from "@/data/categories";
-import { guides } from "@/data/guides";
+import { allGuides as guides } from "@/data/all-guides";
 
 export default async function sitemap() {
   const generatedAt = new Date();
