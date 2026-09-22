@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { guides } from "@/data/guides";
+import { allGuides as guides } from "@/data/all-guides";
 
 const GUIDE_IMAGE_OVERRIDES = {
   "improve-an-ai-photo-prompt": "/images/improve-an-ai-photo-prompt.jpg.jpg",
