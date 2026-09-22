@@ -48,6 +48,7 @@ export default async function Guide({ params }) {
     "cinematic-portrait-prompt-ideas",
     "improve-an-ai-photo-prompt",
     "keep-face-consistent-ai-photos",
+    "ai-photo-prompt-camera-angles-framing",
   ].includes(g.slug);
 
   const guideImage = getGuideImage(g);
