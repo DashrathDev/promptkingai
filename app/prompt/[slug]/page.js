@@ -126,7 +126,6 @@ export default async function PromptPage({ params }) {
             YOUR NEXT CREATIVE STARTING POINT
           </span>
           <h1>{p.title}</h1>
-          <p className="detail-intro">{p.description}</p>
 
           <div className="tags">
             <Link href={`/category/${p.category}`}>{p.categoryName}</Link>
