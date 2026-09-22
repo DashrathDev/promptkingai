@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./showcase.css";
+import "./navigation-scroll.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { DEFAULT_SOCIAL_IMAGE, SITE_URL } from "@/lib/site";
