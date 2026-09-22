@@ -4,7 +4,7 @@ export const guides = [
     title: "How to Use AI Photo Prompts",
     description:
       "A practical beginner’s guide to turning a rough photo idea into a clear, customizable AI prompt.",
-    image: "/images/how-to-use-ai-photo-prompts.jpg",
+    image: "/images/how-to-use-ai-photo-prompts.jpg.jpg",
     label: "THE STARTER GUIDE",
     readTime: "10 min read",
     intro: [
