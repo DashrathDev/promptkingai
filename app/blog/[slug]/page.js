@@ -34,6 +34,8 @@ export default async function Guide({ params }) {
       }
     : null;
 
+  const isWideGuideThumbnail = g.slug === "how-to-use-ai-photo-prompts";
+
   return (
     <article className="container prose page-section">
       {faqSchema ? (
@@ -50,7 +52,14 @@ export default async function Guide({ params }) {
       </span>
       <h1>{g.title}</h1>
       <p className="lead">{g.description}</p>
-      <div className="guide-hero">
+      <div
+        className="guide-hero"
+        style={
+          isWideGuideThumbnail
+            ? { aspectRatio: "16 / 9", height: "auto" }
+            : undefined
+        }
+      >
         <Image
           src={g.image}
           alt={`Illustrative portrait reference for ${g.title}`}
