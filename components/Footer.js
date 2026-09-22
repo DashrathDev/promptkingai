@@ -55,7 +55,6 @@ export default function Footer() {
         <span>
           © {new Date().getFullYear()} Prompt King. All rights reserved.
         </span>
-        <span>Made for curious, creative minds.</span>
       </div>
     </footer>
   );
