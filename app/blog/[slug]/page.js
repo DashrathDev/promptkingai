@@ -34,7 +34,10 @@ export default async function Guide({ params }) {
       }
     : null;
 
-  const isWideGuideThumbnail = g.slug === "how-to-use-ai-photo-prompts";
+  const isWideGuideThumbnail = [
+    "how-to-use-ai-photo-prompts",
+    "cinematic-portrait-prompt-ideas",
+  ].includes(g.slug);
 
   return (
     <article className="container prose page-section">
