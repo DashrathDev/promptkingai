@@ -3,7 +3,7 @@ export const faceConsistencyGuide = {
   title: "How to Keep Your Face Consistent in AI Photos",
   description:
     "Learn practical ways to reduce face changes in AI-generated photos using better reference images, clearer prompts, controlled pose changes and tool-specific identity features.",
-  image: "/images/traditional.webp",
+  image: "/images/keep-face-consistent-ai-photos.jpg.jpg",
   label: "KEEP YOUR IDENTITY",
   readTime: "12 min read",
   intro: [
