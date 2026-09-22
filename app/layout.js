@@ -1,8 +1,8 @@
 import "./globals.css";
 import "./showcase.css";
-import "./navigation-scroll.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTopOnRouteChange from "@/components/ScrollToTopOnRouteChange";
 import { DEFAULT_SOCIAL_IMAGE, SITE_URL } from "@/lib/site";
 
 const defaultTitle = "Prompt King — Discover AI Photo Prompts";
@@ -44,6 +44,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <ScrollToTopOnRouteChange />
         <a href="#main" className="skip-link">
           Skip to content
         </a>
