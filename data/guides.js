@@ -129,7 +129,7 @@ export const guides = [
     title: "Best Cinematic Portrait Prompt Ideas",
     description:
       "A practical guide to building cinematic portrait prompts with stronger lighting, framing, color and atmosphere.",
-    image: "/images/black.webp",
+    image: "/images/cinematic-portrait-prompt-ideas.jpg.jpg",
     label: "THE CINEMATIC EDIT",
     readTime: "10 min read",
     intro: [
