@@ -73,10 +73,16 @@ export default async function Home() {
               <Link href="#trending" className="button">
                 Explore Prompts <ArrowRight size={18} />
               </Link>
-              <a href={PLAY_STORE_URL} className="button secondary">
+              <a
+                href={PLAY_STORE_URL}
+                className="button app-download-button"
+              >
                 Download Prompt King App <ArrowUpRight size={17} />
               </a>
             </div>
+            <p className="hero-app-note">
+              More trending photo prompts are waiting in the Prompt King Android app.
+            </p>
             <div className="hero-steps">
               <span>
                 <Check size={15} /> Discover a style
