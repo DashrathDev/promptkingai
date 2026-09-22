@@ -4,6 +4,15 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { guides } from "@/data/guides";
 import { seo } from "@/lib/site";
+
+const GUIDE_IMAGE_OVERRIDES = {
+  "improve-an-ai-photo-prompt": "/images/improve-an-ai-photo-prompt.jpg.jpg",
+};
+
+function getGuideImage(g) {
+  return GUIDE_IMAGE_OVERRIDES[g.slug] || g.image;
+}
+
 export function generateStaticParams() {
   return guides.map((g) => ({ slug: g.slug }));
 }
@@ -11,7 +20,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const g = guides.find((g) => g.slug === slug);
   return g
-    ? seo(g.title, g.description, `/blog/${slug}`, g.image)
+    ? seo(g.title, g.description, `/blog/${slug}`, getGuideImage(g))
     : { title: "Guide not found", robots: { index: false } };
 }
 export default async function Guide({ params }) {
@@ -37,7 +46,10 @@ export default async function Guide({ params }) {
   const isWideGuideThumbnail = [
     "how-to-use-ai-photo-prompts",
     "cinematic-portrait-prompt-ideas",
+    "improve-an-ai-photo-prompt",
   ].includes(g.slug);
+
+  const guideImage = getGuideImage(g);
 
   return (
     <article className="container prose page-section">
@@ -64,7 +76,7 @@ export default async function Guide({ params }) {
         }
       >
         <Image
-          src={g.image}
+          src={guideImage}
           alt={`Illustrative portrait reference for ${g.title}`}
           fill
           priority
