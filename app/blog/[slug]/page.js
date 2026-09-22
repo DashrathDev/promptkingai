@@ -18,8 +18,30 @@ export default async function Guide({ params }) {
   const { slug } = await params;
   const g = guides.find((g) => g.slug === slug);
   if (!g) notFound();
+
+  const faqSchema = g.faqs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: g.faqs.map(([question, answer]) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <article className="container prose page-section">
+      {faqSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      ) : null}
       <Link href="/blog" className="back-link">
         ← All guides
       </Link>
@@ -37,12 +59,26 @@ export default async function Guide({ params }) {
           sizes="(max-width: 800px) 100vw, 800px"
         />
       </div>
+      {g.intro?.map((paragraph) => (
+        <p key={paragraph}>{paragraph}</p>
+      ))}
       {g.sections.map(([h, p]) => (
         <section key={h}>
           <h2>{h}</h2>
           <p>{p}</p>
         </section>
       ))}
+      {g.faqs?.length ? (
+        <section>
+          <h2>Frequently Asked Questions</h2>
+          {g.faqs.map(([question, answer]) => (
+            <div key={question}>
+              <h3>{question}</h3>
+              <p>{answer}</p>
+            </div>
+          ))}
+        </section>
+      ) : null}
       <div className="prose-cta">
         <h2>Put an idea into words.</h2>
         <p>Find a prompt, change a detail, and explore a new direction.</p>
