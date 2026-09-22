@@ -3,7 +3,7 @@ export const cameraAnglesFramingGuide = {
   title: "AI Photo Prompt Camera Angles and Framing Explained",
   description:
     "Learn how close-up, waist-up, full-body, low-angle, eye-level and wide framing change AI photo results, with practical before-and-after prompt examples.",
-  image: "/images/traditional.webp",
+  image: "/images/ai-photo-prompt-camera-angles-framing.jpg.jpg",
   label: "FRAME IT BETTER",
   readTime: "12 min read",
   intro: [
