@@ -2,7 +2,7 @@ export const dynamicParams = false;
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { guides } from "@/data/guides";
+import { allGuides as guides } from "@/data/all-guides";
 import { seo } from "@/lib/site";
 
 const GUIDE_IMAGE_OVERRIDES = {
@@ -47,6 +47,7 @@ export default async function Guide({ params }) {
     "how-to-use-ai-photo-prompts",
     "cinematic-portrait-prompt-ideas",
     "improve-an-ai-photo-prompt",
+    "keep-face-consistent-ai-photos",
   ].includes(g.slug);
 
   const guideImage = getGuideImage(g);
