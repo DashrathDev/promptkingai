@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { allGuides as guides } from "@/data/all-guides";
 import { seo } from "@/lib/site";
+import styles from "./author.module.css";
 
 const GUIDE_IMAGE_OVERRIDES = {
   "improve-an-ai-photo-prompt": "/images/improve-an-ai-photo-prompt.jpg.jpg",
@@ -112,7 +113,7 @@ export default async function Guide({ params }) {
           Explore prompts →
         </Link>
       </div>
-      <section className="author-box" aria-labelledby="about-author-heading">
+      <section className={styles.authorBox} aria-labelledby="about-author-heading">
         <span className="eyebrow purple">ABOUT THE AUTHOR</span>
         <h2 id="about-author-heading">Dashrath</h2>
         <p>
