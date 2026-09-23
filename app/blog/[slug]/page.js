@@ -112,6 +112,16 @@ export default async function Guide({ params }) {
           Explore prompts →
         </Link>
       </div>
+      <section className="author-box" aria-labelledby="about-author-heading">
+        <span className="eyebrow purple">ABOUT THE AUTHOR</span>
+        <h2 id="about-author-heading">Dashrath</h2>
+        <p>
+          Developer and creator behind Prompt King, building practical tools and
+          educational resources for AI photo creators. He focuses on app
+          development, web development, prompt discovery, and clear guides for
+          better AI photo prompting.
+        </p>
+      </section>
     </article>
   );
 }
