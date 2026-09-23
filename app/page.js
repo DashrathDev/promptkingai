@@ -39,13 +39,13 @@ export const metadata = {
 export default async function Home() {
   const trending = await listPrompts({ sort: "featured", limit: 4 });
   const latest = await listPrompts({ sort: "latest", limit: 4 });
-  const girls = await listPrompts({ category: "girls", limit: 1 });
+  const heroPrompts = await listPrompts({ category: "trending", sort: "latest", limit: 2 });
 
-  const frontPrompt = trending.items?.[0];
-  const rearPrompt = girls.items?.[0] || trending.items?.[1];
+  const frontPrompt = heroPrompts.items?.[0];
+  const rearPrompt = heroPrompts.items?.[1] || frontPrompt;
 
-  const frontPromptHref = frontPrompt?.slug ? `/prompt/${frontPrompt.slug}` : "/explore";
-  const rearPromptHref = rearPrompt?.slug ? `/prompt/${rearPrompt.slug}` : "/category/girls";
+  const frontPromptHref = frontPrompt?.slug ? `/prompt/${frontPrompt.slug}` : "/category/trending";
+  const rearPromptHref = rearPrompt?.slug ? `/prompt/${rearPrompt.slug}` : "/category/trending";
 
   return (
     <>
@@ -102,16 +102,16 @@ export default async function Home() {
             <Link
               href={rearPromptHref}
               className="hero-photo rear"
-              aria-label={rearPrompt ? `Explore ${rearPrompt.title}` : "Explore Girls photo prompts"}
+              aria-label={rearPrompt ? `Explore ${rearPrompt.title}` : "Explore Trending photo prompts"}
             >
               <Image
                 src={rearPrompt?.image || "/images/traditional.webp"}
-                alt={rearPrompt?.imageAlt || "Girls portrait photo inspiration"}
+                alt={rearPrompt?.imageAlt || "Trending photo prompt inspiration"}
                 fill
                 sizes="(max-width: 639px) 45vw, 230px"
                 priority
               />
-              <span>{(rearPrompt?.categoryName || "Girls").toUpperCase()} / TIMELESS</span>
+              <span>{(rearPrompt?.categoryName || "Trending").toUpperCase()} / TIMELESS</span>
             </Link>
             <Link href={frontPromptHref} className="hero-photo front">
               <Image
