@@ -1,33 +1,76 @@
 .authorBox {
-  margin-top: 34px;
-  padding: 28px 30px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--wash), #fff);
+  position: relative;
+  overflow: hidden;
+  margin-top: 38px;
+  padding: 32px 34px;
+  border: 1px solid #dac8ea;
+  border-left: 5px solid var(--purple);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(143, 92, 206, 0.16), transparent 32%),
+    linear-gradient(135deg, #fbf8ff 0%, #f5eefc 55%, #ffffff 100%);
+  box-shadow: 0 14px 34px rgba(91, 42, 134, 0.08);
+}
+
+.authorBox::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -55px;
+  bottom: -70px;
+  border-radius: 50%;
+  background: rgba(111, 59, 184, 0.08);
+  pointer-events: none;
+}
+
+.authorBox > * {
+  position: relative;
+  z-index: 1;
+}
+
+.authorBox :global(.eyebrow) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(111, 59, 184, 0.1);
+  color: var(--deep);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
 .authorBox h2 {
-  margin: 8px 0 10px;
-  font-size: 24px;
+  margin: 14px 0 10px;
+  color: var(--deep);
+  font-size: 27px;
+  font-weight: 700;
 }
 
 .authorBox p {
-  max-width: 70ch;
-  font-size: 15px;
+  max-width: 68ch;
+  color: #574c62;
+  font-size: 16px;
   line-height: 1.8;
 }
 
 @media (max-width: 639px) {
   .authorBox {
-    margin-top: 28px;
-    padding: 24px 22px;
+    margin-top: 30px;
+    padding: 26px 22px;
+    border-left-width: 4px;
+    border-radius: 15px;
   }
 
   .authorBox h2 {
-    font-size: 22px;
+    margin-top: 12px;
+    font-size: 23px;
   }
 
   .authorBox p {
     font-size: 15px;
+    line-height: 1.75;
   }
 }
