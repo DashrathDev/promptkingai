@@ -1,0 +1,36 @@
+name: Next.js security lockfile update
+on:
+  push:
+    branches: [redesign-v2]
+    paths:
+      - .github/workflows/next-security-lockfile.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: redesign-v2
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Generate updated lockfile
+        run: npm install next@16.3.8 --save-exact
+      - name: Build
+        run: npm run build
+      - name: Commit lockfile update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Sync Next.js security patch lockfile"
+            git push origin HEAD:redesign-v2
+          fi
