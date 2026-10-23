@@ -28,7 +28,7 @@ jobs:
       - name: Verify patched dependency versions
         run: |
           npm ls next sharp source-map-js
-          node -e "const p=require('./package-lock.json').packages; for(const [name,v] of Object.entries({'node_modules/next':'16.3.8','node_modules/sharp':'0.35.5','node_modules/source-map-js':'1.2.2'})){if(p[name]?.version!==v)throw Error(name+' is '+p[name]?.version+', expected '+v)}"
+          node -e "const p=require('./package-lock.json').packages; for(const [name,v] of Object.entries({'node_modules/next':'16.4.1','node_modules/sharp':'0.35.5','node_modules/source-map-js':'1.2.2'})){if(p[name]?.version!==v)throw Error(name+' is '+p[name]?.version+', expected '+v)}"
       - name: Build
         run: npm run build
       - name: Commit lockfile update
@@ -37,6 +37,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add package.json package-lock.json
           if ! git diff --cached --quiet; then
-            git commit -m "Sync patched dependency lockfile"
+            git commit -m "Sync Next.js 16.4.1 security lockfile"
             git push origin HEAD:redesign-v2
           fi
