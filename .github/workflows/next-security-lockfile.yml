@@ -23,6 +23,23 @@ jobs:
           cache: npm
       - name: Regenerate lockfile with patched dependencies
         run: npm install --package-lock-only
+      - name: Restore verified npm registry integrity hashes
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const { execFileSync } = require('node:child_process');
+          const path = 'package-lock.json';
+          const lock = JSON.parse(fs.readFileSync(path, 'utf8'));
+          for (const [key, pkg] of Object.entries(lock.packages)) {
+            if (key === 'node_modules/next' || key === 'node_modules/@next/env' || key.startsWith('node_modules/@next/swc-')) {
+              const name = key.slice('node_modules/'.length);
+              const integrity = execFileSync('npm', ['view', `${name}@${pkg.version}`, 'dist.integrity'], { encoding: 'utf8' }).trim();
+              if (!integrity.startsWith('sha512-')) throw new Error(`Invalid integrity for ${name}`);
+              pkg.integrity = integrity;
+            }
+          }
+          fs.writeFileSync(path, JSON.stringify(lock, null, 2) + '\n');
+          NODE
       - name: Install locked dependencies
         run: npm ci
       - name: Verify patched dependency versions
