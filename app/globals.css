@@ -2165,3 +2165,11 @@ summary:focus-visible {
   .footer li a { font-size: 16px; }
   .footer-bottom { flex-direction: column; gap: 12px; padding-block: 22px; }
 }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}

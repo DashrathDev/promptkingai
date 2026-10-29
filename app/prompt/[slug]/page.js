@@ -24,9 +24,9 @@ function safeJsonLd(value) {
 
 export async function generateMetadata({ params }) {
   const p = await getPrompt((await params).slug);
-  return p
-    ? seo(p.title, p.description, `/prompt/${p.slug}`, p.image)
-    : { title: "Prompt not found", robots: { index: false } };
+  if (!p) return { title: "Prompt not found", robots: { index: false } };
+  const meta = seo(p.title, p.metaDescription, `/prompt/${p.slug}`, p.image);
+  return p.indexable ? meta : { ...meta, robots: { index: false, follow: true } };
 }
 
 export default async function PromptPage({ params }) {
@@ -193,6 +193,24 @@ export default async function PromptPage({ params }) {
             <h2>About this prompt</h2>
             <p>{p.about}</p>
           </section>
+
+          {p.styleNotes ? (
+            <section className="content-section">
+              <h2>Lighting, colour and composition</h2>
+              <p>{p.styleNotes}</p>
+            </section>
+          ) : null}
+
+          {p.tips ? (
+            <section className="content-section">
+              <h2>Ways to make it your own</h2>
+              <ul>
+                {p.tips.map((tip) => (
+                  <li key={tip}>{tip}</li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
 
           <div className="info-grid">
             {[
