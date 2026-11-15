@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { blogPosts } from "./blog/blogData";
 
 const prompts = [
   ["cinematic-black-outfit-portrait", "Cinematic Black Outfit Portrait", "Portrait", "t1"],
@@ -12,6 +13,8 @@ const prompts = [
 ];
 
 export default function HomePage() {
+  const featuredBlogPosts = blogPosts.slice(0, 3);
+
   return (
     <>
       <header className="siteHeader">
@@ -23,8 +26,9 @@ export default function HomePage() {
           <nav className="navLinks">
             <a href="#prompts">Explore</a>
             <a href="#categories">Categories</a>
-            <a href="#features">Why Prompt King</a>
-            <a href="#blog">Blog</a>
+            <Link href="/blog">Blog &amp; Guides</Link>
+            <Link href="/about">About Us</Link>
+            <Link href="/contact">Contact</Link>
           </nav>
           <a className="downloadBtn" href="#">Download App</a>
         </div>
@@ -86,7 +90,7 @@ export default function HomePage() {
           <div className="container">
             <div className="sectionHead">
               <div><h2>Trending Prompts</h2><p>Popular AI photo prompt ideas from the Prompt King feed.</p></div>
-              <a className="viewAll" href="#">View all →</a>
+              <a className="viewAll" href="#prompts">View all →</a>
             </div>
             <div className="promptGrid">
               {prompts.map(([slug,title,cat,cls]) => (
@@ -128,12 +132,31 @@ export default function HomePage() {
         <section id="blog">
           <div className="container">
             <div className="sectionHead">
-              <div><h2>Prompt Guides</h2><p>Helpful articles for getting more from AI photo prompts.</p></div>
+              <div>
+                <h2>Prompt Guides &amp; Tutorials</h2>
+                <p>Helpful articles for getting more from AI photo prompts.</p>
+              </div>
+              <Link className="viewAll" href="/blog">View all guides →</Link>
             </div>
             <div className="blogGrid">
-              <article className="blogCard"><small>GUIDE</small><h3>How to Use AI Photo Prompts</h3><p>A beginner-friendly guide to copying, adapting and using prompts.</p></article>
-              <article className="blogCard"><small>IDEAS</small><h3>Best Cinematic Portrait Prompt Ideas</h3><p>Explore lighting, camera, wardrobe and composition ideas.</p></article>
-              <article className="blogCard"><small>TIPS</small><h3>How to Improve an AI Photo Prompt</h3><p>Learn which details make prompts clearer and more useful.</p></article>
+              {featuredBlogPosts.map((post) => (
+                <article className="blogCard" key={post.slug} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                  <div>
+                    <small>{post.category}</small>
+                    <h3 style={{ margin: "8px 0 10px", fontSize: "18px" }}>
+                      <Link href={`/blog/${post.slug}`} style={{ color: "inherit" }}>
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p style={{ fontSize: "14px", lineHeight: "1.6" }}>{post.summary}</p>
+                  </div>
+                  <div style={{ marginTop: "16px" }}>
+                    <Link href={`/blog/${post.slug}`} style={{ color: "var(--primary)", fontWeight: "bold", fontSize: "14px" }}>
+                      Read Guide →
+                    </Link>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -145,11 +168,26 @@ export default function HomePage() {
             <Link className="brand" href="/"><span className="logo">PK</span><span>Prompt <b>King</b></span></Link>
             <p>Discover trending, ready-to-copy AI photo prompts.</p>
           </div>
-          <div><h4>Explore</h4><a href="#">Trending</a><a href="#">Categories</a><a href="#">Latest Prompts</a></div>
-          <div><h4>Company</h4><a href="#">About Us</a><a href="#">Contact</a><a href="#">FAQ</a></div>
-          <div><h4>Legal</h4><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Disclaimer</a></div>
+          <div>
+            <h4>Explore</h4>
+            <a href="#prompts">Trending Prompts</a>
+            <a href="#categories">Categories</a>
+            <Link href="/blog">Guides &amp; Blog</Link>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <Link href="/about">About Us</Link>
+            <Link href="/contact">Contact</Link>
+            <a href="#features">Why Prompt King</a>
+          </div>
+          <div>
+            <h4>Legal</h4>
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
+            <Link href="/disclaimer">Disclaimer</Link>
+          </div>
         </div>
-        <div className="container copyright">© 2026 Prompt King.</div>
+        <div className="container copyright">© 2026 Prompt King AI. All rights reserved.</div>
       </footer>
     </>
   );
