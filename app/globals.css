@@ -213,28 +213,32 @@ summary:focus-visible {
   background: var(--purple);
   color: white;
   border: 1px solid var(--purple);
-  border-radius: 9px;
-  padding: 12px 22px;
+  border-radius: 12px;
+  padding: 12px 24px;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
   white-space: normal;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 14px rgba(111, 59, 184, 0.2);
 }
 .button:hover {
   background: var(--deep);
   border-color: var(--deep);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px #5b2a861a;
+  box-shadow: 0 8px 24px rgba(91, 42, 134, 0.25);
 }
 .button.secondary {
   background: white;
   color: var(--text);
   border: 1px solid var(--border);
-  box-shadow: 0 2px 4px #17151c03;
+  box-shadow: 0 2px 8px rgba(23, 21, 28, 0.04);
 }
 .button.secondary:hover {
   background: var(--wash);
   border-color: #c5b2db;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(91, 42, 134, 0.08);
 }
 .button.small {
   font-size: 13px;
@@ -474,12 +478,13 @@ summary:focus-visible {
   align-items: center;
   gap: 16px;
   border: 1px solid #ddd2e8;
-  border-radius: 13px;
+  border-radius: 16px;
   min-height: 74px;
-  padding: 10px 12px 10px 23px;
-  box-shadow: 0 4px 18px #5b2a8605;
+  padding: 10px 14px 10px 24px;
+  box-shadow: 0 4px 20px rgba(91, 42, 134, 0.05);
   background: white;
   scroll-margin-top: 110px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .search-bar > svg {
   color: var(--purple);
@@ -498,8 +503,8 @@ summary:focus-visible {
   color: #81798a;
 }
 .search-bar:focus-within {
-  outline: 2px solid var(--secondary);
-  outline-offset: 3px;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 4px rgba(111, 59, 184, 0.12), 0 12px 32px rgba(91, 42, 134, 0.08);
 }
 .search-bar input:focus-visible {
   outline: none;
@@ -537,22 +542,28 @@ summary:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  min-height: 43px;
-  padding: 9px 22px;
+  min-height: 42px;
+  padding: 8px 20px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 999px;
   background: white;
   font-size: 13px;
+  font-weight: 500;
   color: #51465d;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 .chip:hover {
-  background: var(--wash);
+  background: #fbf8fe;
+  border-color: #d1bfe4;
   color: var(--purple);
+  transform: translateY(-1px);
 }
 .chip.active {
   background: var(--deep);
   border-color: var(--deep);
   color: white;
+  box-shadow: 0 4px 14px rgba(91, 42, 134, 0.25);
 }
 .section {
   padding-block: 65px;
@@ -597,47 +608,65 @@ summary:focus-visible {
 }
 .prompt-card {
   min-width: 0;
-  transition: transform 0.25s;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .prompt-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 .card-image {
   aspect-ratio: 4/5;
   position: relative;
   overflow: hidden;
-  border-radius: 13px;
+  border-radius: 16px;
   background: var(--wash);
+  box-shadow: 0 4px 18px rgba(66, 36, 86, 0.06);
+  transition: box-shadow 0.25s ease;
+}
+.prompt-card:hover .card-image {
+  box-shadow: 0 16px 36px rgba(111, 59, 184, 0.14);
 }
 .card-image img {
   object-fit: cover;
-  transition: transform 0.3s;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .prompt-card:hover .card-image img {
-  transform: scale(1.035);
+  transform: scale(1.04);
 }
 .image-badge {
   position: absolute;
   left: 13px;
   top: 13px;
-  background: #ffffffed;
-  padding: 4px 11px;
-  border-radius: 5px;
-  font-size: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
   color: #362540;
   text-transform: capitalize;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 .card-arrow {
   position: absolute;
   bottom: 13px;
   right: 13px;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: #ffffffef;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: grid;
   place-items: center;
   color: var(--deep);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+.prompt-card:hover .card-arrow {
+  transform: scale(1.08);
+  background: var(--purple);
+  color: white;
 }
 .card-content {
   padding: 17px 1px 0;
@@ -683,8 +712,15 @@ summary:focus-visible {
 .features article {
   padding: 24px 21px;
   border: 1px solid var(--border);
-  border-radius: 13px;
+  border-radius: 16px;
   background: white;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 4px 14px rgba(91, 42, 134, 0.03);
+}
+.features article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(111, 59, 184, 0.08);
+  border-color: #d1bfe4;
 }
 .feature-icon {
   display: grid;
