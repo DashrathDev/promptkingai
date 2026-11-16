@@ -124,7 +124,7 @@ const schemaData = {
 
 export default async function Home() {
   const trending = await listPrompts({ sort: "featured", limit: 4 });
-  const latest = await listPrompts({ sort: "latest", limit: 4 });
+  const latest = await listPrompts({ sort: "latest", limit: 12 });
 
   const heroCategoryConfigs = [
     { slug: "trending", label: "Trending", tag: "Hot" },
@@ -187,7 +187,7 @@ export default async function Home() {
               prompt, and use it in your preferred compatible AI tool.
             </p>
             <div className="hero-buttons">
-              <Link href="#trending" className="button">
+              <Link href="#feed" className="button">
                 Explore Prompts <ArrowRight size={18} />
               </Link>
               <a href={PLAY_STORE_URL} className="button">
@@ -219,37 +219,37 @@ export default async function Home() {
         </div>
         <CategoryChips active="trending" />
       </div>
-      <section id="trending" className="section container">
+      <section id="feed" className="section container">
         <div className="section-heading">
           <div>
-            <span className="eyebrow purple">THE INSPIRATION EDIT</span>
-            <h2>
-              Trending prompts<span className="purple">.</span>
-            </h2>
-            <p>A fresh perspective for your next photo idea.</p>
+            <span className="eyebrow purple">FRESH FROM THE FEED</span>
+            <h2>New ideas just landed.</h2>
+            <p>A different mood. A new story. Find what inspires you next.</p>
           </div>
-          <Link href="/category/trending" className="text-link">
-            Explore trending <ArrowUpRight size={18} />
+          <Link href="/latest" className="text-link">
+            See latest prompts <ArrowUpRight size={18} />
           </Link>
         </div>
-        <PromptGrid prompts={trending.items} />
-        <p className="reference-note">
-          An editorial selection · Images are illustrative style references.
-        </p>
+        <PromptGrid prompts={latest.items} />
       </section>
-      <section className="latest-section">
+      <section id="trending" className="latest-section">
         <div className="container section">
           <div className="section-heading">
             <div>
-              <span className="eyebrow purple">FRESH FROM THE FEED</span>
-              <h2>New ideas just landed.</h2>
-              <p>A different mood. A new story. Find what inspires you next.</p>
+              <span className="eyebrow purple">THE INSPIRATION EDIT</span>
+              <h2>
+                Trending prompts<span className="purple">.</span>
+              </h2>
+              <p>A fresh perspective for your next photo idea.</p>
             </div>
-            <Link href="/latest" className="text-link">
-              See latest prompts <ArrowUpRight size={18} />
+            <Link href="/category/trending" className="text-link">
+              Explore trending <ArrowUpRight size={18} />
             </Link>
           </div>
-          <PromptGrid prompts={latest.items} />
+          <PromptGrid prompts={trending.items} />
+          <p className="reference-note">
+            An editorial selection · Images are illustrative style references.
+          </p>
         </div>
       </section>
       <section className="container section why">
