@@ -15,7 +15,7 @@ export default function PromptCard({ prompt, priority = false }) {
             src={prompt.image}
             alt={prompt.imageAlt}
             fill
-            sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+            sizes="(max-width: 639px) 450px, (max-width: 1023px) 380px, 280px"
             priority={priority}
           />
           <span className="image-badge">{prompt.category}</span>

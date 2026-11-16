@@ -21,7 +21,7 @@ export default function BlogPreview() {
                   src={guideImage}
                   alt={`Portrait style reference for ${g.title}`}
                   fill
-                  sizes="(max-width: 639px) 100vw, 33vw"
+                  sizes="(max-width: 639px) 480px, (max-width: 1023px) 400px, 360px"
                 />
                 <span>{g.label}</span>
               </div>
