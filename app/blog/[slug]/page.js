@@ -50,6 +50,8 @@ export default async function Guide({ params }) {
     "improve-an-ai-photo-prompt",
     "keep-face-consistent-ai-photos",
     "ai-photo-prompt-camera-angles-framing",
+    "camera-lenses-focal-length-ai-photo-prompts",
+    "midjourney-v6-vs-gemini-imagen-3-vs-flux-portrait-comparison",
   ].includes(g.slug);
 
   const guideImage = getGuideImage(g);
