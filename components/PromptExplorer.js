@@ -43,8 +43,9 @@ export default function PromptExplorer({ prompts, initialQuery = "" }) {
           placeholder="Search portrait, cinematic, couple, festival…"
           maxLength={160}
         />
-        <button className="button" type="submit" aria-label="Apply search">
-          <ArrowRight size={20} />
+        <button className="button search-submit-btn" type="submit" aria-label="Search">
+          <Search size={18} />
+          <span>Search</span>
         </button>
       </form>
       <p className="result-count" role="status">

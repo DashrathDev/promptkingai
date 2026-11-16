@@ -14,9 +14,9 @@ export default function SearchBar({ defaultValue = "" }) {
         defaultValue={defaultValue}
         maxLength={160}
       />
-      <button className="button" type="submit">
-        <span>Find inspiration</span>
-        <ArrowRight size={19} />
+      <button className="button search-submit-btn" type="submit">
+        <Search size={18} />
+        <span>Search</span>
       </button>
     </form>
   );

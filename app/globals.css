@@ -618,7 +618,13 @@ summary:focus-visible {
 }
 .search-bar button {
   flex-shrink: 0;
-  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 650;
+  padding: 12px 24px;
+  border-radius: 12px;
 }
 .category-label {
   display: flex;
@@ -1683,8 +1689,9 @@ summary:focus-visible {
   .blog-grid {
     gap: 20px;
   }
-  .search-bar .button span {
-    display: none;
+  .search-bar .button {
+    padding: 10px 18px;
+    font-size: 14px;
   }
   .section-heading h2 {
     font-size: 32px;
@@ -1953,9 +1960,10 @@ summary:focus-visible {
     font-size: 14px;
   }
   .search-bar .button {
-    padding: 10px;
-    min-width: 43px;
-    min-height: 43px;
+    padding: 10px 18px;
+    min-height: 44px;
+    font-size: 14px;
+    gap: 6px;
   }
   .search-bar > svg {
     width: 19px;
