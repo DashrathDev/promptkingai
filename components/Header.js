@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu, X, Search, ArrowUpRight, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
 import Brand from "./Brand";
 import { PLAY_STORE_URL } from "@/lib/site";
 
@@ -89,13 +89,6 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
-          <Link
-            href="/explore#search"
-            className="icon-button"
-            aria-label="Search prompts"
-          >
-            <Search size={21} />
-          </Link>
           <a href={PLAY_STORE_URL} className="button small header-download">
             Download App <ArrowUpRight size={16} />
           </a>
