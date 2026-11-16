@@ -14,25 +14,112 @@ import CategoryChips from "@/components/CategoryChips";
 import PromptGrid from "@/components/PromptGrid";
 import AppDownloadCTA from "@/components/AppDownloadCTA";
 import BlogPreview from "@/components/BlogPreview";
+import FAQ from "@/components/FAQ";
 import { listPrompts } from "@/lib/prompt-service";
 import { seo, PLAY_STORE_URL } from "@/lib/site";
 
 const homeSeo = seo(
-  "Prompt King – AI Photo Prompts",
-  "Explore ready-to-copy prompts for portraits, cinematic photos, couples, festivals and more. Find your next photo idea with Prompt King.",
+  "Prompt King – Free AI Photo Prompts Library (Copy & Paste Formulas)",
+  "Discover Prompt King: Your premier free library of ready-to-copy AI photo prompts for portraits, cinematic looks, couples, festivals and creative styles. Compatible with Gemini, Midjourney & Flux.",
 );
 
 export const metadata = {
   ...homeSeo,
-  title: { absolute: "Prompt King – AI Photo Prompts" },
+  title: {
+    absolute:
+      "Prompt King – Free AI Photo Prompts Library (Copy & Paste Formulas)",
+  },
+  keywords: [
+    "prompt king",
+    "prompt king ai",
+    "promptking",
+    "ai photo prompts",
+    "ai portrait prompts",
+    "gemini photo prompts",
+    "midjourney portrait prompts",
+    "flux prompts",
+    "free ai prompts",
+    "copy paste ai prompts",
+  ],
   openGraph: {
     ...homeSeo.openGraph,
-    title: "Prompt King – AI Photo Prompts",
+    title:
+      "Prompt King – Free AI Photo Prompts Library (Copy & Paste Formulas)",
   },
   twitter: {
     ...homeSeo.twitter,
-    title: "Prompt King – AI Photo Prompts",
+    title:
+      "Prompt King – Free AI Photo Prompts Library (Copy & Paste Formulas)",
   },
+};
+
+const homepageFaqs = [
+  [
+    "What is Prompt King?",
+    "Prompt King (promptkingai.com) is the premier free directory for discovering, copying, and customizing high-quality AI photo prompts. We curate production-tested prompt formulas for portraits, cinematic lighting, couples, and festive photography.",
+  ],
+  [
+    "How do I use and copy prompts from Prompt King?",
+    "Simply browse our trending categories, find a visual style you love, and click the 'Copy' button. You can then paste the prompt directly into your favorite AI tool (like Google Gemini, Midjourney, or Flux) and customize the clothing, lighting, or setting to make it your own.",
+  ],
+  [
+    "Are Prompt King prompts compatible with Midjourney, Gemini and Flux?",
+    "Yes! All prompt formulas on Prompt King are tested for cross-platform compatibility with Google Gemini (Imagen 3), Midjourney v6, Flux.1 (Dev & Schnell), and ChatGPT (DALL-E 3).",
+  ],
+  [
+    "Is Prompt King free to use?",
+    "Yes, Prompt King is 100% free to browse and copy prompts on promptkingai.com. We also offer a dedicated Prompt King Android app on the Google Play Store for mobile creators.",
+  ],
+];
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://promptkingai.com/#website",
+      url: "https://promptkingai.com/",
+      name: "Prompt King",
+      alternateName: [
+        "Prompt King AI",
+        "PromptKing",
+        "PromptKingAI",
+        "promptkingai.com",
+      ],
+      description:
+        "Discover ready-to-copy AI photo prompts for portraits, cinematic photos, festivals, couples and more.",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://promptkingai.com/explore?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://promptkingai.com/#organization",
+      name: "Prompt King",
+      url: "https://promptkingai.com/",
+      logo: "https://promptkingai.com/brand/prompt-king-icon.png",
+      sameAs: [PLAY_STORE_URL],
+      founder: {
+        "@type": "Person",
+        name: "Dashrath",
+        jobTitle: "Creative Lead & Founder",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://promptkingai.com/#faq",
+      mainEntity: homepageFaqs.map(([question, answer]) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: answer,
+        },
+      })),
+    },
+  ],
 };
 
 export default async function Home() {
@@ -76,15 +163,18 @@ export default async function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
             <span className="hero-kicker">
-              <Sparkles size={15} /> A LITTLE INSPIRATION. ENDLESS
-              POSSIBILITIES.
+              <Sparkles size={15} /> WELCOME TO PROMPT KING — #1 AI PHOTO PROMPTS DIRECTORY
             </span>
             <h1>
-              Discover Trending
+              Prompt King: Discover Trending
               <br />
               AI Photo{" "}
               <span className="aurora-text">
@@ -224,6 +314,19 @@ export default async function Home() {
           </Link>
         </div>
         <BlogPreview />
+      </section>
+      <section className="container section">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow purple">FREQUENTLY ASKED QUESTIONS</span>
+            <h2>About Prompt King<span className="purple">.</span></h2>
+            <p>Everything you need to know about copying and using our AI photo prompts.</p>
+          </div>
+          <Link href="/faq" className="text-link">
+            All FAQs <ArrowUpRight size={18} />
+          </Link>
+        </div>
+        <FAQ items={homepageFaqs} />
       </section>
     </>
   );

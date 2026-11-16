@@ -7,9 +7,10 @@ import { DEFAULT_SOCIAL_IMAGE, SITE_URL } from "@/lib/site";
 
 const GA_MEASUREMENT_ID = "G-7Q33F5DEST";
 const ADSENSE_CLIENT = "ca-pub-8067826014307236";
-const defaultTitle = "Prompt King — Discover AI Photo Prompts";
+const defaultTitle =
+  "Prompt King – Free AI Photo Prompts Library | Copy & Paste";
 const defaultDescription =
-  "Discover ready-to-copy AI photo prompts for portraits, cinematic photos, couples and more.";
+  "Prompt King (promptkingai.com) is the premier free library for discovering, copying, and customizing trending AI photo prompts for portraits, festivals, couples and cinematic looks. Compatible with Gemini, Midjourney & Flux.";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
