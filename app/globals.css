@@ -445,16 +445,16 @@ summary:focus-visible {
   color: var(--purple);
 }
 /* ========================================================
-   CONCEPT 1: 3D FLOATING SHOWCASE & INTERACTIVE TERMINAL (COMPACT & RESPONSIVE)
+   CONCEPT 1: 3D FLOATING SHOWCASE & INTERACTIVE TERMINAL
    ======================================================== */
 .hero-showcase-wrapper {
   position: relative;
   width: 100%;
-  max-width: 350px;
+  max-width: 390px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 9px;
   z-index: 5;
   box-sizing: border-box;
 }
@@ -464,11 +464,11 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 5px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 3px 5px;
+  padding: 3px 6px;
   border-radius: 9999px;
   border: 1px solid rgba(220, 205, 235, 0.9);
   max-width: 100%;
@@ -479,15 +479,15 @@ summary:focus-visible {
 }
 
 .showcase-tab-btn {
-  padding: 5px 12px;
+  padding: 5px 13px;
   border-radius: 9999px;
   border: none;
   background: transparent;
   color: var(--muted);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 650;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
@@ -510,14 +510,14 @@ summary:focus-visible {
   width: 100%;
 }
 
-/* Main Compact 3D Card */
+/* Main 3D Card */
 .showcase-card {
   position: relative;
   z-index: 2;
   background: #ffffff;
-  border-radius: 18px;
+  border-radius: 20px;
   border: 1.5px solid #ffffff;
-  box-shadow: 0 16px 36px -8px rgba(74, 30, 109, 0.16), 0 0 0 1px rgba(111, 59, 184, 0.08);
+  box-shadow: 0 18px 42px -10px rgba(74, 30, 109, 0.18), 0 0 0 1px rgba(111, 59, 184, 0.08);
   overflow: hidden;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
   box-sizing: border-box;
@@ -526,39 +526,39 @@ summary:focus-visible {
 
 .showcase-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 42px -8px rgba(74, 30, 109, 0.22), 0 0 0 1px rgba(111, 59, 184, 0.12);
+  box-shadow: 0 24px 50px -10px rgba(74, 30, 109, 0.24), 0 0 0 1px rgba(111, 59, 184, 0.12);
 }
 
-/* Compact Visual Image Canvas */
+/* Visual Image Canvas - Clean edge-to-edge frame, no blur */
 .showcase-image-wrap {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 330px;
   overflow: hidden;
-  background: #0d0a14;
+  background: #110e1a;
 }
 
-/* Ambient Blurred Backdrop - Fills container with matching radiant colors */
-.showcase-img-blur {
+/* Fast, smooth image transition */
+@keyframes fastSlideIn {
+  0% { opacity: 0.35; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.showcase-img {
   object-fit: cover;
-  filter: blur(24px) brightness(0.6) saturate(1.3);
-  transform: scale(1.2);
-  opacity: 0.8;
-  pointer-events: none;
+  object-position: center top;
+  transition: transform 0.4s ease;
 }
 
-/* Main Sharp Uncropped Image - 100% completely visible */
-.showcase-img-main {
-  object-fit: contain;
-  z-index: 2;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+.showcase-img-animate {
+  animation: fastSlideIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.showcase-card:hover .showcase-img-main {
+.showcase-card:hover .showcase-img {
   transform: scale(1.02);
 }
 
-/* Cyber Scanning Beam */
+/* Cyber Scanning Laser Beam */
 @keyframes scanBeam {
   0% { top: 0%; opacity: 0.85; }
   50% { opacity: 0.3; }
@@ -580,9 +580,9 @@ summary:focus-visible {
 /* Image Badges */
 .showcase-img-badges {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
+  top: 11px;
+  left: 11px;
+  right: 11px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -591,9 +591,9 @@ summary:focus-visible {
 }
 
 .showcase-badge-primary {
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: 9999px;
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.7px;
@@ -604,9 +604,9 @@ summary:focus-visible {
 }
 
 .showcase-badge-meta {
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: 9999px;
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 600;
   background: rgba(14, 10, 24, 0.75);
   color: #f1edfa;
@@ -614,9 +614,9 @@ summary:focus-visible {
   backdrop-filter: blur(8px);
 }
 
-/* Clean Compact Content Info Section Below Image */
+/* Clean Content Info Section Below Image */
 .showcase-info {
-  padding: 10px 14px 6px;
+  padding: 11px 15px 7px;
   background: #ffffff;
   box-sizing: border-box;
 }
@@ -625,14 +625,14 @@ summary:focus-visible {
   display: block;
   font-size: 9.5px;
   font-weight: 800;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.3px;
   color: var(--purple);
   text-transform: uppercase;
   margin-bottom: 2px;
 }
 
 .showcase-title {
-  font-size: 14.5px;
+  font-size: 15px;
   font-weight: 750;
   line-height: 1.25;
   margin: 0;
@@ -648,8 +648,8 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
-  padding: 8px 12px;
+  gap: 7px;
+  padding: 9px 13px;
   background: #faf6fe;
   border-top: 1px solid #ebdff5;
   border-bottom: 1px solid #ebdff5;
@@ -676,7 +676,7 @@ summary:focus-visible {
 
 .showcase-prompt-text {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 10.5px;
+  font-size: 11px;
   color: #4b4556;
   white-space: nowrap;
   overflow: hidden;
@@ -695,12 +695,12 @@ summary:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 5px 10px;
+  padding: 5px 11px;
   background: var(--purple);
   color: #ffffff;
   border: none;
   border-radius: 7px;
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 750;
   letter-spacing: 0.4px;
   cursor: pointer;
@@ -720,8 +720,8 @@ summary:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 26px;
   border-radius: 7px;
   background: #ffffff;
   border: 1px solid var(--border);
@@ -741,7 +741,7 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 9.5px;
+  font-size: 10px;
   color: var(--muted);
   background: #ffffff;
   justify-content: center;
@@ -759,47 +759,47 @@ summary:focus-visible {
 /* Responsive Adjustments for Mobile & Tablets */
 @media (max-width: 900px) {
   .hero-showcase-wrapper {
-    max-width: 340px;
+    max-width: 360px;
   }
 }
 
 @media (max-width: 767px) {
   .hero-showcase-wrapper {
-    max-width: 320px;
+    max-width: 350px;
     width: 100%;
     margin: 0 auto;
   }
   .showcase-tabs {
     gap: 3px;
-    padding: 3px;
-    margin-bottom: 4px;
+    padding: 3px 5px;
+    margin-bottom: 5px;
   }
   .showcase-tab-btn {
-    padding: 4px 9px;
-    font-size: 11px;
+    padding: 4px 10px;
+    font-size: 11.5px;
   }
   .showcase-card {
-    border-radius: 16px;
+    border-radius: 18px;
   }
   .showcase-image-wrap {
-    height: 200px;
+    height: 260px;
   }
   .showcase-info {
-    padding: 8px 12px 5px;
+    padding: 9px 13px 6px;
   }
   .showcase-title {
-    font-size: 13.5px;
+    font-size: 14px;
   }
   .showcase-terminal {
-    padding: 7px 10px;
+    padding: 8px 11px;
   }
   .showcase-copy-btn {
-    padding: 4px 8px;
+    padding: 5px 9px;
     font-size: 10px;
   }
   .showcase-trust-bar {
-    font-size: 9px;
-    padding: 5px 8px;
+    font-size: 9.5px;
+    padding: 6px 8px;
   }
 }
 .discovery {

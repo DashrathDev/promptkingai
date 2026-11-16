@@ -30,14 +30,26 @@ export default function HeroShowcase({ slides = [] }) {
   const safeIdx = activeIdx >= heroSlides.length ? 0 : activeIdx;
   const current = heroSlides[safeIdx] || heroSlides[0];
 
-  // Auto-slide every 5 seconds (pauses on mouse hover)
+  // Fast & lively auto-slide every 3 seconds (pauses on mouse hover)
   useEffect(() => {
     if (isHovered || heroSlides.length <= 1) return;
     timerRef.current = setInterval(() => {
       setActiveIdx((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(timerRef.current);
   }, [isHovered, heroSlides.length]);
+
+  const switchSlide = (idx) => {
+    setActiveIdx(idx);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      if (!isHovered && heroSlides.length > 1) {
+        timerRef.current = setInterval(() => {
+          setActiveIdx((prev) => (prev + 1) % heroSlides.length);
+        }, 3000);
+      }
+    }
+  };
 
   const handleCopy = async (e) => {
     e.preventDefault();
@@ -66,7 +78,7 @@ export default function HeroShowcase({ slides = [] }) {
               key={slide.categorySlug || slide.category || i}
               type="button"
               className={`showcase-tab-btn ${i === safeIdx ? "active" : ""}`}
-              onClick={() => setActiveIdx(i)}
+              onClick={() => switchSlide(i)}
               aria-label={`Show ${slide.category} prompt`}
             >
               <span>{slide.category}</span>
@@ -76,35 +88,23 @@ export default function HeroShowcase({ slides = [] }) {
       )}
 
       <div className="hero-showcase-stage">
-        {/* Main Compact 3D Card */}
+        {/* Main 3D Showcase Card */}
         <div className="showcase-card">
-          {/* Visual Canvas with Ambient Backdrop + Full Uncut Image */}
+          {/* Edge-to-Edge Visual Canvas (No blur, sharp, fast transition) */}
           <div className="showcase-image-wrap">
-            {/* Laser Scanning Beam */}
+            {/* Cyber Scanning Laser Beam */}
             <div className="showcase-scan-beam" />
 
-            {/* Ambient Blurred Copy to Fill Frame with Exact Tones */}
+            {/* Clean Edge-to-Edge Image with Fast Smooth Transition */}
             {current.image && (
               <Image
-                src={current.image}
-                alt=""
-                fill
-                sizes="120px"
-                className="showcase-img-blur"
-                aria-hidden="true"
-                priority
-              />
-            )}
-
-            {/* Main Uncropped Sharp Image */}
-            {current.image && (
-              <Image
+                key={current.image}
                 src={current.image}
                 alt={current.imageAlt || current.title}
                 fill
-                sizes="(max-width: 639px) 90vw, 360px"
+                sizes="(max-width: 639px) 95vw, 420px"
                 priority
-                className="showcase-img-main"
+                className="showcase-img showcase-img-animate"
               />
             )}
 
@@ -119,7 +119,7 @@ export default function HeroShowcase({ slides = [] }) {
             </div>
           </div>
 
-          {/* Clean Compact Content Info Section Below Image */}
+          {/* Clean Content Info Section Below Image */}
           <div className="showcase-info">
             <span className="showcase-kicker">
               {(current.category || "TRENDING").toUpperCase()} PROMPTS
