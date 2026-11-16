@@ -28,10 +28,12 @@ export default function Header() {
         <Brand />
         <nav className="desktop-nav" aria-label="Main navigation">
           {[
-            ["Explore", "/explore"],
-            ["Categories", "/categories"],
-            ["Latest", "/latest"],
-            ["Blog", "/blog"],
+            ["Home", "/"],
+            ["Trending", "/category/trending"],
+            ["Festival", "/category/festival"],
+            ["Couple", "/category/couple"],
+            ["Girls", "/category/girls"],
+            ["Guides", "/blog"],
             ["About", "/about"],
             ["Contact", "/contact"],
           ].map(([name, url]) => (
@@ -74,12 +76,15 @@ export default function Header() {
         hidden={!open}
       >
         {[
-          ["Explore", "/explore"],
-          ["Categories", "/categories"],
-          ["Latest", "/latest"],
-          ["Blog", "/blog"],
-          ["About", "/about"],
-          ["Contact", "/contact"],
+          ["Home", "/"],
+          ["🔥 Trending Prompts", "/category/trending"],
+          ["🪔 Festival Prompts", "/category/festival"],
+          ["💑 Couple Prompts", "/category/couple"],
+          ["🌸 Girls Prompts", "/category/girls"],
+          ["📖 AI Photo Guides", "/blog"],
+          ["All Categories", "/categories"],
+          ["About Us", "/about"],
+          ["Contact Us", "/contact"],
         ].map(([name, url]) => (
           <Link key={url} href={url} onClick={() => setOpen(false)}>
             {name}

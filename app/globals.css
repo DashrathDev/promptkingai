@@ -175,7 +175,7 @@ summary:focus-visible {
 }
 .desktop-nav {
   display: flex;
-  gap: 30px;
+  gap: 18px;
   align-items: center;
   font-size: 14px;
   font-weight: 500;
@@ -184,10 +184,13 @@ summary:focus-visible {
   min-height: 44px;
   display: flex;
   align-items: center;
+  transition: color 0.15s ease;
+  white-space: nowrap;
 }
 .desktop-nav a:hover,
 .desktop-nav a[aria-current="page"] {
   color: var(--purple);
+  font-weight: 600;
 }
 .header-actions {
   display: flex;
@@ -1429,6 +1432,15 @@ summary:focus-visible {
   }
   .menu-toggle {
     display: inline-flex;
+    border: 1px solid var(--border);
+    background: var(--wash);
+    border-radius: 10px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .menu-toggle:hover {
+    background: #efe4fb;
+    border-color: #d1bfe4;
+    color: var(--purple);
   }
   .mobile-nav:not([hidden]) {
     display: flex;
