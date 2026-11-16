@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Mastering Studio & Cinematic Lighting Prompts: Softbox, Rim, Rembrandt & Golden Hour",
+    "slug": "mastering-studio-cinematic-lighting-ai-prompts",
+    "category": "Lighting & Optics",
+    "status": "planned",
+    "targetDate": "Day 2 - 11:00 AM",
+    "keywords": ["studio lighting ai prompt", "cinematic lighting midjourney", "softbox prompt", "rim light ai photo"]
+  },
+  {
+    "id": 2,
+    "title": "How to Fix AI Distortion, Bad Hands & Plastic Skin with Negative Prompts",
+    "slug": "fix-ai-distortion-bad-hands-plastic-skin-prompts",
+    "category": "Troubleshooting & Anatomy",
+    "status": "planned",
+    "targetDate": "Day 2 - 6:30 PM",
+    "keywords": ["fix ai hands", "negative prompts midjourney", "plastic skin ai fix", "flux negative prompt"]
+  },
+  {
+    "id": 3,
+    "title": "Traditional Indian Festive AI Photo Prompts: Sarees, Diya Lighting & Temple Architecture",
+    "slug": "traditional-indian-festive-ai-photo-prompts",
+    "category": "Ethnic & Cultural",
+    "status": "planned",
+    "targetDate": "Day 3 - 11:00 AM",
+    "keywords": ["indian festive prompt", "saree ai photo prompt", "diwali ai prompt", "kanjeevaram saree midjourney"]
+  },
+  {
+    "id": 4,
+    "title": "Professional LinkedIn & Corporate Headshot Prompts: Studio Backgrounds & Executive Poses",
+    "slug": "professional-linkedin-corporate-headshot-ai-prompts",
+    "category": "Professional & Career",
+    "status": "planned",
+    "targetDate": "Day 3 - 6:30 PM",
+    "keywords": ["linkedin headshot prompt", "corporate portrait ai prompt", "business headshot midjourney", "studio profile prompt"]
+  },
+  {
+    "id": 5,
+    "title": "Cinematic Couple Portrait Prompts: Emotion, Romantic Lighting & Natural Poses",
+    "slug": "cinematic-couple-portrait-ai-prompts",
+    "category": "Couple & Romance",
+    "status": "planned",
+    "targetDate": "Day 4 - 11:00 AM",
+    "keywords": ["couple ai prompt", "romantic portrait prompt", "pre wedding ai photo prompt", "couple photography prompt"]
+  },
+  {
+    "id": 6,
+    "title": "Night Street & Cyberpunk Photography Prompts: Neon Glow, Reflections & Rain Effects",
+    "slug": "night-street-cyberpunk-photography-ai-prompts",
+    "category": "Urban & Night",
+    "status": "planned",
+    "targetDate": "Day 4 - 6:30 PM",
+    "keywords": ["cyberpunk prompt", "night street photography ai", "neon lighting prompt", "rain reflection prompt"]
+  },
+  {
+    "id": 7,
+    "title": "Aperture & Depth of Field in AI Prompts: How to Get Dreamy Creamy Bokeh (f/1.4 vs f/2.8)",
+    "slug": "camera-aperture-depth-of-field-bokeh-ai-prompts",
+    "category": "Camera Science",
+    "status": "planned",
+    "targetDate": "Day 5 - 11:00 AM",
+    "keywords": ["bokeh ai prompt", "depth of field prompt", "camera aperture midjourney", "f1.4 lens prompt"]
+  },
+  {
+    "id": 8,
+    "title": "Flux.1 Schnell vs Dev vs Pro: Best Settings & Realistic Skin Pores Prompts",
+    "slug": "flux-1-schnell-vs-dev-best-prompts-settings",
+    "category": "Model Benchmark",
+    "status": "planned",
+    "targetDate": "Day 5 - 6:30 PM",
+    "keywords": ["flux.1 prompt guide", "flux dev settings", "flux schnell photorealism", "flux skin texture"]
+  }
+]
