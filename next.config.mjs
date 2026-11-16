@@ -7,7 +7,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "royalprompts.online",
-        pathname: "/uploads/**",
+        pathname: "/**",
       },
     ],
   },

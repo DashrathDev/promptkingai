@@ -39,6 +39,41 @@ export default async function Home() {
   const trending = await listPrompts({ sort: "featured", limit: 4 });
   const latest = await listPrompts({ sort: "latest", limit: 4 });
 
+  const heroCategoryConfigs = [
+    { slug: "trending", label: "Trending", tag: "Hot" },
+    { slug: "festival", label: "Festival", tag: "Festive" },
+    { slug: "couple", label: "Couple", tag: "Romantic" },
+    { slug: "girls", label: "Girls", tag: "Portrait" },
+  ];
+
+  const heroSlides = (
+    await Promise.all(
+      heroCategoryConfigs.map(async ({ slug, label, tag }) => {
+        try {
+          const res = await listPrompts({ category: slug, sort: "latest", limit: 1 });
+          const item = res.items?.[0];
+          if (!item) return null;
+          return {
+            id: item.id,
+            title: item.title,
+            category: label,
+            categorySlug: slug,
+            image: item.image,
+            imageAlt: item.imageAlt || item.title,
+            slug: item.slug,
+            prompt: (item.prompt || item.description || "").replace(/^Description:\s*/i, ""),
+            desc: item.description ? item.description.replace(/^Description:\s*/i, "") : item.title,
+            lens: "85mm Studio Lens",
+            tag,
+            link: `/prompt/${item.slug}`,
+          };
+        } catch {
+          return null;
+        }
+      })
+    )
+  ).filter(Boolean);
+
   return (
     <>
       <section className="hero">
@@ -81,7 +116,7 @@ export default async function Home() {
               </span>
             </div>
           </div>
-          <HeroShowcase />
+          <HeroShowcase slides={heroSlides} />
         </div>
       </section>
       <div className="container discovery">
