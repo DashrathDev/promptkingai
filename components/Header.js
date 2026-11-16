@@ -77,11 +77,11 @@ export default function Header() {
       >
         {[
           ["Home", "/"],
-          ["🔥 Trending Prompts", "/category/trending"],
-          ["🪔 Festival Prompts", "/category/festival"],
-          ["💑 Couple Prompts", "/category/couple"],
-          ["🌸 Girls Prompts", "/category/girls"],
-          ["📖 AI Photo Guides", "/blog"],
+          ["Trending Prompts", "/category/trending"],
+          ["Festival Prompts", "/category/festival"],
+          ["Couple Prompts", "/category/couple"],
+          ["Girls Prompts", "/category/girls"],
+          ["AI Photo Guides", "/blog"],
           ["All Categories", "/categories"],
           ["About Us", "/about"],
           ["Contact Us", "/contact"],
