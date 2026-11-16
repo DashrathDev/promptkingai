@@ -1444,24 +1444,181 @@ summary:focus-visible {
 }
 .detail-image {
   aspect-ratio: 4/5;
-  max-height: 880px;
+  max-height: 780px;
   position: relative;
   overflow: hidden;
-  border-radius: 17px;
-  background: var(--wash);
+  border-radius: 18px;
+  background: #0d0a14;
+  box-shadow: 0 8px 32px rgba(66, 36, 86, 0.1);
 }
 .detail-image img {
-  object-fit: cover;
+  object-fit: contain;
 }
 .detail-figure figcaption {
   color: var(--muted);
   font-size: 12px;
   margin-top: 10px;
 }
+
+/* Tested AI Compatibility Bar */
+.compatibility-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 18px 0 26px;
+  padding: 12px 18px;
+  background: rgba(111, 59, 184, 0.05);
+  border: 1px solid rgba(111, 59, 184, 0.12);
+  border-radius: 12px;
+}
+.comp-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--deep);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.comp-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.comp-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #3b2f48;
+  background: #ffffff;
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid #e5daf0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
 .prompt-section h2,
 .content-section h2 {
   font-size: 27px;
 }
+
+/* Prompt Card Container with Quick Action */
+.prompt-card-wrapper {
+  background: #ffffff;
+  border: 1px solid #ebdff5;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(66, 36, 86, 0.06);
+  margin-top: 14px;
+}
+.prompt-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 20px;
+  background: #f7f3fb;
+  border-bottom: 1px solid #ebdff5;
+}
+.prompt-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--deep);
+  text-transform: uppercase;
+}
+.status-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+.prompt-quick-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+  background: var(--purple);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.prompt-quick-copy:hover {
+  background: var(--deep);
+  transform: translateY(-1px);
+}
+.prompt-quick-copy.copied {
+  background: #059669;
+}
+.prompt-card-wrapper .prompt-text {
+  background: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 24px 22px;
+  font-size: 15.5px;
+  color: #2e2637;
+  line-height: 1.85;
+  font-family: inherit;
+  margin: 0;
+}
+.prompt-specs-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 20px;
+  background: #faf8fc;
+  border-top: 1px solid #eee7f4;
+}
+.spec-tag {
+  font-size: 12px;
+  color: #5b4f69;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #ebdff5;
+}
+.spec-tag strong {
+  color: var(--deep);
+  font-weight: 600;
+}
+
+/* Negative Prompt Container */
+.negative-prompt-container {
+  margin-top: 24px;
+  border: 1px solid #fed7aa;
+  background: #fffbf5;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.negative-prompt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: #fef3c7;
+  border-bottom: 1px solid #fed7aa;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #9a3412;
+}
+.negative-prompt-text {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: #78350f;
+  line-height: 1.7;
+}
+
 .prompt-text {
   background: var(--wash);
   border: 1px solid var(--border);
@@ -1485,11 +1642,21 @@ summary:focus-visible {
   flex: 1;
   min-width: 180px;
 }
+.copy-main-btn {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+}
+.copy-main-btn.copied {
+  background: #059669;
+  border-color: #059669;
+}
 .copy-status {
   display: block;
-  max-width: 260px;
+  max-width: 320px;
   font-size: 12px;
-  color: var(--deep);
+  color: #059669;
+  font-weight: 500;
   margin-top: 9px;
 }
 .content-section {
@@ -1557,6 +1724,9 @@ summary:focus-visible {
 }
 .detail-sidebar {
   padding-top: 60px;
+  position: sticky;
+  top: 96px;
+  align-self: start;
 }
 .sidebar-cta {
   background: linear-gradient(135deg, #512579, #7340a8);
@@ -1927,6 +2097,9 @@ summary:focus-visible {
   }
   .detail-sidebar > .sidebar-panel:last-child {
     grid-column: 1/-1;
+  }
+  .desktop-only-panel {
+    display: none !important;
   }
   .sidebar-panel {
     margin-top: 0;

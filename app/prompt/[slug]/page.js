@@ -9,6 +9,7 @@ import {
   SlidersHorizontal,
   ClipboardList,
   LockKeyhole,
+  Sparkles,
 } from "lucide-react";
 import { getPrompt, getRelatedPrompts } from "@/lib/prompt-service";
 import { seo, PLAY_STORE_URL, SITE_URL } from "@/lib/site";
@@ -131,6 +132,18 @@ export default async function PromptPage({ params }) {
             <Link href={`/category/${p.category}`}>{p.categoryName}</Link>
           </div>
 
+          <div className="compatibility-bar">
+            <span className="comp-label">
+              <Sparkles size={14} /> Tested AI Compatibility:
+            </span>
+            <div className="comp-badges">
+              <span className="comp-badge">Google Gemini (Imagen 3)</span>
+              <span className="comp-badge">Midjourney v6</span>
+              <span className="comp-badge">Flux.1 Dev / Schnell</span>
+              <span className="comp-badge">ChatGPT (DALL-E 3)</span>
+            </div>
+          </div>
+
           <figure className="detail-figure">
             <div className="detail-image">
               <Image
@@ -142,37 +155,65 @@ export default async function PromptPage({ params }) {
               />
             </div>
             <figcaption>
-              Illustrative style reference. Results will vary by tool, settings
-              and customization.
+              Illustrative style reference. Results depend on prompt formula, reference photo and AI tool settings.
             </figcaption>
           </figure>
 
           <section className="prompt-section">
-            <div className="section-heading">
-              <div>
-                <span className="eyebrow purple">YOUR IDEA STARTS WITH WORDS</span>
-                <h2>AI Photo Prompt</h2>
+            <div className="prompt-card-wrapper">
+              <div className="prompt-card-header">
+                <div className="prompt-card-title">
+                  <span className="status-live-dot" />
+                  <span>READY-TO-COPY AI PROMPT</span>
+                </div>
+                {!p.isPremium && <CopyPrompt text={p.prompt} variant="quick" />}
+              </div>
+
+              {p.isPremium ? (
+                <div className="prompt-text premium-locked">
+                  <LockKeyhole size={24} aria-hidden="true" />
+                  <div>
+                    <strong>Exclusive Mobile Prompt</strong>
+                    <p>
+                      This formula is curated exclusively for the Prompt King Android app. Download the app to unlock and copy.
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div className="prompt-text">{p.prompt}</div>
+              )}
+
+              {/* Quick Specs Chips */}
+              <div className="prompt-specs-row">
+                <span className="spec-tag">
+                  <strong>Aspect Ratio:</strong> {p.aspectRatio || "9:16"}
+                </span>
+                {p.camera && (
+                  <span className="spec-tag">
+                    <strong>Camera / Lens:</strong> {p.camera}
+                  </span>
+                )}
+                {p.lighting && (
+                  <span className="spec-tag">
+                    <strong>Lighting:</strong> {p.lighting.split(".")[0]}
+                  </span>
+                )}
+                {p.colorGrade && (
+                  <span className="spec-tag">
+                    <strong>Color Tone:</strong> {p.colorGrade}
+                  </span>
+                )}
               </div>
             </div>
 
-            {p.isPremium ? (
-              <div className="prompt-text">
-                <LockKeyhole size={20} aria-hidden="true" />
-                <p>
-                  This is a Premium prompt. Open Prompt King on Google Play to
-                  access it through the app.
-                </p>
+            {!p.isPremium && (
+              <div className="copy-actions">
+                <CopyPrompt
+                  text={p.prompt}
+                  label="Copy Complete Prompt Formula"
+                  copiedLabel="Prompt Copied to Clipboard! ✨"
+                />
               </div>
-            ) : (
-              <>
-                <div className="prompt-text">{p.prompt}</div>
-                <div className="copy-actions">
-                  <CopyPrompt text={p.prompt} />
-                  <a href={PLAY_STORE_URL} className="button">
-                    Download Prompt King App <ArrowUpRight size={17} />
-                  </a>
-                </div>
-              </>
             )}
 
             {p.isPremium ? (
@@ -183,10 +224,21 @@ export default async function PromptPage({ params }) {
               </div>
             ) : null}
 
-            <p className="reference-note">
-              Want more trending photo prompts? Discover them in the Prompt King
-              Android app on Google Play.
-            </p>
+            {/* Negative Prompt Block if available */}
+            {p.negativePrompt && (
+              <div className="negative-prompt-container">
+                <div className="negative-prompt-header">
+                  <span>NEGATIVE PROMPT (WHAT TO AVOID)</span>
+                  <CopyPrompt
+                    text={p.negativePrompt}
+                    variant="quick"
+                    label="COPY NEGATIVE"
+                    copiedLabel="COPIED! ✨"
+                  />
+                </div>
+                <div className="negative-prompt-text">{p.negativePrompt}</div>
+              </div>
+            )}
           </section>
 
           <section className="content-section">
@@ -239,7 +291,7 @@ export default async function PromptPage({ params }) {
 
         <aside className="detail-sidebar" aria-label="More inspiration">
           <AppDownloadCTA compact />
-          <section className="sidebar-panel">
+          <section className="sidebar-panel desktop-only-panel">
             <h2>Another direction?</h2>
             {related.slice(0, 3).map((r) => (
               <Link className="mini-prompt" key={r.id} href={`/prompt/${r.slug}`}>
