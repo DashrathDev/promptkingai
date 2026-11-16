@@ -864,19 +864,29 @@ summary:focus-visible {
   justify-content: space-between;
   align-items: center;
   margin: 26px 0 14px;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 1.8px;
   color: var(--muted);
   font-weight: 500;
 }
 .category-label a {
   letter-spacing: 0;
-  font-size: 12px;
-  display: flex;
+  font-size: 14.5px;
+  font-weight: 600;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 35px;
+  min-height: 36px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(111, 59, 184, 0.08);
   color: var(--purple);
+  transition: all 0.2s ease;
+}
+.category-label a:hover {
+  background: var(--purple);
+  color: white;
+  transform: translateX(2px);
 }
 .category-chips {
   display: flex;
@@ -2218,9 +2228,14 @@ summary:focus-visible {
     width: 19px;
   }
   .category-label {
-    font-size: 9px;
+    font-size: 9.5px;
     letter-spacing: 1px;
     margin-top: 22px;
+  }
+  .category-label a {
+    font-size: 13.5px;
+    padding: 5px 12px;
+    min-height: 32px;
   }
   .category-chips {
     gap: 8px;

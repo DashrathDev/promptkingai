@@ -214,7 +214,7 @@ export default async function Home() {
         <div className="category-label">
           <span>FIND YOUR AESTHETIC</span>
           <Link href="/categories">
-            All categories <ArrowRight size={15} />
+            All categories <ArrowRight size={16} />
           </Link>
         </div>
         <CategoryChips active="trending" />
