@@ -1444,15 +1444,16 @@ summary:focus-visible {
 }
 .detail-image {
   aspect-ratio: 4/5;
-  max-height: 780px;
+  max-height: 800px;
   position: relative;
   overflow: hidden;
   border-radius: 18px;
-  background: #0d0a14;
-  box-shadow: 0 8px 32px rgba(66, 36, 86, 0.1);
+  background: var(--wash);
+  box-shadow: 0 4px 20px rgba(66, 36, 86, 0.08);
 }
 .detail-image img {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 .detail-figure figcaption {
   color: var(--muted);
