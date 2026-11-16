@@ -192,6 +192,106 @@ summary:focus-visible {
   color: var(--purple);
   font-weight: 600;
 }
+.nav-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.nav-dropdown-trigger {
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  padding: 0;
+  cursor: pointer;
+  min-height: 44px;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+.nav-dropdown-wrapper:hover .nav-dropdown-trigger,
+.nav-dropdown-trigger[aria-current="page"] {
+  color: var(--purple);
+  font-weight: 600;
+}
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% - 4px);
+  left: -12px;
+  min-width: 200px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 14px 34px rgba(91, 42, 134, 0.12);
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 100;
+}
+.nav-dropdown-wrapper:hover .nav-dropdown-menu {
+  display: flex;
+}
+.nav-dropdown-menu a {
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a4453;
+  transition: all 0.15s ease;
+  min-height: auto;
+}
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a.active-sublink {
+  background: var(--wash);
+  color: var(--purple);
+  font-weight: 600;
+}
+.mobile-dropdown-section {
+  display: flex;
+  flex-direction: column;
+}
+.mobile-dropdown-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 0;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 500;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+}
+.mobile-dropdown-btn:hover {
+  background: var(--wash);
+  color: var(--purple);
+}
+.mobile-dropdown-sublinks {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: 18px;
+  margin: 4px 0 8px;
+  border-left: 2px solid #e5daf0;
+}
+.mobile-dropdown-sublinks a {
+  min-height: 40px;
+  font-size: 14px;
+  color: #635870;
+}
+.mobile-dropdown-sublinks a:hover,
+.mobile-dropdown-sublinks a.active-mobile-sublink {
+  color: var(--purple);
+  font-weight: 600;
+}
 .header-actions {
   display: flex;
   align-items: center;
