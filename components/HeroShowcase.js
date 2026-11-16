@@ -30,12 +30,12 @@ export default function HeroShowcase({ slides = [] }) {
   const safeIdx = activeIdx >= heroSlides.length ? 0 : activeIdx;
   const current = heroSlides[safeIdx] || heroSlides[0];
 
-  // Fast & lively auto-slide every 3 seconds (pauses on mouse hover)
+  // Fast & lively auto-slide every 2.8 seconds (pauses on mouse hover)
   useEffect(() => {
     if (isHovered || heroSlides.length <= 1) return;
     timerRef.current = setInterval(() => {
       setActiveIdx((prev) => (prev + 1) % heroSlides.length);
-    }, 3000);
+    }, 2800);
     return () => clearInterval(timerRef.current);
   }, [isHovered, heroSlides.length]);
 
@@ -46,7 +46,7 @@ export default function HeroShowcase({ slides = [] }) {
       if (!isHovered && heroSlides.length > 1) {
         timerRef.current = setInterval(() => {
           setActiveIdx((prev) => (prev + 1) % heroSlides.length);
-        }, 3000);
+        }, 2800);
       }
     }
   };
@@ -95,13 +95,14 @@ export default function HeroShowcase({ slides = [] }) {
             {/* Cyber Scanning Laser Beam */}
             <div className="showcase-scan-beam" />
 
-            {/* Clean Edge-to-Edge Image with Fast Smooth Transition */}
+            {/* Clean Edge-to-Edge Image with Fast Smooth Transition (Full Image Visible, Zero Crop) */}
             {current.image && (
               <Image
                 key={current.image}
                 src={current.image}
                 alt={current.imageAlt || current.title}
                 fill
+                style={{ objectFit: "contain" }}
                 sizes="(max-width: 639px) 95vw, 420px"
                 priority
                 className="showcase-img showcase-img-animate"

@@ -450,11 +450,11 @@ summary:focus-visible {
 .hero-showcase-wrapper {
   position: relative;
   width: 100%;
-  max-width: 390px;
+  max-width: 410px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 10px;
   z-index: 5;
   box-sizing: border-box;
 }
@@ -529,29 +529,34 @@ summary:focus-visible {
   box-shadow: 0 24px 50px -10px rgba(74, 30, 109, 0.24), 0 0 0 1px rgba(111, 59, 184, 0.12);
 }
 
-/* Visual Image Canvas - Clean edge-to-edge frame, no blur */
+/* Visual Image Canvas - Full uncropped portrait image, clean studio frame, no blur */
 .showcase-image-wrap {
   position: relative;
   width: 100%;
-  height: 330px;
+  height: 390px;
   overflow: hidden;
-  background: #110e1a;
+  background: #0d0a14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Fast, smooth image transition */
 @keyframes fastSlideIn {
-  0% { opacity: 0.35; transform: scale(0.98); }
+  0% { opacity: 0.4; transform: scale(0.985); }
   100% { opacity: 1; transform: scale(1); }
 }
 
 .showcase-img {
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 0.4s ease;
+  object-fit: contain !important;
+  object-position: center center !important;
+  width: 100% !important;
+  height: 100% !important;
+  transition: transform 0.3s ease;
 }
 
 .showcase-img-animate {
-  animation: fastSlideIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fastSlideIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .showcase-card:hover .showcase-img {
@@ -759,13 +764,16 @@ summary:focus-visible {
 /* Responsive Adjustments for Mobile & Tablets */
 @media (max-width: 900px) {
   .hero-showcase-wrapper {
-    max-width: 360px;
+    max-width: 380px;
+  }
+  .showcase-image-wrap {
+    height: 360px;
   }
 }
 
 @media (max-width: 767px) {
   .hero-showcase-wrapper {
-    max-width: 350px;
+    max-width: 340px;
     width: 100%;
     margin: 0 auto;
   }
@@ -782,7 +790,7 @@ summary:focus-visible {
     border-radius: 18px;
   }
   .showcase-image-wrap {
-    height: 260px;
+    height: 330px;
   }
   .showcase-info {
     padding: 9px 13px 6px;
