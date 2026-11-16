@@ -2491,64 +2491,64 @@ summary:focus-visible {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 2.8fr;
-  gap: 48px;
+  grid-template-columns: 1.3fr 2.7fr;
+  gap: 52px;
   align-items: start;
-  padding-bottom: 40px;
+  padding-bottom: 44px;
 }
 
 .footer-brand-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .footer-bio {
-  font-size: 14px;
-  line-height: 1.65;
-  color: #5c556b;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #524a61;
   margin: 0;
-  max-width: 36ch;
+  max-width: 40ch;
 }
 
 .footer-badges {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 2px;
+  gap: 9px;
+  margin-top: 4px;
 }
 
 .footer-badge {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 11.5px;
+  gap: 8px;
+  font-size: 13px;
   font-weight: 650;
   color: var(--deep);
-  background: rgba(111, 59, 184, 0.07);
-  padding: 5px 11px;
+  background: rgba(111, 59, 184, 0.08);
+  padding: 6px 13px;
   border-radius: 9999px;
   width: fit-content;
-  border: 1px solid rgba(111, 59, 184, 0.12);
+  border: 1px solid rgba(111, 59, 184, 0.15);
 }
 
 .footer-contact-box {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 6px;
+  gap: 12px;
+  margin-top: 8px;
 }
 
 .footer-email-link {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 12.5px;
+  gap: 8px;
+  font-size: 14px;
   font-weight: 650;
   color: var(--deep);
   background: #ffffff;
-  padding: 8px 13px;
-  border-radius: 10px;
+  padding: 9px 16px;
+  border-radius: 11px;
   border: 1px solid #ddd2e8;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -2564,13 +2564,13 @@ summary:focus-visible {
 .footer-app-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 12.5px;
+  gap: 7px;
+  font-size: 14px;
   font-weight: 700;
   color: #ffffff;
   background: var(--purple);
-  padding: 8px 14px;
-  border-radius: 10px;
+  padding: 9px 16px;
+  border-radius: 11px;
   text-decoration: none;
   box-shadow: 0 3px 10px rgba(111, 59, 184, 0.25);
   transition: all 0.2s ease;
@@ -2585,7 +2585,7 @@ summary:focus-visible {
 .footer-nav-columns {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 28px;
 }
 
 .footer-col {
@@ -2593,8 +2593,8 @@ summary:focus-visible {
 }
 
 .footer-heading {
-  margin: 0 0 16px;
-  font-size: 12px;
+  margin: 0 0 18px;
+  font-size: 13.5px;
   font-weight: 800;
   letter-spacing: 0.9px;
   text-transform: uppercase;
@@ -2607,16 +2607,16 @@ summary:focus-visible {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 11px;
 }
 
 .footer-links li a {
   display: inline-block;
-  font-size: 13.5px;
-  color: #635b73;
+  font-size: 15px;
+  color: #554d65;
   text-decoration: none;
   transition: all 0.18s ease;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .footer-links li a:hover {
@@ -2626,31 +2626,31 @@ summary:focus-visible {
 
 /* Compliance & E-E-A-T Disclaimer Banner */
 .footer-disclaimer-wrap {
-  padding-bottom: 24px;
+  padding-bottom: 26px;
 }
 
 .footer-disclaimer-card {
   background: #ffffff;
   border: 1px solid #ebdff5;
   border-radius: 14px;
-  padding: 16px 20px;
+  padding: 18px 22px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 9px;
   box-shadow: 0 2px 8px rgba(74, 30, 109, 0.04);
 }
 
 .footer-disclaimer-text {
-  font-size: 12px;
-  line-height: 1.6;
-  color: #6e677c;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #615a6e;
   margin: 0;
 }
 
 .footer-author-text {
-  font-size: 12px;
-  line-height: 1.5;
-  color: #4a3e5c;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #433754;
   margin: 0;
 }
 
@@ -2665,10 +2665,10 @@ summary:focus-visible {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 14px;
-  padding-block: 18px;
-  font-size: 12.5px;
-  color: #6b637b;
+  gap: 16px;
+  padding-block: 20px;
+  font-size: 14px;
+  color: #5e566d;
 }
 
 .footer-copyright {
@@ -2678,13 +2678,13 @@ summary:focus-visible {
 .footer-legal-quick {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .footer-legal-quick a {
-  color: #6b637b;
+  color: #5e566d;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 550;
   transition: color 0.18s ease;
 }
 
@@ -2699,7 +2699,7 @@ summary:focus-visible {
 .footer-love {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   margin: 0;
 }
 
@@ -2712,48 +2712,49 @@ summary:focus-visible {
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 38px;
   }
   .footer-bio {
     max-width: 100%;
   }
   .footer-nav-columns {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px 24px;
+    gap: 34px 26px;
   }
 }
 
 @media (max-width: 639px) {
   .footer {
-    padding-top: 40px;
+    padding-top: 42px;
   }
   .footer-grid {
-    gap: 28px;
-    padding-bottom: 28px;
+    gap: 30px;
+    padding-bottom: 30px;
   }
   .footer-nav-columns {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px 14px;
+    gap: 26px 16px;
   }
   .footer-heading {
-    font-size: 11.5px;
-    margin-bottom: 11px;
+    font-size: 13px;
+    margin-bottom: 12px;
   }
   .footer-links li a {
-    font-size: 13px;
+    font-size: 14.5px;
   }
   .footer-disclaimer-card {
-    padding: 14px 16px;
+    padding: 16px 18px;
   }
   .footer-disclaimer-text,
   .footer-author-text {
-    font-size: 11.5px;
+    font-size: 12.5px;
   }
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    padding-block: 16px;
+    gap: 12px;
+    padding-block: 18px;
+    font-size: 13.5px;
   }
   .footer-legal-quick {
     flex-wrap: wrap;

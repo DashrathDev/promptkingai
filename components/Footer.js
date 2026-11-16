@@ -62,21 +62,21 @@ export default function Footer() {
 
           <div className="footer-badges">
             <span className="footer-badge">
-              <Sparkles size={13} /> Tested on Gemini, Midjourney & Flux
+              <Sparkles size={15} /> Tested on Gemini, Midjourney & Flux
             </span>
             <span className="footer-badge">
-              <ShieldCheck size={13} /> Original Tested Formulas
+              <ShieldCheck size={15} /> Original Tested Formulas
             </span>
           </div>
 
           <div className="footer-contact-box">
             <a href="mailto:contact@promptkingai.com" className="footer-email-link">
-              <Mail size={15} />
+              <Mail size={16} />
               <span>contact@promptkingai.com</span>
             </a>
             <a href={PLAY_STORE_URL} className="footer-app-cta" target="_blank" rel="noopener noreferrer">
               <span>Get Android App</span>
-              <ArrowUpRight size={14} />
+              <ArrowUpRight size={16} />
             </a>
           </div>
         </div>
