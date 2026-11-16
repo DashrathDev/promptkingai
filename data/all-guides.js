@@ -5,9 +5,9 @@ import { focalLengthLensGuide } from "@/data/focal-length-lens-guide";
 import { aiPortraitGeneratorComparisonGuide } from "@/data/ai-portrait-generator-comparison-guide";
 
 export const allGuides = [
-  ...baseGuides,
-  faceConsistencyGuide,
-  cameraAnglesFramingGuide,
-  focalLengthLensGuide,
   aiPortraitGeneratorComparisonGuide,
+  focalLengthLensGuide,
+  cameraAnglesFramingGuide,
+  faceConsistencyGuide,
+  ...baseGuides,
 ];
