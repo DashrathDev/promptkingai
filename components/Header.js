@@ -33,6 +33,7 @@ export default function Header() {
             ["Latest", "/latest"],
             ["Blog", "/blog"],
             ["About", "/about"],
+            ["Contact", "/contact"],
           ].map(([name, url]) => (
             <Link
               key={url}
@@ -78,6 +79,7 @@ export default function Header() {
           ["Latest", "/latest"],
           ["Blog", "/blog"],
           ["About", "/about"],
+          ["Contact", "/contact"],
         ].map(([name, url]) => (
           <Link key={url} href={url} onClick={() => setOpen(false)}>
             {name}

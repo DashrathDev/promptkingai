@@ -3,7 +3,7 @@ import { seo } from "@/lib/site";
 
 export const metadata = seo(
   "About Prompt King",
-  "Learn about Prompt King, an AI prompt discovery platform for finding, copying, and customizing creative AI photo prompts.",
+  "Learn about Prompt King, founded by Dashrath in Karnataka, India. Discover tested, culturally accurate, and cinematic AI photo prompts for creators worldwide.",
   "/about",
 );
 
@@ -11,176 +11,120 @@ export default function About() {
   return (
     <article className="container prose page-section">
       <span className="eyebrow purple">ABOUT PROMPT KING</span>
-      <h1>Discover better prompts. Create your way.</h1>
+      <h1>Crafted for Creators. Tested for Realism.</h1>
       <p className="lead">
-        Prompt King helps creators discover trending, ready-to-copy AI photo
-        prompts and turn creative ideas into clearer instructions for their
-        preferred AI tools.
+        Prompt King is an Indian AI prompt discovery platform and creative hub,
+        founded by Dashrath in Karnataka, India. We help photographers, digital
+        artists, and social media creators turn ideas into breathtaking AI
+        photos using tested, ready-to-copy prompt formulas.
       </p>
 
       <section>
-        <h2>1. Who We Are</h2>
+        <h2>1. The Story Behind Prompt King</h2>
         <p>
-          Prompt King is an AI prompt discovery platform built for people who
-          want creative photo ideas without spending hours writing prompts from
-          scratch.
+          Prompt King was started with a simple observation: modern generative
+          AI models like <strong>Google Gemini (Imagen 3), Midjourney, ChatGPT (DALL-E 3), and Flux</strong> have
+          immense creative power, but getting photorealistic, consistent, and
+          culturally authentic results is frustratingly difficult.
         </p>
         <p>
-          Our goal is simple: make useful, well-structured AI photo prompts
-          easier to discover, understand, customize, and copy.
+          Too often, mainstream AI tools produce distorted hands, plastic
+          wax-like skin, or westernized interpretations of traditional Indian
+          festivals, attire, and rituals. Creators were wasting hours guessing
+          obscure keywords.
         </p>
         <p>
-          Prompt King is not an AI image generator. We focus on prompt discovery
-          and creative inspiration.
-        </p>
-      </section>
-
-      <section>
-        <h2>2. What You Can Discover</h2>
-        <p>
-          PromptKingAI.com brings together prompts across a growing range of
-          creative styles and categories, including portrait, cinematic,
-          couple, traditional, festival, bridal, vintage and retro, regional
-          styles, trending creative concepts, and other photo-prompt categories.
-        </p>
-        <p>
-          New prompts and categories may be added as creative trends and user
-          interests evolve.
+          To solve this, <strong>Dashrath</strong>, a passionate prompt researcher
+          and digital creator based in <strong>Karnataka, India</strong>, began
+          systematically benchmarking camera lenses, lighting ratios, and
+          negative prompts. What began as a personal notebook of tested prompt
+          recipes has grown into <strong>PromptKingAI.com</strong> — a free,
+          open discovery resource for creators worldwide.
         </p>
       </section>
 
       <section>
-        <h2>3. Discover. Copy. Make It Your Own.</h2>
-        <p>
-          Using Prompt King is designed to be simple. Browse prompts, open the
-          one you like, copy the prompt text, customize it if needed, and use it
-          with a compatible AI tool of your choice.
-        </p>
-        <p>
-          Our prompt pages may also include useful context such as visual
-          direction, composition, lighting, styling, and customization ideas.
-        </p>
+        <h2>2. Who We Are (Leadership &amp; E-E-A-T)</h2>
+        <div style={{ background: "var(--wash)", border: "1px solid var(--border)", borderRadius: "16px", padding: "24px", margin: "20px 0" }}>
+          <h3 style={{ margin: "0 0 6px", fontSize: "19px", color: "var(--deep)" }}>Dashrath</h3>
+          <p style={{ margin: "0 0 12px", fontSize: "14px", fontWeight: "600", color: "var(--purple)" }}>
+            Founder &amp; Lead AI Prompt Researcher | Karnataka, India
+          </p>
+          <p style={{ margin: 0, fontSize: "14px", lineHeight: "1.7" }}>
+            Dashrath oversees prompt curation, parameter benchmarking, and
+            editorial guidelines at Prompt King. With a deep passion for digital
+            photography and generative AI, he tests prompt formulas across multiple
+            AI engines to ensure authentic skin tones, natural lighting, and
+            cultural fidelity for the global creative community.
+          </p>
+        </div>
       </section>
 
       <section>
-        <h2>4. A Prompt Discovery Experience</h2>
+        <h2>3. What You Can Discover on Prompt King</h2>
         <p>
-          Prompt King does not generate or edit images on PromptKingAI.com.
-          Instead, we help users discover the words and creative directions
-          behind different photo concepts.
+          PromptKingAI.com brings together prompts across a rich spectrum of
+          creative styles and photography genres:
         </p>
-        <p>
-          The actual image-generation process happens through independent AI
-          tools selected by the user. Different AI tools may interpret the same
-          prompt differently, so results can vary.
-        </p>
+        <ul>
+          <li><strong>Cultural &amp; Festive Concepts:</strong> Authentic prompts for traditional festivals (Diwali, Navratri, Eid), royal weddings, Banarasi sarees, and regional heritage looks.</li>
+          <li><strong>Cinematic Portraits:</strong> Controlled lighting setups, including Rembrandt, neon noir, golden hour, and dramatic editorial studio looks.</li>
+          <li><strong>Couple &amp; Milestone Photoshoots:</strong> Aesthetic outdoor, vintage 90s retro, and anniversary photoshoot concepts.</li>
+          <li><strong>Modern Streetwear &amp; Fashion:</strong> Minimalist aesthetics, high-fashion magazine covers, and urban lookbooks.</li>
+        </ul>
       </section>
 
       <section>
-        <h2>5. Our Approach to Prompt Content</h2>
+        <h2>4. Our Testing &amp; Editorial Standards</h2>
         <p>
-          We aim to make prompt content clear, useful, easy to copy, easy to
-          customize, relevant to the intended visual style, and helpful for both
-          beginners and experienced creators.
+          Unlike unvetted repositories, every prompt published on Prompt King
+          adheres to our rigorous testing standards:
         </p>
+        <ul>
+          <li><strong>Multi-Model Verification:</strong> Prompts are tested on Google Gemini, Midjourney, Flux, and ChatGPT to assess consistency.</li>
+          <li><strong>Optical Camera Parameters:</strong> We specify real photography gear references (e.g., 85mm portrait lenses, 35mm anamorphic, f/1.8 apertures) to produce natural depth of field rather than digital blur.</li>
+          <li><strong>Texture Realism:</strong> We emphasize natural micro-skin textures, visible pores, and organic lighting to eliminate artificial plastic finishes.</li>
+        </ul>
         <p>
-          Where appropriate, prompts may be reviewed or edited for clearer
-          subject descriptions, lighting, framing, styling, and overall
-          consistency. You can learn more about our content standards in our{" "}
+          You can read our full methodology in our{" "}
           <Link href="/editorial-policy">Editorial Policy</Link>.
         </p>
       </section>
 
       <section>
-        <h2>6. Reference Images</h2>
+        <h2>5. 100% Free &amp; Transparent Access</h2>
         <p>
-          Images shown with prompts may be used as visual references for style,
-          mood, clothing, composition, lighting, or creative direction.
+          Prompt King is built to be open and accessible. You do not need an
+          account, paid subscription, or credit card to browse, copy, and adapt
+          any prompt in our library.
         </p>
         <p>
-          Unless specifically stated otherwise, reference images should not be
-          interpreted as verified outputs produced by the exact accompanying
-          prompt. Results depend on the AI tool, model, settings, reference
-          material, and prompt interpretation used by the creator.
-        </p>
-      </section>
-
-      <section>
-        <h2>7. Trending and Featured Content</h2>
-        <p>
-          Prompt King may highlight prompts as Trending, Featured, Latest,
-          Premium, or through other categories. These labels help organize and
-          surface interesting content.
-        </p>
-        <p>
-          Unless specifically stated as data-based, labels such as Trending or
-          Featured may reflect editorial selection, freshness, relevance, or
-          current creative interest rather than a real-time popularity ranking.
+          Prompt King is an educational prompt library and discovery resource.
+          We do not render or generate images on our servers; rather, we provide
+          tested instructional text formulas that creators take into compatible
+          AI tools of their choice.
         </p>
       </section>
 
       <section>
-        <h2>8. Prompt King Android App</h2>
+        <h2>6. Editorial Headquarters &amp; Contact</h2>
         <p>
-          Prompt King is also available as an Android app. The app makes it easy
-          to browse trending AI photo prompts, explore categories, and copy
-          prompts directly from your phone.
+          We operate transparently from Karnataka, India, and welcome
+          suggestions, prompt submissions, and corrections from creators
+          everywhere.
         </p>
         <p>
-          You can find the official Prompt King app on Google Play through the
-          download links provided on this website.
-        </p>
-      </section>
-
-      <section>
-        <h2>9. Built for Creators</h2>
-        <p>
-          Prompt King is designed for social media creators, AI photo
-          enthusiasts, students, photographers, designers, content creators,
-          Instagram and WhatsApp users, and anyone exploring creative AI
-          prompts.
-        </p>
-        <p>You do not need to be an expert in prompt writing to get started.</p>
-      </section>
-
-      <section>
-        <h2>10. Transparency Matters</h2>
-        <p>
-          We aim to clearly distinguish between prompt discovery and image
-          generation, reference images and verified outputs, editorial
-          selections and measured popularity, and editorial content and
-          advertising.
-        </p>
-        <p>
-          We do not intentionally publish fabricated ratings, fake testimonials,
-          or unsupported performance guarantees.
-        </p>
-      </section>
-
-      <section>
-        <h2>11. Our Goal</h2>
-        <p>
-          Our goal is to make Prompt King a useful destination for discovering
-          creative AI photo prompts that are easy to understand and ready to
-          adapt.
-        </p>
-        <p>
-          As AI tools and creative trends evolve, we plan to continue improving
-          the prompt library, categories, guides, and overall discovery
-          experience.
+          <strong>Official Contact:</strong> contact@promptkingai.com<br />
+          <strong>Support &amp; Inquiries:</strong> Visit our <Link href="/contact">Contact Us page</Link>
         </p>
       </section>
 
       <div className="prose-cta">
-        <h2>Explore Prompt King</h2>
-        <p>Looking for your next creative direction?</p>
+        <h2>Explore Tested Prompts</h2>
+        <p>Ready to create your next cinematic photo?</p>
         <Link href="/explore" className="button">
-          Explore prompts →
+          Explore prompt library →
         </Link>
-        <p>
-          For questions, feedback, corrections, or business-related enquiries,
-          visit our <Link href="/contact">Contact page</Link>.
-        </p>
       </div>
     </article>
   );
