@@ -76,10 +76,7 @@ export default function HeroShowcase({ slides = [] }) {
       )}
 
       <div className="hero-showcase-stage">
-        {/* Ambient Glow Aura */}
-        <div className="showcase-ambient-glow" />
-
-        {/* Main 3D Card */}
+        {/* Main Compact 3D Card */}
         <div className="showcase-card">
           {/* Visual Canvas with Ambient Backdrop + Full Uncut Image */}
           <div className="showcase-image-wrap">
@@ -105,7 +102,7 @@ export default function HeroShowcase({ slides = [] }) {
                 src={current.image}
                 alt={current.imageAlt || current.title}
                 fill
-                sizes="(max-width: 639px) 95vw, 440px"
+                sizes="(max-width: 639px) 90vw, 360px"
                 priority
                 className="showcase-img-main"
               />
@@ -122,15 +119,12 @@ export default function HeroShowcase({ slides = [] }) {
             </div>
           </div>
 
-          {/* Clean Content Info Section Below Image (Leaves Photo 100% Uncovered) */}
+          {/* Clean Compact Content Info Section Below Image */}
           <div className="showcase-info">
             <span className="showcase-kicker">
               {(current.category || "TRENDING").toUpperCase()} PROMPTS
             </span>
             <h3 className="showcase-title">{current.title}</h3>
-            {current.desc && (
-              <p className="showcase-desc">{current.desc}</p>
-            )}
           </div>
 
           {/* Prompt Terminal & Copy Box */}
@@ -148,12 +142,12 @@ export default function HeroShowcase({ slides = [] }) {
               >
                 {copied ? (
                   <>
-                    <Check size={14} />
-                    <span>COPIED! ✨</span>
+                    <Check size={13} />
+                    <span>COPIED!</span>
                   </>
                 ) : (
                   <>
-                    <Copy size={14} />
+                    <Copy size={13} />
                     <span>COPY</span>
                   </>
                 )}
@@ -163,7 +157,7 @@ export default function HeroShowcase({ slides = [] }) {
                 className="showcase-view-link"
                 title={`Explore ${current.title}`}
               >
-                <ArrowUpRight size={17} />
+                <ArrowUpRight size={15} />
               </Link>
             </div>
           </div>
@@ -171,7 +165,7 @@ export default function HeroShowcase({ slides = [] }) {
           {/* Compatibility Trust Bar */}
           <div className="showcase-trust-bar">
             <span>Tested on:</span>
-            <strong>Gemini • Midjourney v6 • Flux.1 • ChatGPT</strong>
+            <strong>Gemini • Midjourney • Flux • ChatGPT</strong>
           </div>
         </div>
       </div>
