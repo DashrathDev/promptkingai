@@ -15,6 +15,7 @@ import { getPrompt, getRelatedPrompts } from "@/lib/prompt-service";
 import { seo, PLAY_STORE_URL, SITE_URL } from "@/lib/site";
 import { categories } from "@/data/categories";
 import CopyPrompt from "@/components/CopyPrompt";
+import ExpandablePrompt from "@/components/ExpandablePrompt";
 import FAQ from "@/components/FAQ";
 import AppDownloadCTA from "@/components/AppDownloadCTA";
 import RelatedPrompts from "@/components/RelatedPrompts";
@@ -160,51 +161,16 @@ export default async function PromptPage({ params }) {
           </figure>
 
           <section className="prompt-section">
-            <div className="prompt-card-wrapper">
-              <div className="prompt-card-header">
-                <div className="prompt-card-title">
-                  <span className="status-live-dot" />
-                  <span>READY-TO-COPY AI PROMPT</span>
-                </div>
-                {!p.isPremium && <CopyPrompt text={p.prompt} variant="quick" />}
-              </div>
-
-              {p.isPremium ? (
-                <div className="prompt-text premium-locked">
-                  <LockKeyhole size={24} aria-hidden="true" />
-                  <div>
-                    <strong>Exclusive Mobile Prompt</strong>
-                    <p>
-                      This formula is curated exclusively for the Prompt King Android app. Download the app to unlock and copy.
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <div className="prompt-text">{p.prompt}</div>
-              )}
-
-              {/* Quick Specs Chips */}
-              <div className="prompt-specs-row">
-                <span className="spec-tag">
-                  <strong>Aspect Ratio:</strong> {p.aspectRatio || "9:16"}
-                </span>
-                {p.camera && (
-                  <span className="spec-tag">
-                    <strong>Camera / Lens:</strong> {p.camera}
-                  </span>
-                )}
-                {p.lighting && (
-                  <span className="spec-tag">
-                    <strong>Lighting:</strong> {p.lighting.split(".")[0]}
-                  </span>
-                )}
-                {p.colorGrade && (
-                  <span className="spec-tag">
-                    <strong>Color Tone:</strong> {p.colorGrade}
-                  </span>
-                )}
-              </div>
-            </div>
+            <ExpandablePrompt
+              promptText={p.prompt}
+              isPremium={p.isPremium}
+              specs={{
+                aspectRatio: p.aspectRatio,
+                camera: p.camera,
+                lighting: p.lighting,
+                colorGrade: p.colorGrade,
+              }}
+            />
 
             {!p.isPremium && (
               <div className="copy-actions">

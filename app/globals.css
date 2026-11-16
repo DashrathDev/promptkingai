@@ -1561,6 +1561,53 @@ summary:focus-visible {
 .prompt-quick-copy.copied {
   background: #059669;
 }
+.prompt-text-container {
+  position: relative;
+  transition: max-height 0.35s ease;
+}
+.prompt-text-container.collapsed {
+  max-height: 220px;
+  overflow: hidden;
+}
+.prompt-text-container.expanded {
+  max-height: none;
+}
+.prompt-fade-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.94) 80%, #ffffff 100%);
+  pointer-events: none;
+}
+.prompt-expand-bar {
+  display: flex;
+  justify-content: center;
+  padding: 10px 16px 14px;
+  background: #ffffff;
+  border-top: 1px dashed #ebdff5;
+}
+.prompt-expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--purple);
+  background: rgba(111, 59, 184, 0.08);
+  border: 1px solid rgba(111, 59, 184, 0.18);
+  padding: 7px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.prompt-expand-btn:hover {
+  background: var(--purple);
+  color: #ffffff;
+  border-color: var(--purple);
+  transform: translateY(-1px);
+}
 .prompt-card-wrapper .prompt-text {
   background: #ffffff;
   border: none;
