@@ -3,7 +3,7 @@ export const aiPortraitGeneratorComparisonGuide = {
   title: "Midjourney v6 vs Google Gemini (Imagen 3) vs Flux.1: The Ultimate AI Portrait Comparison",
   description:
     "An in-depth, hands-on benchmark comparing Midjourney v6, Google Gemini Imagen 3, and Flux.1 for realistic human portraits, skin texture, Indian ethnic wear, and lighting.",
-  image: "/images/city.webp",
+  image: "/images/midjourney-v6-vs-gemini-imagen-3-vs-flux-portrait-comparison.jpg",
   label: "TOOL BENCHMARK",
   readTime: "15 min read",
   intro: [

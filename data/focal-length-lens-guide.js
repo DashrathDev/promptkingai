@@ -3,7 +3,7 @@ export const focalLengthLensGuide = {
   title: "Camera Lenses and Focal Length in AI Photo Prompts Explained",
   description:
     "Master how 24mm, 35mm, 50mm, 85mm, and 135mm lenses change face shape, background compression, and depth of field in AI photo prompts.",
-  image: "/images/moody.webp",
+  image: "/images/camera-lenses-focal-length-ai-photo-prompts.jpg",
   label: "LENS & OPTICS GUIDE",
   readTime: "13 min read",
   intro: [
