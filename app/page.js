@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -8,8 +7,8 @@ import {
   Layers3,
   Compass,
   Check,
-  Clapperboard,
 } from "lucide-react";
+import HeroShowcase from "@/components/HeroShowcase";
 import SearchBar from "@/components/SearchBar";
 import CategoryChips from "@/components/CategoryChips";
 import PromptGrid from "@/components/PromptGrid";
@@ -39,13 +38,6 @@ export const metadata = {
 export default async function Home() {
   const trending = await listPrompts({ sort: "featured", limit: 4 });
   const latest = await listPrompts({ sort: "latest", limit: 4 });
-  const heroPrompts = await listPrompts({ category: "trending", sort: "latest", limit: 2 });
-
-  const frontPrompt = heroPrompts.items?.[0];
-  const rearPrompt = heroPrompts.items?.[1] || frontPrompt;
-
-  const frontPromptHref = frontPrompt?.slug ? `/prompt/${frontPrompt.slug}` : "/category/trending";
-  const rearPromptHref = rearPrompt?.slug ? `/prompt/${rearPrompt.slug}` : "/category/trending";
 
   return (
     <>
@@ -60,7 +52,7 @@ export default async function Home() {
               Discover Trending
               <br />
               AI Photo{" "}
-              <span>
+              <span className="aurora-text">
                 Prompts<span className="title-spark">✳</span>
               </span>
             </h1>
@@ -89,56 +81,7 @@ export default async function Home() {
               </span>
             </div>
           </div>
-          <div className="hero-art">
-            <div className="hero-orbit" />
-            <div className="floating-label">
-              <Clapperboard size={18} />
-              <span>
-                A new perspective
-                <br />
-                <strong>is one prompt away.</strong>
-              </span>
-            </div>
-            <Link
-              href={rearPromptHref}
-              className="hero-photo rear"
-              aria-label={rearPrompt ? `Explore ${rearPrompt.title}` : "Explore Trending photo prompts"}
-            >
-              <Image
-                src={rearPrompt?.image || "/images/traditional.webp"}
-                alt={rearPrompt?.imageAlt || "Trending photo prompt inspiration"}
-                fill
-                sizes="(max-width: 639px) 45vw, 230px"
-                priority
-              />
-              <span>{(rearPrompt?.categoryName || "Trending").toUpperCase()} / TIMELESS</span>
-            </Link>
-            <Link href={frontPromptHref} className="hero-photo front">
-              <Image
-                src={frontPrompt?.image || "/images/black.webp"}
-                alt={frontPrompt?.imageAlt || "AI photo prompt inspiration"}
-                fill
-                sizes="(max-width: 639px) 55vw, 290px"
-                priority
-              />
-              <div className="hero-photo-caption">
-                <span>{(frontPrompt?.categoryName || "Trending").toUpperCase()} PROMPTS</span>
-                <strong>{frontPrompt?.title || "Find your next creative direction."}</strong>
-                <span className="hero-photo-link">
-                  Explore the prompt <ArrowUpRight size={19} />
-                </span>
-              </div>
-            </Link>
-            <div className="copy-float">
-              <span>
-                <Copy size={19} />
-              </span>
-              <div>
-                <strong>Good ideas, ready to copy.</strong>
-                <small>Your next creative starting point.</small>
-              </div>
-            </div>
-          </div>
+          <HeroShowcase />
         </div>
       </section>
       <div className="container discovery">
