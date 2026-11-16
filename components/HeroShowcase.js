@@ -81,22 +81,35 @@ export default function HeroShowcase({ slides = [] }) {
 
         {/* Main 3D Card */}
         <div className="showcase-card">
-          {/* Laser Scanning Beam */}
-          <div className="showcase-scan-beam" />
-
-          {/* Visual Canvas */}
+          {/* Visual Canvas with Ambient Backdrop + Full Uncut Image */}
           <div className="showcase-image-wrap">
+            {/* Laser Scanning Beam */}
+            <div className="showcase-scan-beam" />
+
+            {/* Ambient Blurred Copy to Fill Frame with Exact Tones */}
+            {current.image && (
+              <Image
+                src={current.image}
+                alt=""
+                fill
+                sizes="120px"
+                className="showcase-img-blur"
+                aria-hidden="true"
+                priority
+              />
+            )}
+
+            {/* Main Uncropped Sharp Image */}
             {current.image && (
               <Image
                 src={current.image}
                 alt={current.imageAlt || current.title}
                 fill
-                sizes="(max-width: 639px) 90vw, 440px"
+                sizes="(max-width: 639px) 95vw, 440px"
                 priority
-                className="showcase-img"
+                className="showcase-img-main"
               />
             )}
-            <div className="showcase-overlay" />
 
             {/* Badges on Image */}
             <div className="showcase-img-badges">
@@ -107,17 +120,17 @@ export default function HeroShowcase({ slides = [] }) {
                 {current.lens || "85mm Studio Lens"}
               </span>
             </div>
+          </div>
 
-            {/* Captions on Image */}
-            <div className="showcase-captions">
-              <span className="showcase-kicker">
-                {(current.category || "TRENDING").toUpperCase()} PROMPTS
-              </span>
-              <h3 className="showcase-title">{current.title}</h3>
-              {current.desc && (
-                <p className="showcase-desc">{current.desc}</p>
-              )}
-            </div>
+          {/* Clean Content Info Section Below Image (Leaves Photo 100% Uncovered) */}
+          <div className="showcase-info">
+            <span className="showcase-kicker">
+              {(current.category || "TRENDING").toUpperCase()} PROMPTS
+            </span>
+            <h3 className="showcase-title">{current.title}</h3>
+            {current.desc && (
+              <p className="showcase-desc">{current.desc}</p>
+            )}
           </div>
 
           {/* Prompt Terminal & Copy Box */}
