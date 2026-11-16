@@ -45,6 +45,7 @@ export default async function Guide({ params }) {
     : null;
 
   const isWideGuideThumbnail = [
+    "mastering-studio-cinematic-lighting-ai-prompts",
     "how-to-use-ai-photo-prompts",
     "cinematic-portrait-prompt-ideas",
     "improve-an-ai-photo-prompt",
