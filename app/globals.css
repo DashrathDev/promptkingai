@@ -237,11 +237,11 @@ summary:focus-visible {
   display: flex;
 }
 .nav-dropdown-menu a {
-  padding: 9px 14px;
+  padding: 10px 16px;
   border-radius: 8px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #4a4453;
+  font-size: 15px;
+  font-weight: 650;
+  color: #3b3342;
   transition: all 0.15s ease;
   min-height: auto;
 }
@@ -249,7 +249,7 @@ summary:focus-visible {
 .nav-dropdown-menu a.active-sublink {
   background: var(--wash);
   color: var(--purple);
-  font-weight: 600;
+  font-weight: 700;
 }
 .mobile-dropdown-section {
   display: flex;
@@ -283,14 +283,15 @@ summary:focus-visible {
   border-left: 2px solid #e5daf0;
 }
 .mobile-dropdown-sublinks a {
-  min-height: 40px;
-  font-size: 14px;
-  color: #635870;
+  min-height: 42px;
+  font-size: 15px;
+  font-weight: 650;
+  color: #4f435b;
 }
 .mobile-dropdown-sublinks a:hover,
 .mobile-dropdown-sublinks a.active-mobile-sublink {
   color: var(--purple);
-  font-weight: 600;
+  font-weight: 700;
 }
 .header-actions {
   display: flex;
