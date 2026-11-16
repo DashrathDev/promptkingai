@@ -313,7 +313,12 @@ export default async function Home() {
             All guides <ArrowUpRight size={18} />
           </Link>
         </div>
-        <BlogPreview />
+        <BlogPreview limit={3} />
+        <div style={{ textAlign: "center", marginTop: "34px" }}>
+          <Link href="/blog" className="button" style={{ display: "inline-flex" }}>
+            Explore All Guides & Tutorials <ArrowRight size={17} />
+          </Link>
+        </div>
       </section>
       <section className="container section">
         <div className="section-heading">

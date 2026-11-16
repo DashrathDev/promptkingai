@@ -7,10 +7,12 @@ const GUIDE_IMAGE_OVERRIDES = {
   "improve-an-ai-photo-prompt": "/images/improve-an-ai-photo-prompt.jpg.jpg",
 };
 
-export default function BlogPreview() {
+export default function BlogPreview({ limit }) {
+  const displayGuides = limit ? guides.slice(0, limit) : guides;
+
   return (
     <div className="blog-grid">
-      {guides.map((g) => {
+      {displayGuides.map((g) => {
         const guideImage = GUIDE_IMAGE_OVERRIDES[g.slug] || g.image;
 
         return (
