@@ -6,6 +6,9 @@ export const studioCinematicLightingGuide = {
   image: "/images/mastering-studio-cinematic-lighting-ai-prompts.jpg",
   label: "LIGHTING & OPTICS GUIDE",
   readTime: "16 min read",
+  publishedAt: "2026-11-17",
+  formattedDate: "November 17, 2026",
+  author: "Dashrath",
   intro: [
     "Light is the fundamental medium of photography. In traditional portraiture, an experienced photographer does not simply aim a camera at a subject and press the shutter; they sculpt shadows, define contours, control contrast ratios, and direct the viewer's gaze through deliberate illumination. In generative AI photography, light plays an even more profound role. Without clear lighting instructions, generative models like Midjourney v6.1, Google Gemini (Imagen 3), and Flux.1 default to flat, ambient illumination or aggressive cosmetic smoothing that gives human skin an artificial, plastic look.",
     "Many prompt creators attempt to fix dull images by piling on generic quality buzzwords such as 'hyperrealistic,' 'masterpiece,' '8K resolution,' or 'unreal engine render.' These descriptors fail because they do not communicate physical properties to the model's neural network. Modern AI image models are trained on millions of professionally curated photographs tagged with real technical metadata. When you replace vague descriptors with authentic lighting setups—such as 'large diffused octabox key light,' 'subtle warm golden rim light,' or 'dramatic chiaroscuro'—the AI model instantly accesses photographic training weights that govern realistic light falloff, specular reflections, subsurface scattering, and volumetric depth.",

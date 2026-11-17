@@ -6,6 +6,9 @@ export const focalLengthLensGuide = {
   image: "/images/camera-lenses-focal-length-ai-photo-prompts.jpg",
   label: "LENS & OPTICS GUIDE",
   readTime: "13 min read",
+  publishedAt: "2026-11-16",
+  formattedDate: "November 16, 2026",
+  author: "Dashrath",
   intro: [
     "One of the fastest ways to turn an artificial-looking AI image into a convincing photographic portrait is to stop using vague buzzwords like “hyperrealistic,” “ultra-detailed,” or “8K” and instead specify a real camera lens and focal length.",
     "Generative AI models such as Midjourney v6, Google Gemini (Imagen 3), and Flux.1 are trained on millions of real photographic files with embedded camera metadata (EXIF data). When you tell the AI that a photo was taken with an “85mm f/1.4 prime lens,” the model understands the exact optical characteristics associated with that lens: flattering facial compression, shallow depth of field, natural perspective, and realistic background blur.",

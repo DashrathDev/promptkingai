@@ -6,6 +6,9 @@ export const aiPortraitGeneratorComparisonGuide = {
   image: "/images/midjourney-v6-vs-gemini-imagen-3-vs-flux-portrait-comparison.jpg",
   label: "TOOL BENCHMARK",
   readTime: "15 min read",
+  publishedAt: "2026-11-16",
+  formattedDate: "November 16, 2026",
+  author: "Dashrath",
   intro: [
     "Choosing the right AI image generator for photorealistic portraits has never been more competitive. For years, Midjourney held an undisputed monopoly on cinematic aesthetics. Today, Google Gemini’s updated Imagen 3 model and Black Forest Labs’ open-weights powerhouse Flux.1 have completely disrupted the creative landscape.",
     "If you are a photographer, prompt engineer, digital artist, or creator using Prompt King, which tool should you use for portraits? Does Midjourney still lead in cinematic lighting? Can Google Gemini handle authentic Indian skin tones and traditional fabric textures better? Is Flux.1 truly the new king of micro-details and zero-plastic skin pores?",

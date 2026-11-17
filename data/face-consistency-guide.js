@@ -6,6 +6,9 @@ export const faceConsistencyGuide = {
   image: "/images/keep-face-consistent-ai-photos.jpg.jpg",
   label: "KEEP YOUR IDENTITY",
   readTime: "12 min read",
+  publishedAt: "2026-11-14",
+  formattedDate: "November 14, 2026",
+  author: "Dashrath",
   intro: [
     "One of the most common problems with AI-generated photos is simple: the face keeps changing. You may use the same reference photo, the same prompt and the same general style, but each result can still look like a slightly different person. The eyes may change, the jawline may shift, the nose may look different, the hairstyle may become inconsistent, or the overall facial structure may drift.",
     "This happens because AI image tools do not always treat identity as a fixed rule. A prompt can describe the scene, clothing, pose, background and lighting very well, but facial consistency often depends on additional factors such as the quality of the reference image, the angle of the face, how much the pose changes, the model being used and whether the tool includes dedicated identity or character-reference controls.",

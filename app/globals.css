@@ -1275,6 +1275,32 @@ summary:focus-visible {
 .blog-card .eyebrow {
   font-size: 9px;
 }
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 7px;
+  flex-wrap: wrap;
+}
+.blog-card-meta .blog-card-date,
+.blog-card-meta .blog-card-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  color: #635873;
+}
+.blog-card-meta .blog-card-date svg,
+.blog-card-meta .blog-card-read svg {
+  color: var(--purple);
+  opacity: 0.85;
+}
+.blog-card-meta .blog-card-sep {
+  color: #c4b5d6;
+  font-size: 11px;
+}
 .blog-card h3 {
   font-size: 21px;
   line-height: 1.35;
@@ -1858,6 +1884,54 @@ summary:focus-visible {
 }
 .prose {
   max-width: 850px;
+}
+.article-meta-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 18px 0 16px;
+  padding: 8px 16px;
+  background: var(--wash);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  max-width: 100%;
+}
+.detail-eyebrow-badge {
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 9px;
+  background: rgba(111, 59, 184, 0.12);
+  border-radius: 999px;
+  color: var(--deep);
+}
+.article-meta-header .meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  color: #554866;
+  font-weight: 500;
+}
+.article-meta-header .meta-item svg {
+  color: var(--purple);
+  opacity: 0.9;
+}
+.article-meta-header .meta-item time {
+  color: #2b233a;
+  font-weight: 600;
+}
+.article-meta-header .meta-sep {
+  color: #c4b5d6;
+  font-size: 11px;
+}
+.article-meta-header .author-tag {
+  color: #554866;
+}
+.article-meta-header .author-tag strong {
+  color: var(--deep);
+  font-weight: 700;
 }
 .prose h1 {
   font-size: clamp(2.5rem, 4vw, 3.8rem);
@@ -2688,6 +2762,15 @@ summary:focus-visible {
   .faq-list summary {
     font-size: 15px;
     padding-block: 18px;
+  }
+  .article-meta-header {
+    border-radius: 14px;
+    padding: 10px 12px;
+    gap: 8px 10px;
+    width: 100%;
+  }
+  .article-meta-header .meta-item {
+    font-size: 12px;
   }
   .prose h1 {
     font-size: 38px;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Calendar, Clock } from "lucide-react";
 import { allGuides as guides } from "@/data/all-guides";
 
 const GUIDE_IMAGE_OVERRIDES = {
@@ -29,7 +29,17 @@ export default function BlogPreview({ limit }) {
               </div>
             </Link>
             <div>
-              <span className="eyebrow">PROMPT GUIDES · {g.readTime}</span>
+              <div className="blog-card-meta">
+                <span className="blog-card-date">
+                  <Calendar size={13} aria-hidden="true" />
+                  <time dateTime={g.publishedAt}>{g.formattedDate || "Nov 2026"}</time>
+                </span>
+                <span className="blog-card-sep">•</span>
+                <span className="blog-card-read">
+                  <Clock size={13} aria-hidden="true" />
+                  <span>{g.readTime}</span>
+                </span>
+              </div>
               <h3>
                 <Link href={`/blog/${g.slug}`}>
                   {g.title} <ArrowUpRight size={19} />

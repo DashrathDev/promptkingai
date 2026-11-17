@@ -6,6 +6,9 @@ export const cameraAnglesFramingGuide = {
   image: "/images/ai-photo-prompt-camera-angles-framing.jpg.jpg",
   label: "FRAME IT BETTER",
   readTime: "12 min read",
+  publishedAt: "2026-11-15",
+  formattedDate: "November 15, 2026",
+  author: "Dashrath",
   intro: [
     "Camera angle and framing are two of the most important parts of an AI photo prompt, but they are also among the most confusing. Many users know what kind of image they want, but they do not know whether to write close-up, waist-up, three-quarter, full-body, low-angle, eye-level, side profile or wide shot. Because of that, the final image may feel too zoomed in, too distant, awkwardly cropped or visually different from what the user expected.",
     "The easiest way to understand the difference is this: framing describes how much of the subject is visible, while camera angle describes where the camera is positioned in relation to the subject. A prompt can use both at the same time, such as a waist-up portrait at eye level or a full-body portrait from a slightly low camera angle.",

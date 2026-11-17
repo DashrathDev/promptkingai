@@ -7,6 +7,9 @@ export const guides = [
     image: "/images/how-to-use-ai-photo-prompts.jpg.jpg",
     label: "THE STARTER GUIDE",
     readTime: "10 min read",
+    publishedAt: "2026-11-12",
+    formattedDate: "November 12, 2026",
+    author: "Dashrath",
     intro: [
       "AI photo prompts are useful because they turn a rough visual idea into a clearer creative direction. Instead of typing a few random words and hoping for a good result, you can describe what should appear in the scene, how the subject should look, where the photo should be set, and what kind of lighting or mood you want.",
       "The goal is not to create the longest possible prompt. The goal is to give a compatible AI tool enough useful direction to understand your idea. Prompt King is designed around this workflow: discover a ready-to-copy photo prompt, open a style you like, copy the text, customize the important details, and then use that prompt in a compatible AI tool of your choice.",
@@ -132,6 +135,9 @@ export const guides = [
     image: "/images/cinematic-portrait-prompt-ideas.jpg.jpg",
     label: "THE CINEMATIC EDIT",
     readTime: "10 min read",
+    publishedAt: "2026-11-10",
+    formattedDate: "November 10, 2026",
+    author: "Dashrath",
     intro: [
       "Cinematic portraits are popular because they feel more like a frame from a movie than a standard photo. The subject is still important, but the image also depends on atmosphere, lighting, framing, background and emotion.",
       "A strong cinematic prompt does not need dozens of dramatic keywords. It needs a clear scene. You should know who is in the image, what they are doing, where they are standing, what kind of light is shaping the face, how much of the subject should be visible and what mood the scene should communicate. Prompt King can help you discover ready-to-copy cinematic photo prompts that you can customize for your own idea.",
@@ -269,6 +275,9 @@ export const guides = [
     image: "/images/traditional.webp",
     label: "PROMPT WITH INTENTION",
     readTime: "12 min read",
+    publishedAt: "2026-11-08",
+    formattedDate: "November 8, 2026",
+    author: "Dashrath",
     intro: [
       "A good AI photo prompt is not about using the most complicated words. It is about giving clear visual direction. Many prompts fail because they are too vague, too crowded or internally inconsistent. A prompt may mention a beautiful portrait, cinematic lighting, a luxury background, professional quality and dramatic photography, but still leave the AI tool with very little useful information about what the image should actually look like.",
       "The easiest way to improve an AI photo prompt is to make the scene easier to understand. Prompt King helps you discover ready-to-copy photo prompts that you can use as a starting point. Instead of rebuilding everything from zero, you can copy a prompt that is already close to your idea, change the details that matter and then use the revised prompt in a compatible AI tool.",
