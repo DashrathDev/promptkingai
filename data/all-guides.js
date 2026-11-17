@@ -4,8 +4,10 @@ import { cameraAnglesFramingGuide } from "@/data/camera-angles-framing-guide";
 import { focalLengthLensGuide } from "@/data/focal-length-lens-guide";
 import { aiPortraitGeneratorComparisonGuide } from "@/data/ai-portrait-generator-comparison-guide";
 import { studioCinematicLightingGuide } from "@/data/studio-cinematic-lighting-guide";
+import { fixAiDistortionGuide } from "@/data/fix-ai-distortion-bad-hands-plastic-skin-guide";
 
 export const allGuides = [
+  fixAiDistortionGuide,
   studioCinematicLightingGuide,
   aiPortraitGeneratorComparisonGuide,
   focalLengthLensGuide,
