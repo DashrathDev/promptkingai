@@ -89,6 +89,7 @@ export default async function Guide({ params }) {
     : null;
 
   const isWideGuideThumbnail = [
+    "traditional-indian-festive-ai-photo-prompts",
     "fix-ai-distortion-bad-hands-plastic-skin-prompts",
     "mastering-studio-cinematic-lighting-ai-prompts",
     "how-to-use-ai-photo-prompts",
