@@ -6,8 +6,10 @@ import { aiPortraitGeneratorComparisonGuide } from "@/data/ai-portrait-generator
 import { studioCinematicLightingGuide } from "@/data/studio-cinematic-lighting-guide";
 import { fixAiDistortionGuide } from "@/data/fix-ai-distortion-bad-hands-plastic-skin-guide";
 import { traditionalIndianFestiveGuide } from "@/data/traditional-indian-festive-guide";
+import { professionalLinkedinHeadshotsGuide } from "@/data/professional-linkedin-headshots-guide";
 
 export const allGuides = [
+  professionalLinkedinHeadshotsGuide,
   traditionalIndianFestiveGuide,
   fixAiDistortionGuide,
   studioCinematicLightingGuide,
