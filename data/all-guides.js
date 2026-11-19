@@ -7,8 +7,10 @@ import { studioCinematicLightingGuide } from "@/data/studio-cinematic-lighting-g
 import { fixAiDistortionGuide } from "@/data/fix-ai-distortion-bad-hands-plastic-skin-guide";
 import { traditionalIndianFestiveGuide } from "@/data/traditional-indian-festive-guide";
 import { professionalLinkedinHeadshotsGuide } from "@/data/professional-linkedin-headshots-guide";
+import { cinematicCouplePortraitGuide } from "@/data/cinematic-couple-portrait-guide";
 
 export const allGuides = [
+  cinematicCouplePortraitGuide,
   professionalLinkedinHeadshotsGuide,
   traditionalIndianFestiveGuide,
   fixAiDistortionGuide,
