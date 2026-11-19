@@ -8,8 +8,10 @@ import { fixAiDistortionGuide } from "@/data/fix-ai-distortion-bad-hands-plastic
 import { traditionalIndianFestiveGuide } from "@/data/traditional-indian-festive-guide";
 import { professionalLinkedinHeadshotsGuide } from "@/data/professional-linkedin-headshots-guide";
 import { cinematicCouplePortraitGuide } from "@/data/cinematic-couple-portrait-guide";
+import { nightStreetCyberpunkGuide } from "@/data/night-street-cyberpunk-guide";
 
 export const allGuides = [
+  nightStreetCyberpunkGuide,
   cinematicCouplePortraitGuide,
   professionalLinkedinHeadshotsGuide,
   traditionalIndianFestiveGuide,
