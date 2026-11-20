@@ -89,6 +89,7 @@ export default async function Guide({ params }) {
     : null;
 
   const isWideGuideThumbnail = [
+    "flux-1-schnell-vs-dev-best-prompts-settings",
     "camera-aperture-depth-of-field-bokeh-ai-prompts",
     "night-street-cyberpunk-photography-ai-prompts",
     "cinematic-couple-portrait-ai-prompts",

@@ -10,8 +10,10 @@ import { professionalLinkedinHeadshotsGuide } from "@/data/professional-linkedin
 import { cinematicCouplePortraitGuide } from "@/data/cinematic-couple-portrait-guide";
 import { nightStreetCyberpunkGuide } from "@/data/night-street-cyberpunk-guide";
 import { apertureDepthOfFieldBokehGuide } from "@/data/aperture-depth-of-field-bokeh-guide";
+import { fluxSchnellDevProGuide } from "@/data/flux-1-schnell-vs-dev-guide";
 
 export const allGuides = [
+  fluxSchnellDevProGuide,
   apertureDepthOfFieldBokehGuide,
   nightStreetCyberpunkGuide,
   cinematicCouplePortraitGuide,
