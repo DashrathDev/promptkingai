@@ -9,8 +9,10 @@ import { traditionalIndianFestiveGuide } from "@/data/traditional-indian-festive
 import { professionalLinkedinHeadshotsGuide } from "@/data/professional-linkedin-headshots-guide";
 import { cinematicCouplePortraitGuide } from "@/data/cinematic-couple-portrait-guide";
 import { nightStreetCyberpunkGuide } from "@/data/night-street-cyberpunk-guide";
+import { apertureDepthOfFieldBokehGuide } from "@/data/aperture-depth-of-field-bokeh-guide";
 
 export const allGuides = [
+  apertureDepthOfFieldBokehGuide,
   nightStreetCyberpunkGuide,
   cinematicCouplePortraitGuide,
   professionalLinkedinHeadshotsGuide,

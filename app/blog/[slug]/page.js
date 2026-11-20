@@ -89,6 +89,7 @@ export default async function Guide({ params }) {
     : null;
 
   const isWideGuideThumbnail = [
+    "camera-aperture-depth-of-field-bokeh-ai-prompts",
     "night-street-cyberpunk-photography-ai-prompts",
     "cinematic-couple-portrait-ai-prompts",
     "professional-linkedin-corporate-headshot-ai-prompts",
