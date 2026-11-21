@@ -12,8 +12,10 @@ import { nightStreetCyberpunkGuide } from "@/data/night-street-cyberpunk-guide";
 import { apertureDepthOfFieldBokehGuide } from "@/data/aperture-depth-of-field-bokeh-guide";
 import { fluxSchnellDevProGuide } from "@/data/flux-1-schnell-vs-dev-guide";
 import { vintage35mmFilmGuide } from "@/data/vintage-35mm-film-kodak-portra-guide";
+import { commercialProductEcommerceGuide } from "@/data/commercial-product-ecommerce-guide";
 
 export const allGuides = [
+  commercialProductEcommerceGuide,
   vintage35mmFilmGuide,
   fluxSchnellDevProGuide,
   apertureDepthOfFieldBokehGuide,

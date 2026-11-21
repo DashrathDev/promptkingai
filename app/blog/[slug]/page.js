@@ -89,6 +89,7 @@ export default async function Guide({ params }) {
     : null;
 
   const isWideGuideThumbnail = [
+    "commercial-product-ecommerce-ai-photography-prompts",
     "vintage-35mm-film-photography-kodak-portra-ai-prompts",
     "flux-1-schnell-vs-dev-best-prompts-settings",
     "camera-aperture-depth-of-field-bokeh-ai-prompts",
