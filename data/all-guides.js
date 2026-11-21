@@ -11,8 +11,10 @@ import { cinematicCouplePortraitGuide } from "@/data/cinematic-couple-portrait-g
 import { nightStreetCyberpunkGuide } from "@/data/night-street-cyberpunk-guide";
 import { apertureDepthOfFieldBokehGuide } from "@/data/aperture-depth-of-field-bokeh-guide";
 import { fluxSchnellDevProGuide } from "@/data/flux-1-schnell-vs-dev-guide";
+import { vintage35mmFilmGuide } from "@/data/vintage-35mm-film-kodak-portra-guide";
 
 export const allGuides = [
+  vintage35mmFilmGuide,
   fluxSchnellDevProGuide,
   apertureDepthOfFieldBokehGuide,
   nightStreetCyberpunkGuide,

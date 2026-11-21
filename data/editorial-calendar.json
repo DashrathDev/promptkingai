@@ -70,5 +70,23 @@
     "status": "published",
     "targetDate": "Day 5 - 6:30 PM",
     "keywords": ["flux.1 prompt guide", "flux dev settings", "flux schnell photorealism", "flux skin texture"]
+  },
+  {
+    "id": 9,
+    "title": "Vintage 35mm Film Photography Prompts: Kodak Portra 400, CineStill 800T & Authentic Grain",
+    "slug": "vintage-35mm-film-photography-kodak-portra-ai-prompts",
+    "category": "Analog Film Aesthetics",
+    "status": "published",
+    "targetDate": "Day 6 - 11:00 AM",
+    "keywords": ["vintage film ai prompt", "kodak portra 400 midjourney", "cinestill 800t halation prompt", "35mm analog photo prompt"]
+  },
+  {
+    "id": 10,
+    "title": "Commercial Product & E-Commerce AI Photography Prompts: Studio Splashes, Acrylic Risers & Hero Lighting",
+    "slug": "commercial-product-ecommerce-ai-photography-prompts",
+    "category": "Commercial & Advertising",
+    "status": "planned",
+    "targetDate": "Day 6 - 6:30 PM",
+    "keywords": ["product photography ai prompt", "commercial ecommerce photo prompt", "studio splash prompt", "cosmetics mockup midjourney"]
   }
 ]
