@@ -88,5 +88,23 @@
     "status": "published",
     "targetDate": "Day 6 - 6:30 PM",
     "keywords": ["product photography ai prompt", "commercial ecommerce photo prompt", "studio splash prompt", "cosmetics mockup midjourney"]
+  },
+  {
+    "id": 11,
+    "title": "Indian Bridal & Wedding AI Photography Prompts: Heavy Lehengas, Kundan Jewelry & Mandap Lighting",
+    "slug": "indian-bridal-wedding-ai-photography-prompts",
+    "category": "Bridal & Wedding",
+    "status": "published",
+    "targetDate": "Day 7 - 11:00 AM",
+    "keywords": ["indian bridal ai prompt", "wedding lehenga prompt", "kundan jewelry midjourney", "mandap lighting ai photo", "dulhan ai photo prompt"]
+  },
+  {
+    "id": 12,
+    "title": "Automotive & Supercar AI Photography Prompts: Rolling Rig Shots, Motion Blur & Wet Asphalt Reflections",
+    "slug": "automotive-supercar-ai-photography-prompts",
+    "category": "Automotive & Action",
+    "status": "planned",
+    "targetDate": "Day 7 - 6:30 PM",
+    "keywords": ["car photography ai prompt", "supercar rolling shot prompt", "automotive lighting midjourney", "wet asphalt car photo ai"]
   }
 ]

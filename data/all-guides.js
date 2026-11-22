@@ -13,8 +13,10 @@ import { apertureDepthOfFieldBokehGuide } from "@/data/aperture-depth-of-field-b
 import { fluxSchnellDevProGuide } from "@/data/flux-1-schnell-vs-dev-guide";
 import { vintage35mmFilmGuide } from "@/data/vintage-35mm-film-kodak-portra-guide";
 import { commercialProductEcommerceGuide } from "@/data/commercial-product-ecommerce-guide";
+import { indianBridalWeddingGuide } from "@/data/indian-bridal-wedding-guide";
 
 export const allGuides = [
+  indianBridalWeddingGuide,
   commercialProductEcommerceGuide,
   vintage35mmFilmGuide,
   fluxSchnellDevProGuide,
