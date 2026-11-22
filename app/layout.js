@@ -22,6 +22,9 @@ export const metadata = {
   description: defaultDescription,
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
+  verification: {
+    google: "UxQ5mwCTTNxKpXi0rqwP54OoeL-BhUiZl23jDbbgf_o",
+  },
   other: { "google-adsense-account": ADSENSE_CLIENT },
   openGraph: {
     title: defaultTitle,
