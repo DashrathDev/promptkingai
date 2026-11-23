@@ -89,6 +89,7 @@ export default async function Guide({ params }) {
     : null;
 
   const isWideGuideThumbnail = [
+    "architectural-luxury-interior-ai-photography-prompts",
     "automotive-supercar-ai-photography-prompts",
     "indian-bridal-wedding-ai-photography-prompts",
     "commercial-product-ecommerce-ai-photography-prompts",

@@ -15,8 +15,10 @@ import { vintage35mmFilmGuide } from "@/data/vintage-35mm-film-kodak-portra-guid
 import { commercialProductEcommerceGuide } from "@/data/commercial-product-ecommerce-guide";
 import { indianBridalWeddingGuide } from "@/data/indian-bridal-wedding-guide";
 import { automotiveSupercarGuide } from "@/data/automotive-supercar-photography-guide";
+import { architecturalLuxuryInteriorGuide } from "@/data/architectural-luxury-interior-guide";
 
 export const allGuides = [
+  architecturalLuxuryInteriorGuide,
   automotiveSupercarGuide,
   indianBridalWeddingGuide,
   commercialProductEcommerceGuide,
