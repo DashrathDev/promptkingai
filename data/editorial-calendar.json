@@ -103,8 +103,17 @@
     "title": "Automotive & Supercar AI Photography Prompts: Rolling Rig Shots, Motion Blur & Wet Asphalt Reflections",
     "slug": "automotive-supercar-ai-photography-prompts",
     "category": "Automotive & Action",
-    "status": "planned",
-    "targetDate": "Day 7 - 6:30 PM",
+    "status": "published",
+    "targetDate": "Day 8 - 11:00 AM",
     "keywords": ["car photography ai prompt", "supercar rolling shot prompt", "automotive lighting midjourney", "wet asphalt car photo ai"]
+  },
+  {
+    "id": 13,
+    "title": "Architectural & Luxury Interior AI Photography Prompts: Modernist Villas, Biophilic Design & Golden Hour Light",
+    "slug": "architectural-luxury-interior-ai-photography-prompts",
+    "category": "Architecture & Real Estate",
+    "status": "planned",
+    "targetDate": "Day 8 - 6:30 PM",
+    "keywords": ["architecture ai prompt", "interior design photo prompt", "modernist villa midjourney", "luxury real estate ai photography"]
   }
 ]

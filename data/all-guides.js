@@ -14,8 +14,10 @@ import { fluxSchnellDevProGuide } from "@/data/flux-1-schnell-vs-dev-guide";
 import { vintage35mmFilmGuide } from "@/data/vintage-35mm-film-kodak-portra-guide";
 import { commercialProductEcommerceGuide } from "@/data/commercial-product-ecommerce-guide";
 import { indianBridalWeddingGuide } from "@/data/indian-bridal-wedding-guide";
+import { automotiveSupercarGuide } from "@/data/automotive-supercar-photography-guide";
 
 export const allGuides = [
+  automotiveSupercarGuide,
   indianBridalWeddingGuide,
   commercialProductEcommerceGuide,
   vintage35mmFilmGuide,
