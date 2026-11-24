@@ -115,5 +115,23 @@
     "status": "published",
     "targetDate": "Day 8 - 6:30 PM",
     "keywords": ["architecture ai prompt", "interior design photo prompt", "modernist villa midjourney", "luxury real estate ai photography"]
+  },
+  {
+    "id": 14,
+    "title": "High-Fashion Editorial & Runway AI Photography Prompts: Haute Couture, Silk Draping, Studio Strobe Lighting & Vogue Aesthetics",
+    "slug": "high-fashion-editorial-runway-ai-photography-prompts",
+    "category": "Fashion & Editorial",
+    "status": "published",
+    "targetDate": "Day 9 - 11:00 AM",
+    "keywords": ["high fashion ai prompt", "vogue editorial photo prompt", "haute couture midjourney", "fashion runway ai photo", "studio strobe fashion prompt"]
+  },
+  {
+    "id": 15,
+    "title": "Wildlife & Nature Action AI Photography Prompts: Super-Telephoto Compression, Fur Micro-Textures & Golden Hour Rim Light",
+    "slug": "wildlife-nature-action-ai-photography-prompts",
+    "category": "Wildlife & Nature",
+    "status": "published",
+    "targetDate": "Day 9 - 6:30 PM",
+    "keywords": ["wildlife photography ai prompt", "animal macro photo prompt", "super telephoto lens midjourney", "action wildlife ai photo"]
   }
 ]

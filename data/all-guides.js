@@ -1,4 +1,6 @@
 import { guides as baseGuides } from "@/data/guides";
+import { wildlifeNatureActionPhotographyGuide } from "@/data/wildlife-nature-action-photography-guide";
+import { highFashionEditorialRunwayGuide } from "@/data/high-fashion-editorial-runway-guide";
 import { faceConsistencyGuide } from "@/data/face-consistency-guide";
 import { cameraAnglesFramingGuide } from "@/data/camera-angles-framing-guide";
 import { focalLengthLensGuide } from "@/data/focal-length-lens-guide";
@@ -18,6 +20,8 @@ import { automotiveSupercarGuide } from "@/data/automotive-supercar-photography-
 import { architecturalLuxuryInteriorGuide } from "@/data/architectural-luxury-interior-guide";
 
 export const allGuides = [
+  wildlifeNatureActionPhotographyGuide,
+  highFashionEditorialRunwayGuide,
   architecturalLuxuryInteriorGuide,
   automotiveSupercarGuide,
   indianBridalWeddingGuide,
