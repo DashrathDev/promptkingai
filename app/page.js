@@ -7,6 +7,7 @@ import {
   Layers3,
   Compass,
   Check,
+  Zap,
 } from "lucide-react";
 import HeroShowcase from "@/components/HeroShowcase";
 import SearchBar from "@/components/SearchBar";
@@ -168,30 +169,50 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <section className="hero">
+        {/* Animated gradient orbs */}
+        <div className="hero-orb hero-orb-1" aria-hidden="true" />
+        <div className="hero-orb hero-orb-2" aria-hidden="true" />
         <div className="container hero-grid">
           <div className="hero-copy">
             <span className="hero-kicker">
-              <Sparkles size={15} /> WELCOME TO PROMPT KING — #1 AI PHOTO PROMPTS DIRECTORY
+              <Sparkles size={15} /> #1 FREE AI PHOTO PROMPTS LIBRARY
             </span>
             <h1>
-              Prompt King: Discover Trending
-              <br />
-              AI Photo{" "}
+              Copy. Paste.{" "}
               <span className="aurora-text">
-                Prompts<span className="title-spark">✳</span>
+                Create.<span className="title-spark">✳</span>
               </span>
+              <br />
+              <span className="hero-h1-sub">AI Photo Prompts, Ready to Use</span>
             </h1>
             <p>
               Explore ready-to-copy prompts for portraits, cinematic photos,
               couples, festivals and more. Find a style you love, copy the
-              prompt, and use it in your preferred compatible AI tool.
+              prompt, and use it in your preferred AI tool.
             </p>
+            {/* Stats Trust Bar */}
+            <div className="hero-stats">
+              <div className="hero-stat">
+                <span className="hero-stat-num">1,000+</span>
+                <span className="hero-stat-label">AI Prompts</span>
+              </div>
+              <div className="hero-stat-divider" />
+              <div className="hero-stat">
+                <span className="hero-stat-num">20+</span>
+                <span className="hero-stat-label">Expert Guides</span>
+              </div>
+              <div className="hero-stat-divider" />
+              <div className="hero-stat">
+                <span className="hero-stat-num">100%</span>
+                <span className="hero-stat-label">Free Forever</span>
+              </div>
+            </div>
             <div className="hero-buttons">
               <Link href="#feed" className="button">
                 Explore Prompts <ArrowRight size={18} />
               </Link>
-              <a href={PLAY_STORE_URL} className="button">
-                Download Prompt King App <ArrowUpRight size={17} />
+              <a href={PLAY_STORE_URL} className="button button-outline">
+                Download App <ArrowUpRight size={17} />
               </a>
             </div>
             <div className="hero-steps">
@@ -202,7 +223,7 @@ export default async function Home() {
                 <Check size={15} /> Copy the prompt
               </span>
               <span>
-                <Check size={15} /> Make it yours
+                <Zap size={15} /> Create instantly
               </span>
             </div>
           </div>
